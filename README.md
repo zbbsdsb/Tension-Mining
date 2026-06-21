@@ -14,50 +14,83 @@
 
 > Most people search for solutions. Great researchers search for tensions.
 
-A research methodology for discovering invariants hidden inside complex systems.
+A research methodology for discovering invariants hidden inside complex systems. Works as an AI-executable Skill across Claude Code, TRAE, Cursor, Windsurf, and any tool that supports Markdown-based skill files.
 
 ---
 
-## The Workflow
+## Quick Start
+
+### 1. Install
+
+Clone this repository into your AI tool's skill directory:
+
+```bash
+# Claude Code — project-level (recommended)
+git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining
+
+# Claude Code — user-level (all projects)
+git clone https://github.com/CeaserZhao/Tension-Mining.git ~/.claude/skills/tension-mining
+
+# TRAE
+git clone https://github.com/CeaserZhao/Tension-Mining.git .trae/skills/tension-mining
+
+# Cursor / Windsurf / other
+# Place the repo anywhere accessible. Reference SKILL.md in your project instructions.
+```
+
+### 2. Use
+
+**Automatic trigger** — describe a complex system problem in natural language:
+
+> "I want to design a decentralized identity system for a P2P marketplace."
+
+The AI detects the trigger and activates Tension Mining automatically.
+
+**Manual trigger** — invoke the skill directly:
+
+| Tool | Command |
+|------|---------|
+| Claude Code | `/tension-mining` |
+| TRAE | AI auto-activates based on SKILL.md description |
+| Cursor / Windsurf | Reference `SKILL.md` in your `.cursorrules` or project instructions |
+
+### 3. Follow the 7 Phases
+
+The AI will guide you through 7 phases, asking one question at a time:
 
 ```
-    REALITY
-       |
-       v
-  +----------+
-  |PHENOMENA |  <-- Observe before abstracting
-  +----------+
-       |
-       v
-  +----------+
-  | TENSION  |  <-- Discover ineliminable tradeoffs
-  +----------+
-       |
-       v
-  +----------+
-  |INVARIANT |  <-- Extract cross-domain principles
-  +----------+
-       |
-       v
-  +----------+
-  |MECHANISM |  <-- Study how reality resolves them
-  +----------+
-       |
-       v
-  +----------+
-  |  SYSTEM  |  <-- Synthesize into a coherent model
-  +----------+
-       |
-       v
-  +----------+
-  |ALGORITHM |  <-- Algorithms are downstream, not start
-  +----------+
-       |
-       v
-  +----------+
-  |DESTROY   |  <-- Attack your own model
-  +----------+
+1. Phenomenon Mining  →  Collect 5-10 real-world examples from 3+ domains
+2. Tension Mining      →  Identify 5+ ineliminable tradeoffs
+3. Invariant Mining    →  Extract 3+ cross-domain principles
+4. Mechanism Mining    →  Study how reality resolves these tensions
+5. System Synthesis    →  Combine into a coherent model
+6. Algorithm Synthesis →  Derive algorithms from mechanisms (only now)
+7. Destruction Phase   →  Attack your own model
 ```
+
+**Core principle:** Do not start from solutions. Start from reality.
+
+---
+
+## How It Works
+
+### Design Patterns
+
+Tension Mining uses a **Pipeline + Inversion + Generator** hybrid pattern:
+
+- **Pipeline** — 7 phases execute in strict order. Each phase has a gate condition; you cannot proceed until it is met.
+- **Inversion** — The AI interviews you phase-by-phase, asking one question at a time. You drive the content; the AI enforces the methodology.
+- **Generator** — Output follows a structured template with defined sections, ensuring completeness.
+
+### Anti-Cheat Mechanisms
+
+- **Common Rationalizations table** — counters AI's tendency to skip steps ("I already know the tensions, let's skip to the algorithm")
+- **Red Flags** — observable behaviors that indicate the methodology is being violated
+- **Quality Rubric** — 5-dimension self-evaluation (D1-D5, score 0-15) appended to every output
+
+### Progressive Disclosure
+
+`SKILL.md` is a concise activation skeleton (~80 lines). Detailed phase instructions, atlases, and templates are loaded on demand, keeping initial context minimal.
 
 ---
 
@@ -151,6 +184,25 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 
 ---
 
+## Repository Navigation
+
+| Path | Purpose |
+|------|---------|
+| [`SKILL.md`](./SKILL.md) | Activation skeleton — the AI entry point (~80 lines) |
+| [`references/execution-protocol.md`](./references/execution-protocol.md) | Detailed 7-phase instructions (Goal / Interview / Output / Gate) |
+| [`references/interface-contract.md`](./references/interface-contract.md) | Input/output specification and error handling |
+| [`references/quality-rubric.md`](./references/quality-rubric.md) | 5-dimension scoring rubric (D1-D5, 0-15 scale) |
+| [`references/tension-atlas.md`](./references/tension-atlas.md) | Catalog of 19 persistent tensions across domains |
+| [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Catalog of 12 cross-domain invariants |
+| [`references/methodology-primer.md`](./references/methodology-primer.md) | Extended methodology reference |
+| [`examples/dialogue-example.md`](./examples/dialogue-example.md) | Full user-AI dialogue walkthrough (recommended first read) |
+| [`examples/`](./examples/) | 7 additional case studies |
+| [`templates/_core-template.md`](./templates/_core-template.md) | Shared 7-phase workflow skeleton |
+| [`templates/`](./templates/) | 5 domain-specific templates (Algorithm, AI Agent, NPC Society, Organization, Protocol) |
+| [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md) | Directory layout, dependency graph, governance rules |
+
+---
+
 ## One Question
 
 Before designing anything, ask:
@@ -158,19 +210,6 @@ Before designing anything, ask:
 > What tension am I actually looking at?
 
 The answer is often more valuable than the algorithm.
-
----
-
-## Repository Navigation
-
-| Path | Purpose |
-|------|---------|
-| [`SKILL.md`](./SKILL.md) | AI-executable research protocol (7 phases) |
-| [`references/tension-atlas.md`](./references/tension-atlas.md) | Catalog of persistent tensions across domains |
-| [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Cross-domain principles that remain valid |
-| [`examples/`](./examples/) | 8 case studies: PageRank, Transformer, Bitcoin, Git, Wikipedia, NPC Society, Agent Organization, Dialogue Example |
-| [`templates/`](./templates/) | 6 fill-in-the-blank templates for immediate use |
-| [`references/`](./references/) | Execution protocol, interface contract, quality rubric, and methodology reference |
 
 ---
 

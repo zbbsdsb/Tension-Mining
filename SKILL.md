@@ -4,16 +4,16 @@ description: >
   Discover invariants hidden inside complex systems by mining tensions across reality, phenomena, and mechanisms.
   Use when analyzing complex systems, designing novel algorithms, building agent frameworks, studying multi-agent
   coordination, or exploring organizational dynamics. Not for simple optimization tasks or known-solution problems.
-license: MIT
-metadata:
-  author: CeaserZhao
-  version: "2.0"
-  domain: complex-systems-research
-  methodology: tension-driven-discovery
-  phases: 7
-  patterns: [pipeline, inversion, generator]
-  quality_rubric: references/quality-rubric.md
-  interface_contract: references/interface-contract.md
+user-invocable: true
+version: "2.0"
+# --- Extended metadata (not parsed by skill loaders, kept for documentation) ---
+# author: CeaserZhao
+# domain: complex-systems-research
+# methodology: tension-driven-discovery
+# phases: 7
+# patterns: [pipeline, inversion, generator]
+# quality_rubric: references/quality-rubric.md
+# interface_contract: references/interface-contract.md
 ---
 
 # Tension Mining — Activation Protocol

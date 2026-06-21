@@ -1,7 +1,45 @@
 # Tension Mining — Project Structure
 
 > Governance documentation for the Tension Mining Skill project.
-> This file describes the directory layout, file dependency graph, and governance rules.
+> This file describes the directory layout, file dependency graph, installation, and governance rules.
+
+---
+
+## Installation
+
+This repository is a self-contained AI Skill. Install it into your AI tool's skill directory:
+
+### Claude Code
+
+```bash
+# Project-level (recommended — keeps skill scoped to one project)
+git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining
+
+# User-level (available across all projects)
+git clone https://github.com/CeaserZhao/Tension-Mining.git ~/.claude/skills/tension-mining
+```
+
+Invoke with `/tension-mining` or let Claude Code auto-trigger based on the `description` field.
+
+### TRAE
+
+```bash
+git clone https://github.com/CeaserZhao/Tension-Mining.git .trae/skills/tension-mining
+```
+
+TRAE auto-discovers skills in `.trae/skills/` and activates based on SKILL.md description.
+
+### Cursor / Windsurf / Other AI Tools
+
+Clone or download the repository anywhere accessible. Add a reference to `SKILL.md` in your project instructions (e.g., `.cursorrules`, `.windsurfrules`, or your system prompt):
+
+```
+When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md
+```
+
+### Manual / No Tool
+
+Read `SKILL.md` for the activation skeleton, then load `references/execution-protocol.md` for detailed phase instructions. Use `templates/` for structured fill-in-the-blank analysis. Read `examples/dialogue-example.md` for a complete walkthrough.
 
 ---
 
