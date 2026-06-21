@@ -4,10 +4,10 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License"></a>
-  <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v1.0-rust?style=flat-square" alt="Skill v1.0"></a>
-  <a href="./tension-atlas.md"><img src="https://img.shields.io/badge/atlas-19_tensions-4a6fa5?style=flat-square" alt="Tensions"></a>
-  <a href="./invariant-atlas.md"><img src="https://img.shields.io/badge/atlas-12_invariants-4a6fa5?style=flat-square" alt="Invariants"></a>
-  <a href="./examples/"><img src="https://img.shields.io/badge/cases-7_studies-6b7280?style=flat-square" alt="Case Studies"></a>
+  <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v2.0-blue?style=flat-square" alt="Skill v2.0"></a>
+  <a href="./references/tension-atlas.md"><img src="https://img.shields.io/badge/atlas-19_tensions-4a6fa5?style=flat-square" alt="Tensions"></a>
+  <a href="./references/invariant-atlas.md"><img src="https://img.shields.io/badge/atlas-12_invariants-4a6fa5?style=flat-square" alt="Invariants"></a>
+  <a href="./examples/"><img src="https://img.shields.io/badge/cases-8_studies-6b7280?style=flat-square" alt="Case Studies"></a>
 </p>
 
 ---
@@ -24,29 +24,39 @@ A research methodology for discovering invariants hidden inside complex systems.
     REALITY
        |
        v
-  +---------+
-  |PHENOMENA|  <-- Observe before abstracting
-  +---------+
+  +----------+
+  |PHENOMENA |  <-- Observe before abstracting
+  +----------+
        |
        v
-  +---------+
-  | TENSION |  <-- Discover ineliminable tradeoffs
-  +---------+
+  +----------+
+  | TENSION  |  <-- Discover ineliminable tradeoffs
+  +----------+
        |
        v
-  +---------+
-  |INVARIANT|  <-- Extract cross-domain principles
-  +---------+
+  +----------+
+  |INVARIANT |  <-- Extract cross-domain principles
+  +----------+
        |
        v
-  +---------+
-  |MECHANISM|  <-- Study how reality resolves them
-  +---------+
+  +----------+
+  |MECHANISM |  <-- Study how reality resolves them
+  +----------+
        |
        v
-  +---------+
-  | ALGORITHM|  <-- Algorithms are downstream, not start
-  +---------+
+  +----------+
+  |  SYSTEM  |  <-- Synthesize into a coherent model
+  +----------+
+       |
+       v
+  +----------+
+  |ALGORITHM |  <-- Algorithms are downstream, not start
+  +----------+
+       |
+       v
+  +----------+
+  |DESTROY   |  <-- Attack your own model
+  +----------+
 ```
 
 ---
@@ -83,7 +93,7 @@ Most people focus on behavior. Tension Mining focuses on the forces underneath b
 
 ---
 
-## The Five Phases
+## The Seven Phases
 
 ### 1. Phenomenon Mining
 
@@ -109,11 +119,23 @@ Search for patterns that appear across unrelated systems. Extract invariants.
 
 Study how reality resolves tensions. Build a mechanism library.
 
-### 5. Algorithm Synthesis
+### 5. System Synthesis
+
+> What is the smallest model that explains the system?
+
+Combine tensions, invariants, and mechanisms into a coherent model. Identify which tensions are primary, which mechanisms are essential, and what failure modes exist.
+
+### 6. Algorithm Synthesis
 
 > If the mechanism is real, how should it be implemented?
 
 Only now design algorithms. Allow them to emerge naturally from mechanisms.
+
+### 7. Destruction Phase
+
+> What assumptions fail? What edge cases break the system?
+
+Attack the model. Assume it is wrong. Identify weak assumptions, missing tensions, and possible redesigns.
 
 ---
 
@@ -123,6 +145,7 @@ Only now design algorithms. Allow them to emerge naturally from mechanisms.
 - **Not** a brainstorming template
 - **Not** a productivity framework
 - **Not** a guaranteed path to innovation
+- **Not** a visual design system
 
 Tension Mining is a lens. Its purpose is simple: help researchers discover the forces shaping a system before attempting to design the system itself.
 
@@ -143,11 +166,11 @@ The answer is often more valuable than the algorithm.
 | Path | Purpose |
 |------|---------|
 | [`SKILL.md`](./SKILL.md) | AI-executable research protocol (7 phases) |
-| [`tension-atlas.md`](./tension-atlas.md) | Catalog of persistent tensions across domains |
-| [`invariant-atlas.md`](./invariant-atlas.md) | Cross-domain principles that remain valid |
-| [`examples/`](./examples/) | 7 case studies: PageRank, Transformer, Bitcoin, Git, Wikipedia, NPC Society, Agent Organization |
-| [`templates/`](./templates/) | 5 fill-in-the-blank templates for immediate use |
-| [`references/`](./references/) | Extended methodology reference and glossary |
+| [`references/tension-atlas.md`](./references/tension-atlas.md) | Catalog of persistent tensions across domains |
+| [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Cross-domain principles that remain valid |
+| [`examples/`](./examples/) | 8 case studies: PageRank, Transformer, Bitcoin, Git, Wikipedia, NPC Society, Agent Organization, Dialogue Example |
+| [`templates/`](./templates/) | 6 fill-in-the-blank templates for immediate use |
+| [`references/`](./references/) | Execution protocol, interface contract, quality rubric, and methodology reference |
 
 ---
 
