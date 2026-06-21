@@ -1,320 +1,143 @@
-# Tension Mining Skill
-
-## Purpose
-
-Use this skill when the goal is not merely to solve a problem, but to discover the underlying forces, invariants, mechanisms, and opportunities hidden within a complex system.
-
-This skill is especially useful for:
-
-* AI systems
-* Agent frameworks
-* Multi-agent coordination
-* NPC societies
-* Organizations
-* Markets
-* Platforms
-* Scientific research
-* Novel algorithm design
-* New product categories
-
 ---
+name: tension-mining
+description: >
+  Discover invariants hidden inside complex systems by mining tensions across reality,
+  phenomena, and mechanisms. Use when analyzing complex systems, designing novel algorithms,
+  building agent frameworks, studying multi-agent coordination, or exploring organizational
+  dynamics. Not for simple optimization tasks or known-solution problems.
+license: MIT
+compatibility: Designed for research-oriented AI agents with markdown output capabilities
+metadata:
+  author: CeaserZhao
+  version: "1.0"
+  domain: complex-systems-research
+  methodology: tension-driven-discovery
+---
+
+# Tension Mining Protocol
 
 ## Core Principle
 
 Do not start from solutions.
-
 Do not start from architectures.
-
 Do not start from algorithms.
 
 Start from reality.
 
-The objective is to move through the following layers:
+Move through the layers:
 
-Reality
-→ Phenomena
-→ Tensions
-→ Invariants
-→ Mechanisms
-→ Algorithms
+```
+Reality -> Phenomena -> Tensions -> Invariants -> Mechanisms -> Algorithms
+```
 
 The quality of the result depends on the depth of understanding in the earlier layers.
 
----
+## When NOT to Use
 
-# Phase 1: Phenomenon Mining
+- The problem has a known optimal solution
+- The task is pure implementation or refactoring
+- The goal is incremental optimization of an existing system
+- Time constraints prevent deep exploration
 
-Goal:
+## 7-Phase Workflow
 
-Build a library of relevant real-world phenomena.
+### Phase 1: Phenomenon Mining
 
-Questions:
+**Goal:** Build a library of relevant real-world phenomena.
 
-* What existing systems exhibit similar behavior?
-* What natural systems solve similar problems?
-* What social systems solve similar problems?
-* What technological systems solve similar problems?
-* What historical systems solve similar problems?
+**Questions:**
+- What existing systems exhibit similar behavior?
+- What natural systems solve similar problems?
+- What social systems solve similar problems?
+- What technological systems solve similar problems?
+- What historical systems solve similar problems?
 
-Search broadly.
+**Output:** Phenomenon Library (5-10 phenomena, each with Name, Domain, Relevant behavior, Why it matters)
 
-Look for analogies across domains.
+**Reference:** See [`tension-atlas.md`](./tension-atlas.md) for domain-specific phenomena.
 
-Do not evaluate solutions yet.
+### Phase 2: Tension Mining
 
-Output:
+**Goal:** Identify forces that continuously shape the system.
 
-## Phenomenon Library
+**Definition:** A tension is a tradeoff that cannot be permanently eliminated.
 
-List at least 5-10 phenomena.
+**Questions:**
+- What forces are pulling in opposite directions?
+- What optimization destroys another optimization?
+- What remains difficult regardless of implementation?
 
-For each phenomenon provide:
+**Output:** Tension Map (at least 5 tensions, each with Force A, Force B, Why both matter, Consequences of over-optimizing either side)
 
-* Name
-* Domain
-* Relevant behavior
-* Why it matters
+**Reference:** See [`tension-atlas.md`](./tension-atlas.md) for a catalog of persistent tensions.
 
----
+### Phase 3: Invariant Mining
 
-# Phase 2: Tension Mining
+**Goal:** Discover patterns that appear across multiple phenomena.
 
-Goal:
+**Definition:** An invariant is a principle that remains valid across different domains.
 
-Identify forces that continuously shape the system.
+**Questions:**
+- What repeatedly appears?
+- What survives context changes?
+- What principle explains multiple phenomena?
 
-Definition:
+**Output:** Invariant Library (principles with Statement, Supporting phenomena, Explanation)
 
-A tension is a tradeoff that cannot be permanently eliminated.
+**Reference:** See [`invariant-atlas.md`](./invariant-atlas.md) for cross-domain principles.
 
-Questions:
+### Phase 4: Mechanism Mining
 
-* What forces are pulling in opposite directions?
-* What optimization destroys another optimization?
-* What remains difficult regardless of implementation?
+**Goal:** Understand how reality resolves tensions.
 
-Examples:
+**Questions:**
+- What mechanisms maintain stability?
+- What mechanisms coordinate behavior?
+- What mechanisms distribute resources?
+- What mechanisms generate adaptation?
 
-Autonomy ↔ Control
+**Output:** Mechanism Library (Name, Function, Related tensions, Related invariants)
 
-Freedom ↔ Efficiency
+### Phase 5: System Synthesis
 
-Exploration ↔ Safety
+**Goal:** Combine tensions, invariants, and mechanisms into a coherent system model.
 
-Individual Benefit ↔ Collective Benefit
+**Questions:**
+- What is the smallest model explaining the system?
+- Which tensions are primary?
+- Which mechanisms are essential?
+- Which mechanisms are optional?
 
-Short-Term Gain ↔ Long-Term Value
+**Output:** System Model (Core Tensions, Core Invariants, Core Mechanisms, Expected Behaviors, Failure Modes)
 
-Output:
+### Phase 6: Algorithm Synthesis
 
-## Tension Map
+**Goal:** Generate implementation candidates.
 
-For each tension provide:
+**IMPORTANT:** Algorithms are not the objective. Algorithms are downstream consequences.
 
-* Force A
-* Force B
-* Why both forces matter
-* Consequences of over-optimizing either side
+**Questions:**
+- How can the mechanism be represented computationally?
+- What mathematical structures fit naturally?
+- What graph structures exist?
+- What flows exist?
+- What information propagates?
 
-Identify at least 5 tensions.
+**Output:** Algorithm Candidates (Name, Core idea, Mathematical representation, Advantages, Limitations)
 
----
+### Phase 7: Destruction Phase
 
-# Phase 3: Invariant Mining
+**Goal:** Attack the model. Assume it is wrong.
 
-Goal:
+**Questions:**
+- What assumptions fail?
+- What edge cases break the system?
+- What adversarial environments exist?
+- What phenomena remain unexplained?
 
-Discover patterns that appear across multiple phenomena.
+**Output:** Failure Analysis (Weak assumptions, Missing tensions, Missing invariants, Missing mechanisms, Possible redesigns)
 
-Definition:
-
-An invariant is a principle that remains valid across different domains.
-
-Questions:
-
-* What repeatedly appears?
-* What survives context changes?
-* What principle explains multiple phenomena?
-
-Examples:
-
-Local interactions create global structure.
-
-Identity drives cooperation.
-
-Gradients drive movement.
-
-Boundaries shape behavior.
-
-Output:
-
-## Invariant Library
-
-For each invariant provide:
-
-* Statement
-* Supporting phenomena
-* Explanation
-
-Prioritize principles that appear across unrelated domains.
-
----
-
-# Phase 4: Mechanism Mining
-
-Goal:
-
-Understand how reality resolves tensions.
-
-Questions:
-
-* What mechanisms maintain stability?
-* What mechanisms coordinate behavior?
-* What mechanisms distribute resources?
-* What mechanisms generate adaptation?
-
-Examples:
-
-Markets
-
-Reputation
-
-Hormones
-
-Pheromones
-
-Feedback loops
-
-Social norms
-
-Evolution
-
-Output:
-
-## Mechanism Library
-
-For each mechanism provide:
-
-* Name
-* Function
-* Related tensions
-* Related invariants
-
----
-
-# Phase 5: System Synthesis
-
-Goal:
-
-Combine tensions, invariants, and mechanisms into a coherent system model.
-
-Questions:
-
-* What is the smallest model explaining the system?
-* Which tensions are primary?
-* Which mechanisms are essential?
-* Which mechanisms are optional?
-
-Output:
-
-## System Model
-
-Structure:
-
-Core Tensions
-
-Core Invariants
-
-Core Mechanisms
-
-Expected Behaviors
-
-Failure Modes
-
----
-
-# Phase 6: Algorithm Synthesis
-
-Goal:
-
-Generate implementation candidates.
-
-IMPORTANT:
-
-Algorithms are not the objective.
-
-Algorithms are downstream consequences.
-
-Questions:
-
-* How can the mechanism be represented computationally?
-* What mathematical structures fit naturally?
-* What graph structures exist?
-* What flows exist?
-* What information propagates?
-
-Possible representations:
-
-Graphs
-
-Networks
-
-Diffusion
-
-Optimization
-
-Control systems
-
-Dynamical systems
-
-Game theory
-
-Probabilistic systems
-
-Output:
-
-## Algorithm Candidates
-
-For each candidate provide:
-
-* Name
-* Core idea
-* Mathematical representation
-* Advantages
-* Limitations
-
----
-
-# Phase 7: Destruction Phase
-
-Goal:
-
-Attack the model.
-
-Assume the model is wrong.
-
-Questions:
-
-* What assumptions fail?
-* What edge cases break the system?
-* What adversarial environments exist?
-* What phenomena remain unexplained?
-
-Output:
-
-## Failure Analysis
-
-List:
-
-* Weak assumptions
-* Missing tensions
-* Missing invariants
-* Missing mechanisms
-* Possible redesigns
-
----
-
-# Final Deliverable
+## Final Deliverable
 
 Produce:
 
@@ -326,10 +149,16 @@ Produce:
 6. Algorithm Candidates
 7. Failure Analysis
 
-Do not skip layers.
+Do not skip layers. Do not jump directly to algorithms.
 
-Do not jump directly to algorithms.
+The objective is not optimization. The objective is understanding.
 
-The objective is not optimization.
+## File References
 
-The objective is understanding.
+| File | Purpose |
+|------|---------|
+| [`tension-atlas.md`](./tension-atlas.md) | Catalog of persistent tensions with IDs and cross-references |
+| [`invariant-atlas.md`](./invariant-atlas.md) | Cross-domain invariants with IDs and cross-references |
+| [`examples/`](./examples/) | 7 complete case studies demonstrating the workflow |
+| [`templates/`](./templates/) | 5 fill-in-the-blank templates for immediate use |
+| [`references/methodology-primer.md`](./references/methodology-primer.md) | Extended methodology reference |
