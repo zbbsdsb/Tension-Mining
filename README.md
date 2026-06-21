@@ -1,4 +1,16 @@
-# Tension Mining
+<p align="center">
+  <img src="./social-preview.png" alt="Tension Mining" width="800">
+</p>
+
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License"></a>
+  <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v1.0-rust?style=flat-square" alt="Skill v1.0"></a>
+  <a href="./tension-atlas.md"><img src="https://img.shields.io/badge/atlas-19_tensions-4a6fa5?style=flat-square" alt="Tensions"></a>
+  <a href="./invariant-atlas.md"><img src="https://img.shields.io/badge/atlas-12_invariants-4a6fa5?style=flat-square" alt="Invariants"></a>
+  <a href="./examples/"><img src="https://img.shields.io/badge/cases-7_studies-6b7280?style=flat-square" alt="Case Studies"></a>
+</p>
+
+---
 
 > Most people search for solutions. Great researchers search for tensions.
 
