@@ -1195,6 +1195,7 @@
         <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)" data-i18n="install.tab.claude">Claude Code</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)" data-i18n="install.tab.trae">TRAE</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)" data-i18n="install.tab.cursor">Cursor</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-statuz" onclick="showTab('statuz', this)">Statuz</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)" data-i18n="install.tab.manual">Manual</button>
       </div>
       <div class="install-code" id="code-claude">
@@ -1219,6 +1220,14 @@
         <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="comment"># Place anywhere accessible, then add to your .cursorrules:</span><br><br>
         <span class="cmd">When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md</span>
+      </div>
+      <div class="install-code" id="code-statuz" style="display:none">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
+        <span class="comment"># Statuz — Unite Skill</span><br>
+        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git</span><br><br>
+        <span class="comment"># Statuz unites this skill into your workflow.</span><br>
+        <span class="comment"># Reference the repository in your Statuz configuration.</span>
       </div>
       <div class="install-code" id="code-manual" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
@@ -1286,11 +1295,12 @@
     <div class="footer-logo">Tension<span>Mining</span></div>
     <div class="footer-links">
       <a href="https://github.com/zbbsdsb/Tension-Mining" data-i18n="footer.github">GitHub</a>
+      <a href="https://github.com/zbbsdsb" target="_blank" rel="noopener">Author</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md">Contribute</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/LICENSE">License</a>
     </div>
-    <div class="copyright">MIT License — Copyright (c) 2026 zbbsdsb</div>
+    <div class="copyright">MIT License — Copyright (c) 2026 <a href="https://github.com/zbbsdsb" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;">zbbsdsb</a></div>
   </footer>
 
   <script>
