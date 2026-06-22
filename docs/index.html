@@ -8,23 +8,23 @@
   <meta property="og:image" content="./assets/social-preview.jpg">
 
   <style>
-    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Regular.ttf') format('truetype'); font-weight: 400; }
-    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Bold.ttf') format('truetype'); font-weight: 700; }
-    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
-    @font-face { font-family: 'JetBrainsMono'; src: url('./assets/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; }
-    @font-face { font-family: 'JetBrainsMono'; src: url('./assets/JetBrainsMono-Bold.ttf') format('truetype'); font-weight: 700; }
-    @font-face { font-family: 'InstrumentSans'; src: url('./assets/InstrumentSans-Regular.ttf') format('truetype'); font-weight: 400; }
-    @font-face { font-family: 'InstrumentSans'; src: url('./assets/InstrumentSans-Bold.ttf') format('truetype'); font-weight: 700; }
-    @font-face { font-family: 'Jura'; src: url('./assets/Jura-Light.ttf') format('truetype'); font-weight: 300; }
-    @font-face { font-family: 'Jura'; src: url('./assets/Jura-Medium.ttf') format('truetype'); font-weight: 500; }
+    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'JetBrainsMono'; src: url('./assets/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'JetBrainsMono'; src: url('./assets/JetBrainsMono-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'InstrumentSans'; src: url('./assets/InstrumentSans-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'InstrumentSans'; src: url('./assets/InstrumentSans-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'Jura'; src: url('./assets/Jura-Light.ttf') format('truetype'); font-weight: 300; font-display: swap; }
+    @font-face { font-family: 'Jura'; src: url('./assets/Jura-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
 
     :root {
-      --bg: #0f1115;
-      --bg2: #161920;
-      --bg3: #1e222c;
+      --bg: #0a0c10;
+      --bg2: #111318;
+      --bg3: #1a1d26;
       --ink: #e8e6e3;
       --muted: #7a7880;
-      --rule: #2a2e38;
+      --rule: #252a35;
       --accent: #c44;
       --accent2: #6b8cae;
       --accent3: #2a9d8f;
@@ -38,16 +38,36 @@
       background: var(--bg);
       line-height: 1.7;
       overflow-x: hidden;
+      cursor: none;
     }
 
-    /* Noise texture overlay */
+    /* Grid background */
     body::before {
       content: '';
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-image:
+        linear-gradient(rgba(37,42,53,0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,42,53,0.4) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 0;
+    }
+
+    /* Custom cursor */
+    .cursor-dot {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-dot.hover {
+      transform: scale(3);
+      opacity: 0.5;
     }
 
     /* Navigation */
@@ -55,38 +75,53 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1.25rem 2rem;
+      padding: 1rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(15, 17, 21, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule);
+      background: rgba(10, 12, 16, 0.7);
+      backdrop-filter: blur(20px) saturate(1.2);
+      border-bottom: 1px solid rgba(37,42,53,0.5);
     }
     nav .logo {
       font-family: 'Jura', sans-serif;
       font-weight: 500;
-      font-size: 1rem;
-      letter-spacing: 0.15em;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--ink);
     }
     nav .logo span { color: var(--accent); }
     nav .links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
     nav .links a {
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s;
+      position: relative;
     }
-    nav .links a:hover { color: var(--ink); }
+    nav .links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+    nav .links a:hover {
+      color: var(--ink);
+    }
+    nav .links a:hover::after {
+      width: 100%;
+    }
 
-    /* Hero */
+    /* Hero with particle canvas */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -94,52 +129,95 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 8rem 2rem 4rem;
+      padding: 6rem 2rem 4rem;
       position: relative;
+      overflow: hidden;
+    }
+    #particle-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
     }
     .hero .eyebrow {
       font-family: 'JetBrainsMono', monospace;
       font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s 0.5s forwards;
     }
     .hero h1 {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-size: clamp(3rem, 8vw, 7rem);
       font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
-      max-width: 900px;
+      opacity: 0;
+      animation: fadeInUp 1s 0.8s forwards;
+    }
+    .hero h1 .tension {
+      color: var(--accent);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 20px rgba(196, 68, 68, 0.3); }
+      50% { text-shadow: 0 0 40px rgba(196, 68, 68, 0.6), 0 0 80px rgba(196, 68, 68, 0.2); }
     }
     .hero .subtitle {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
       font-style: italic;
       color: var(--muted);
       max-width: 600px;
-      margin-bottom: 3rem;
+      margin: 0 auto 3rem;
       line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 1s 1.2s forwards;
+      min-height: 3.5em;
+    }
+    .hero .subtitle .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
     .hero .cta-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
+      opacity: 0;
+      animation: fadeInUp 1s 1.6s forwards;
     }
     .hero .cta {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      border-radius: 4px;
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
       text-decoration: none;
-      transition: all 0.3s;
-      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: none;
       border: none;
+      position: relative;
+      overflow: hidden;
     }
     .cta-primary {
       background: var(--accent);
@@ -147,6 +225,7 @@
     }
     .cta-primary:hover {
       background: #d44;
+      box-shadow: 0 0 30px rgba(196, 68, 68, 0.4), 0 0 60px rgba(196, 68, 68, 0.2);
       transform: translateY(-2px);
     }
     .cta-secondary {
@@ -157,6 +236,41 @@
     .cta-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
+      box-shadow: 0 0 20px rgba(196, 68, 68, 0.15);
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeInUp 1s 2.5s forwards;
+    }
+    .scroll-indicator span {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scroll-indicator .arrow {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+      50% { opacity: 1; transform: scaleY(1); }
     }
 
     /* Quote band */
@@ -164,12 +278,21 @@
       background: var(--bg2);
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       text-align: center;
+      position: relative;
+    }
+    .quote-band::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.5;
     }
     .quote-band blockquote {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
       font-style: italic;
       color: var(--ink);
       max-width: 800px;
@@ -180,80 +303,142 @@
       font-family: 'JetBrainsMono', monospace;
       font-size: 0.7rem;
       color: var(--muted);
-      margin-top: 1.5rem;
-      letter-spacing: 0.1em;
+      margin-top: 2rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
     /* Section base */
     section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
+      padding: 8rem 2rem;
+      max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .section-label {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1rem;
     }
     .section-title {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 400;
       margin-bottom: 1.5rem;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .section-desc {
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 700px;
+      max-width: 650px;
       line-height: 1.7;
     }
 
-    /* Pipeline */
-    .pipeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-top: 3rem;
-    }
-    .pipeline-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--rule);
+    /* Pipeline visualization */
+    .pipeline-viz {
+      margin-top: 4rem;
       position: relative;
+      min-height: 800px;
     }
-    .pipeline-step:last-child { border-bottom: none; }
-    .pipeline-step .num {
-      font-family: 'Jura', sans-serif;
-      font-weight: 300;
-      font-size: 2.5rem;
-      color: var(--accent);
-      line-height: 1;
-      min-width: 3rem;
-      opacity: 0.6;
+    .pipeline-svg {
+      width: 100%;
+      height: 800px;
     }
-    .pipeline-step .content h3 {
+    .pipeline-node {
+      cursor: none;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0.3;
+    }
+    .pipeline-node.lit {
+      opacity: 1;
+    }
+    .pipeline-node.lit circle {
+      fill: var(--accent);
+      fill-opacity: 0.15;
+      filter: drop-shadow(0 0 12px rgba(196, 68, 68, 0.5));
+    }
+    .pipeline-node.lit text {
+      fill: var(--ink);
+    }
+    .pipeline-node.lit .node-num {
+      fill: var(--accent);
+    }
+    .pipeline-node circle {
+      transition: all 0.4s;
+      filter: drop-shadow(0 0 8px rgba(196, 68, 68, 0.3));
+    }
+    .pipeline-node:hover circle {
+      filter: drop-shadow(0 0 20px rgba(196, 68, 68, 0.6));
+      r: 28;
+    }
+    .pipeline-node text {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 0.3rem;
+      font-size: 14px;
+      fill: var(--ink);
+      pointer-events: none;
     }
-    .pipeline-step .content p {
+    .pipeline-node .node-num {
+      font-family: 'Jura', sans-serif;
+      font-size: 11px;
+      fill: var(--muted);
+    }
+    .pipeline-line {
+      stroke: var(--rule);
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      transition: stroke-dashoffset 1.5s ease;
+    }
+    .pipeline-line.active {
+      stroke-dashoffset: 0;
+      stroke: var(--accent);
+    }
+    .pipeline-line.loop {
+      stroke-dasharray: 8 4;
+    }
+    .pipeline-detail {
+      position: absolute;
+      background: var(--bg2);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 320px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 0.4s;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(10px);
+    }
+    .pipeline-detail.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) translateY(0);
+    }
+
+    .pipeline-detail h4 {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .pipeline-detail p {
+      font-size: 0.85rem;
       color: var(--muted);
-      font-size: 0.92rem;
       line-height: 1.6;
+      margin-bottom: 0.5rem;
     }
-    .pipeline-step .content .gate {
+    .pipeline-detail .gate {
       font-family: 'JetBrainsMono', monospace;
       font-size: 0.7rem;
       color: var(--accent2);
-      margin-top: 0.5rem;
       letter-spacing: 0.05em;
     }
 
@@ -262,35 +447,103 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
     .stat-card {
-      background: var(--bg2);
+      background: rgba(17, 19, 24, 0.8);
       border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 2rem;
+      border-radius: 4px;
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .stat-card:hover::before {
+      opacity: 1;
     }
     .stat-card:hover {
+      border-color: rgba(196, 68, 68, 0.3);
+      box-shadow: 0 0 30px rgba(196, 68, 68, 0.1);
       transform: translateY(-4px);
-      border-color: var(--accent);
     }
     .stat-card .number {
       font-family: 'Jura', sans-serif;
       font-weight: 300;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: var(--accent);
       line-height: 1;
     }
     .stat-card .label {
       font-family: 'JetBrainsMono', monospace;
       font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
+
+    /* Atlas network */
+    #atlas-viz {
+      width: 100%;
+      height: 600px;
+      margin-top: 3rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+    #atlas-viz svg {
+      width: 100%;
+      height: 100%;
+    }
+    .atlas-legend {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(10, 12, 16, 0.9);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1rem;
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.7rem;
+    }
+    .atlas-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      color: var(--muted);
+    }
+    .atlas-legend-item:last-child { margin-bottom: 0; }
+    .legend-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+    }
+    .atlas-tooltip {
+      position: absolute;
+      background: var(--bg3);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: var(--ink);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 100;
+      max-width: 250px;
+    }
+    .atlas-tooltip.visible { opacity: 1; }
 
     /* Cases */
     .cases-grid {
@@ -300,45 +553,115 @@
       margin-top: 3rem;
     }
     .case-card {
-      background: var(--bg2);
+      background: rgba(17, 19, 24, 0.8);
       border: 1px solid var(--rule);
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 1.5rem;
-      transition: all 0.3s;
-      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: none;
       color: inherit;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+    }
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent2), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .case-card:hover::before {
+      opacity: 1;
     }
     .case-card:hover {
-      border-color: var(--accent2);
-      transform: translateY(-2px);
+      border-color: rgba(107, 140, 174, 0.3);
+      box-shadow: 0 0 25px rgba(107, 140, 174, 0.1);
+      transform: translateY(-3px);
     }
     .case-card .case-domain {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent2);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .case-card .case-name {
       font-family: 'CrimsonPro', Georgia, serif;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 400;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .case-card .case-tension {
       font-size: 0.8rem;
       color: var(--muted);
+      line-height: 1.6;
+    }
+    .case-card .case-expand {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+      opacity: 0;
+    }
+    .case-card:hover .case-expand {
+      max-height: 120px;
+      opacity: 1;
+    }
+    .case-card .case-invariant {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--rule);
+    }
+    .case-card .case-summary {
+      font-size: 0.75rem;
+      color: var(--muted);
       line-height: 1.5;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    .case-card .case-arrow {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.6rem;
+      color: var(--accent2);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: all 0.4s;
+    }
+    .case-card:hover .case-arrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Wave divider */
+    .wave-divider {
+      width: 100%;
+      height: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .wave-divider canvas {
+      width: 100%;
+      height: 100%;
     }
 
     /* Install */
     .install-block {
-      background: var(--bg2);
+      background: rgba(17, 19, 24, 0.8);
       border: 1px solid var(--rule);
-      border-radius: 8px;
+      border-radius: 4px;
       padding: 2rem;
       margin-top: 2rem;
     }
@@ -351,15 +674,15 @@
     }
     .install-tab {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       letter-spacing: 0.05em;
       color: var(--muted);
       background: none;
       border: none;
-      cursor: pointer;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      transition: all 0.2s;
+      cursor: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      transition: all 0.3s;
     }
     .install-tab:hover { color: var(--ink); }
     .install-tab.active {
@@ -368,136 +691,253 @@
     }
     .install-code {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       background: var(--bg);
       border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 1.25rem;
+      border-radius: 4px;
+      padding: 1.5rem;
       color: var(--muted);
       overflow-x: auto;
       position: relative;
     }
-    .install-code .copy-btn {
+    .install-code .copy-btn, .install-code .copy-for-ai-btn {
       position: absolute;
       top: 0.75rem;
-      right: 0.75rem;
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.05em;
       color: var(--muted);
       background: var(--bg3);
       border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-      transition: all 0.2s;
+      border-radius: 2px;
+      padding: 0.3rem 0.7rem;
+      cursor: none;
+      transition: all 0.3s;
     }
-    .install-code .copy-btn:hover {
+    .install-code .copy-btn { right: 0.75rem; }
+    .install-code .copy-for-ai-btn { right: 5rem; border-color: var(--accent2); }
+    .install-code .copy-btn:hover, .install-code .copy-for-ai-btn:hover {
       color: var(--ink);
       border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(196, 68, 68, 0.2);
     }
-    .install-code .copy-for-ai-btn {
-      position: absolute;
-      top: 0.75rem;
-      right: 5.5rem;
-      font-family: 'JetBrainsMono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      background: var(--bg3);
-      border: 1px solid var(--accent2);
-      border-radius: 4px;
-      padding: 0.3rem 0.6rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .install-code .copy-for-ai-btn:hover {
-      color: var(--accent2);
-      border-color: var(--accent2);
-    }
-    .install-code .comment { color: #5a5a5a; }
+    .install-code .comment { color: #6a6a6a; }
     .install-code .cmd { color: var(--accent3); }
 
     /* Footer */
     footer {
       border-top: 1px solid var(--rule);
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       text-align: center;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent2), transparent);
+      opacity: 0.3;
     }
     footer .footer-logo {
       font-family: 'Jura', sans-serif;
       font-weight: 500;
       font-size: 1rem;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--ink);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     footer .footer-logo span { color: var(--accent); }
     footer .footer-links {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
     }
     footer .footer-links a {
       font-family: 'JetBrainsMono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s;
+      letter-spacing: 0.05em;
     }
-    footer .footer-links a:hover { color: var(--ink); }
+    footer .footer-links a:hover {
+      color: var(--accent);
+    }
     footer .copyright {
       font-size: 0.8rem;
       color: var(--muted);
     }
+
+    /* Roadmap */
+    .roadmap-timeline {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .roadmap-timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+    .roadmap-item {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .roadmap-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .roadmap-dot {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--rule);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jura', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s;
+    }
+    .roadmap-item.done .roadmap-dot {
+      border-color: var(--accent3);
+      color: var(--accent3);
+      box-shadow: 0 0 12px rgba(42, 157, 143, 0.3);
+    }
+    .roadmap-item.current .roadmap-dot {
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 12px rgba(196, 68, 68, 0.3);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(196, 68, 68, 0.3); }
+      50% { box-shadow: 0 0 24px rgba(196, 68, 68, 0.5); }
+    }
+    .roadmap-content {
+      flex: 1;
+    }
+    .roadmap-version {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .roadmap-item.done .roadmap-version { color: var(--accent3); }
+    .roadmap-item.current .roadmap-version { color: var(--accent); }
+    .roadmap-item.planned .roadmap-version { color: var(--muted); }
+    .roadmap-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+    .roadmap-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .roadmap-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--rule);
+    }
+    .roadmap-item.done .roadmap-list li::before { background: var(--accent3); }
+    .roadmap-item.current .roadmap-list li::before { background: var(--accent); }
 
     /* Responsive */
     @media (max-width: 900px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
       nav .links { display: none; }
+      .pipeline-viz { min-height: 600px; }
+      .pipeline-svg { height: 600px; }
+      #atlas-viz { height: 400px; }
+      body { cursor: auto; }
+      .cursor-dot { display: none; }
     }
     @media (max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
-      .hero { padding: 6rem 1.5rem 3rem; }
-      section { padding: 4rem 1.5rem; }
+      .hero { padding: 5rem 1.5rem 3rem; }
+      section { padding: 5rem 1.5rem; }
+      .pipeline-viz { min-height: 500px; }
+      .pipeline-svg { height: 500px; }
     }
 
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    /* Focus styles for keyboard navigation */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      #particle-canvas, .wave-divider canvas { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
+  <div class="cursor-dot" id="cursor"></div>
+
+  <nav role="navigation" aria-label="Main navigation">
     <div class="logo">Tension<span>Mining</span></div>
     <div class="links">
       <a href="#pipeline">Pipeline</a>
       <a href="#atlas">Atlas</a>
       <a href="#cases">Cases</a>
       <a href="#install">Install</a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining">GitHub</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener">GitHub</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="eyebrow">AI-Executable Research Methodology</div>
-    <h1>Discover the Forces Shaping Complex Systems</h1>
-    <p class="subtitle">A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality — not from assumptions.</p>
-    <div class="cta-group">
-      <a href="#install" class="cta cta-primary">Get Started</a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining" class="cta cta-secondary">View on GitHub</a>
+  <section class="hero" aria-label="Hero section">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <div class="eyebrow">AI-Executable Research Methodology</div>
+      <h1>Discover the <span class="tension">Forces</span> Shaping Complex Systems</h1>
+      <p class="subtitle" id="hero-subtitle"></p>
+      <div class="cta-group">
+        <a href="#install" class="cta cta-primary">Get Started</a>
+        <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener" class="cta cta-secondary">View on GitHub</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="arrow"></div>
     </div>
   </section>
 
@@ -506,161 +946,238 @@
     <div class="attribution">— The Tension Mining Principle</div>
   </div>
 
-  <section id="pipeline">
+  <section id="pipeline" aria-labelledby="pipeline-title">
     <div class="section-label">The Methodology</div>
-    <h2 class="section-title">Seven Phases. Strict Order. No Skipping.</h2>
+    <h2 class="section-title" id="pipeline-title">Seven Phases. Strict Order. No Skipping.</h2>
     <p class="section-desc">Each phase has a gate condition. You cannot proceed until it is met. The AI interviews you one question at a time. You drive the content; the methodology enforces the discipline.</p>
 
-    <div class="pipeline">
-      <div class="pipeline-step reveal">
-        <div class="num">01</div>
-        <div class="content">
-          <h3>Phenomenon Mining</h3>
-          <p>Observe reality before building abstractions. Collect 5-10 real-world examples from at least 3 distinct domains — ant colonies, markets, cities, ecosystems, online communities.</p>
-          <div class="gate">Gate: 5+ phenomena from 3+ domains</div>
-        </div>
+    <div class="pipeline-viz">
+      <svg class="pipeline-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
+        <!-- Lines -->
+        <path class="pipeline-line" id="line-1" d="M 150 100 L 350 200" />
+        <path class="pipeline-line" id="line-2" d="M 350 200 L 650 200" />
+        <path class="pipeline-line" id="line-3" d="M 650 200 L 850 300" />
+        <path class="pipeline-line" id="line-4" d="M 850 300 L 850 500" />
+        <path class="pipeline-line" id="line-5" d="M 850 500 L 650 600" />
+        <path class="pipeline-line" id="line-6" d="M 650 600 L 350 600" />
+        <path class="pipeline-line loop" id="line-7" d="M 350 600 Q 150 500 150 350 Q 150 200 150 100" />
+
+        <!-- Nodes -->
+        <g class="pipeline-node" data-phase="1" transform="translate(150, 100)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">01</text>
+          <text y="50" text-anchor="middle">Phenomenon</text>
+        </g>
+        <g class="pipeline-node" data-phase="2" transform="translate(350, 200)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">02</text>
+          <text y="50" text-anchor="middle">Tension</text>
+        </g>
+        <g class="pipeline-node" data-phase="3" transform="translate(650, 200)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">03</text>
+          <text y="50" text-anchor="middle">Invariant</text>
+        </g>
+        <g class="pipeline-node" data-phase="4" transform="translate(850, 300)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">04</text>
+          <text y="50" text-anchor="middle">Mechanism</text>
+        </g>
+        <g class="pipeline-node" data-phase="5" transform="translate(850, 500)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">05</text>
+          <text y="50" text-anchor="middle">System</text>
+        </g>
+        <g class="pipeline-node" data-phase="6" transform="translate(650, 600)">
+          <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
+          <text y="5" text-anchor="middle" class="node-num">06</text>
+          <text y="50" text-anchor="middle">Algorithm</text>
+        </g>
+        <g class="pipeline-node" data-phase="7" transform="translate(350, 600)">
+          <circle r="28" fill="var(--bg2)" stroke="var(--accent)" stroke-width="3" />
+          <text y="5" text-anchor="middle" class="node-num">07</text>
+          <text y="55" text-anchor="middle">Destruction</text>
+        </g>
+      </svg>
+
+      <div class="pipeline-detail" id="detail-1">
+        <h4>Phenomenon Mining</h4>
+        <p>Observe reality before building abstractions. Collect 5-10 real-world examples from at least 3 distinct domains.</p>
+        <div class="gate">Gate: 5+ phenomena from 3+ domains</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">02</div>
-        <div class="content">
-          <h3>Tension Mining</h3>
-          <p>Identify forces pulling the system in different directions. A tension is a tradeoff that cannot be permanently eliminated — it can only be managed. Not "pros vs cons." Ineliminable tradeoffs.</p>
-          <div class="gate">Gate: 5+ tensions with Force A/B identified</div>
-        </div>
+      <div class="pipeline-detail" id="detail-2">
+        <h4>Tension Mining</h4>
+        <p>Identify forces pulling the system in different directions. Ineliminable tradeoffs, not "pros vs cons."</p>
+        <div class="gate">Gate: 5+ tensions with Force A/B identified</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">03</div>
-        <div class="content">
-          <h3>Invariant Mining</h3>
-          <p>Extract principles that appear across multiple tensions and multiple domains. Invariants are the "laws" of complex systems — they explain why the same tension patterns appear in biology, society, and technology.</p>
-          <div class="gate">Gate: 3+ cross-domain invariants with boundary conditions</div>
-        </div>
+      <div class="pipeline-detail" id="detail-3">
+        <h4>Invariant Mining</h4>
+        <p>Extract principles that appear across multiple tensions and domains. The "laws" of complex systems.</p>
+        <div class="gate">Gate: 3+ cross-domain invariants</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">04</div>
-        <div class="content">
-          <h3>Mechanism Mining</h3>
-          <p>Study how reality resolves the tensions you identified. Nature, society, and technology have already developed solutions. Your job is to find and understand them.</p>
-          <div class="gate">Gate: 3+ mechanisms mapped to tensions</div>
-        </div>
+      <div class="pipeline-detail" id="detail-4">
+        <h4>Mechanism Mining</h4>
+        <p>Study how reality resolves tensions. Nature, society, and technology have already developed solutions.</p>
+        <div class="gate">Gate: 3+ mechanisms mapped to tensions</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">05</div>
-        <div class="content">
-          <h3>System Synthesis</h3>
-          <p>Combine tensions, invariants, and mechanisms into a coherent model. Identify which tensions are primary, which mechanisms are essential, and what failure modes exist.</p>
-          <div class="gate">Gate: Coherent system model with predicted behaviors</div>
-        </div>
+      <div class="pipeline-detail" id="detail-5">
+        <h4>System Synthesis</h4>
+        <p>Combine tensions, invariants, and mechanisms into a coherent model with predicted behaviors.</p>
+        <div class="gate">Gate: Coherent model with failure modes</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">06</div>
-        <div class="content">
-          <h3>Algorithm Synthesis</h3>
-          <p>Only now design algorithms. Derive them from the mechanisms, not from first principles. If your mechanisms are well understood, the algorithm should emerge naturally.</p>
-          <div class="gate">Gate: Algorithm candidates mapped to Phase 4 mechanisms</div>
-        </div>
+      <div class="pipeline-detail" id="detail-6">
+        <h4>Algorithm Synthesis</h4>
+        <p>Only now design algorithms. Derive them from mechanisms, not from first principles.</p>
+        <div class="gate">Gate: Algorithms mapped to Phase 4 mechanisms</div>
       </div>
-      <div class="pipeline-step reveal">
-        <div class="num">07</div>
-        <div class="content">
-          <h3>Destruction Phase</h3>
-          <p>Attack the entire model. Assume it is wrong. Identify weak assumptions, missing tensions, missing invariants, and possible redesigns. No analysis is complete without this.</p>
-          <div class="gate">Gate: Failure analysis + D1-D5 self-evaluation</div>
-        </div>
+      <div class="pipeline-detail" id="detail-7">
+        <h4>Destruction Phase</h4>
+        <p>Attack the model. Identify weak assumptions, missing tensions, and possible redesigns.</p>
+        <div class="gate">Gate: Failure analysis + D1-D5 evaluation</div>
       </div>
     </div>
   </section>
 
-  <div class="quote-band">
-    <blockquote>"PageRank began with a question about importance. Bitcoin began with a tension between decentralization and trust. The breakthrough appears when a hidden tension is finally made visible."</blockquote>
-    <div class="attribution">— Why Tensions Matter</div>
-  </div>
+  <div class="wave-divider" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
 
-  <section id="atlas">
+  <section id="atlas" aria-labelledby="atlas-title">
     <div class="section-label">The Knowledge Base</div>
-    <h2 class="section-title">Atlas of Persistent Forces</h2>
-    <p class="section-desc">A living catalog of tensions and invariants discovered across domains. Each entry is cross-referenced, validated, and ready to be applied to your analysis.</p>
+    <h2 class="section-title" id="atlas-title">Atlas of Persistent Forces</h2>
+    <p class="section-desc">A living catalog of tensions and invariants discovered across domains. Drag nodes, zoom, and explore the network of relationships.</p>
+
+    <div id="atlas-viz" role="img" aria-label="Interactive force-directed graph showing relationships between 19 tensions and 12 invariants">
+      <svg id="atlas-svg"></svg>
+      <div class="atlas-legend">
+        <div class="atlas-legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Tension [CORE]</div>
+        <div class="atlas-legend-item"><span class="legend-dot" style="background:var(--accent);opacity:0.5"></span>Tension [EXP]</div>
+        <div class="atlas-legend-item"><span class="legend-dot" style="background:var(--accent2)"></span>Invariant [CORE]</div>
+        <div class="atlas-legend-item"><span class="legend-dot" style="background:var(--accent2);opacity:0.5"></span>Invariant [EXP]</div>
+      </div>
+      <div class="atlas-tooltip" id="atlas-tooltip"></div>
+    </div>
 
     <div class="stats-grid">
-      <div class="stat-card reveal">
-        <div class="number">19</div>
+      <div class="stat-card">
+        <div class="number" data-count="19">0</div>
         <div class="label">Persistent Tensions</div>
       </div>
-      <div class="stat-card reveal">
-        <div class="number">12</div>
+      <div class="stat-card">
+        <div class="number" data-count="12">0</div>
         <div class="label">Cross-Domain Invariants</div>
       </div>
-      <div class="stat-card reveal">
-        <div class="number">8</div>
+      <div class="stat-card">
+        <div class="number" data-count="8">0</div>
         <div class="label">Case Studies</div>
       </div>
-      <div class="stat-card reveal">
-        <div class="number">5</div>
+      <div class="stat-card">
+        <div class="number" data-count="5">0</div>
         <div class="label">Domain Templates</div>
       </div>
     </div>
   </section>
 
-  <section id="cases">
+  <div class="wave-divider" aria-hidden="true"><canvas id="wave-canvas-2"></canvas></div>
+
+  <section id="cases" aria-labelledby="cases-title">
     <div class="section-label">Validated in Practice</div>
-    <h2 class="section-title">Case Studies</h2>
+    <h2 class="section-title" id="cases-title">Case Studies</h2>
     <p class="section-desc">Each case walks through the full 7-phase pipeline. From PageRank to Bitcoin to Transformers — see how hidden tensions shaped the systems that changed the world.</p>
 
     <div class="cases-grid">
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/page-rank.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/page-rank.md" class="case-card">
         <div class="case-domain">Information Retrieval</div>
         <div class="case-name">PageRank</div>
-        <div class="case-tension">Local vs Global<br>Freedom vs Efficiency</div>
+        <div class="case-tension">Local vs Global · Freedom vs Efficiency</div>
+        <div class="case-expand">
+          <div class="case-invariant">Local Rules Create Global Order · Gradients Drive Movement</div>
+          <div class="case-summary">How Google turned the web's link structure into a global ranking signal.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/transformer.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/transformer.md" class="case-card">
         <div class="case-domain">Deep Learning</div>
         <div class="case-name">Transformer</div>
-        <div class="case-tension">Synchronicity vs Asynchronicity<br>Compression vs Fidelity</div>
+        <div class="case-tension">Synchronicity vs Asynchronicity · Compression vs Fidelity</div>
+        <div class="case-expand">
+          <div class="case-invariant">Compression Reveals Structure · Tradeoffs Are Inescapable</div>
+          <div class="case-summary">Why attention replaced recurrence — and what was lost in the process.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/bitcoin.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/bitcoin.md" class="case-card">
         <div class="case-domain">Cryptocurrency</div>
         <div class="case-name">Bitcoin</div>
-        <div class="case-tension">Centralization vs Decentralization<br>Competition vs Cooperation</div>
+        <div class="case-tension">Centralization vs Decentralization · Competition vs Cooperation</div>
+        <div class="case-expand">
+          <div class="case-invariant">Identity Drives Cooperation · Feedback Loops Stabilize</div>
+          <div class="case-summary">A trustless consensus mechanism born from ineliminable social tensions.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/git.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/git.md" class="case-card">
         <div class="case-domain">Version Control</div>
         <div class="case-name">Git</div>
-        <div class="case-tension">Consistency vs Availability<br>Local vs Global</div>
+        <div class="case-tension">Consistency vs Availability · Local vs Global</div>
+        <div class="case-expand">
+          <div class="case-invariant">Local Rules Create Global Order · Tradeoffs Are Inescapable</div>
+          <div class="case-summary">Distributed version control as a tension resolution between speed and consistency.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/wikipedia.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/wikipedia.md" class="case-card">
         <div class="case-domain">Collaborative Knowledge</div>
         <div class="case-name">Wikipedia</div>
-        <div class="case-tension">Freedom vs Efficiency<br>Individual vs Collective</div>
+        <div class="case-tension">Freedom vs Efficiency · Individual vs Collective</div>
+        <div class="case-expand">
+          <div class="case-invariant">Identity Drives Cooperation · Boundaries Shape Behavior</div>
+          <div class="case-summary">How open editing created the world's largest encyclopedia through governed chaos.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/npc-society.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/npc-society.md" class="case-card">
         <div class="case-domain">Multi-Agent Systems</div>
         <div class="case-name">NPC Society</div>
-        <div class="case-tension">Survival vs Exploration<br>Individual vs Collective</div>
+        <div class="case-tension">Survival vs Exploration · Individual vs Collective</div>
+        <div class="case-expand">
+          <div class="case-invariant">Variation Enables Selection · Local Rules Create Global Order</div>
+          <div class="case-summary">Designing emergent social behavior from individual survival imperatives.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/agent-organization.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/agent-organization.md" class="case-card">
         <div class="case-domain">AI Coordination</div>
         <div class="case-name">Agent Organization</div>
-        <div class="case-tension">Autonomy vs Control<br>Centralization vs Decentralization</div>
+        <div class="case-tension">Autonomy vs Control · Centralization vs Decentralization</div>
+        <div class="case-expand">
+          <div class="case-invariant">Feedback Loops Stabilize · Tradeoffs Are Inescapable</div>
+          <div class="case-summary">Organizing AI agents requires resolving the same tensions as human organizations.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
-      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/dialogue-example.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/dialogue-example.md" class="case-card">
         <div class="case-domain">Walkthrough</div>
         <div class="case-name">Dialogue Demo</div>
-        <div class="case-tension">Full 7-phase interaction<br>Recommended first read</div>
+        <div class="case-tension">Full 7-phase interaction</div>
+        <div class="case-expand">
+          <div class="case-invariant">All methodology phases demonstrated</div>
+          <div class="case-summary">A complete human-AI dialogue walking through every phase of the pipeline.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
       </a>
     </div>
   </section>
 
-  <section id="install">
+  <section id="install" aria-labelledby="install-title">
     <div class="section-label">Get Started</div>
-    <h2 class="section-title">Install in 30 Seconds</h2>
+    <h2 class="section-title" id="install-title">Install in 30 Seconds</h2>
     <p class="section-desc">Clone into your AI tool's skill directory. The AI auto-detects and activates based on your problem description.</p>
 
     <div class="install-block">
-      <div class="install-tabs">
-        <button class="install-tab active" onclick="showTab('claude')">Claude Code</button>
-        <button class="install-tab" onclick="showTab('trae')">TRAE</button>
-        <button class="install-tab" onclick="showTab('cursor')">Cursor</button>
-        <button class="install-tab" onclick="showTab('manual')">Manual</button>
+      <div class="install-tabs" role="tablist" aria-label="Installation methods">
+        <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)">Claude Code</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)">TRAE</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)">Cursor</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)">Manual</button>
       </div>
       <div class="install-code" id="code-claude">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
@@ -697,6 +1214,56 @@
     </div>
   </section>
 
+  <section id="roadmap" aria-labelledby="roadmap-title">
+    <div class="section-label">What's Next</div>
+    <h2 class="section-title" id="roadmap-title">Roadmap</h2>
+    <p class="section-desc">From methodology to ecosystem. Each milestone builds on the tensions and invariants discovered so far.</p>
+
+    <div class="roadmap-timeline">
+      <div class="roadmap-item done">
+        <div class="roadmap-dot">v2.0</div>
+        <div class="roadmap-content">
+          <div class="roadmap-version">v2.0 — Foundation (Complete)</div>
+          <ul class="roadmap-list">
+            <li>7-phase pipeline with gate conditions</li>
+            <li>Progressive Disclosure architecture</li>
+            <li>Atlas with [CORE]/[EXPERIMENTAL] labeling</li>
+            <li>5 domain-specific templates</li>
+            <li>8 case studies</li>
+            <li>Quality rubric (D1-D5)</li>
+            <li>CI/CD with automated atlas validation</li>
+            <li>Anti-Rationalization defense</li>
+          </ul>
+        </div>
+      </div>
+      <div class="roadmap-item current">
+        <div class="roadmap-dot">v2.1</div>
+        <div class="roadmap-content">
+          <div class="roadmap-version">v2.1 — Expansion (In Progress)</div>
+          <ul class="roadmap-list">
+            <li>Interactive web visualization</li>
+            <li>Additional case studies</li>
+            <li>Template expansion</li>
+            <li>Community-contributed tensions</li>
+            <li>Multi-language support</li>
+          </ul>
+        </div>
+      </div>
+      <div class="roadmap-item planned">
+        <div class="roadmap-dot">v3.0</div>
+        <div class="roadmap-content">
+          <div class="roadmap-version">v3.0 — Ecosystem (Planned)</div>
+          <ul class="roadmap-list">
+            <li>Plugin system for custom phases</li>
+            <li>API for programmatic access</li>
+            <li>Collaborative analysis mode</li>
+            <li>Academic paper &amp; citations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-logo">Tension<span>Mining</span></div>
     <div class="footer-links">
@@ -709,24 +1276,517 @@
   </footer>
 
   <script>
-    // Tab switching
-    function showTab(tool) {
-      document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.install-code').forEach(c => c.style.display = 'none');
-      event.target.classList.add('active');
+    // ===== CUSTOM CURSOR =====
+    const cursor = document.getElementById('cursor');
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX - 4 + 'px';
+      cursor.style.top = cursorY - 4 + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    document.querySelectorAll('a, button, .case-card, .stat-card, .pipeline-node').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // ===== TYPEWRITER EFFECT =====
+    (function() {
+      const el = document.getElementById('hero-subtitle');
+      const text = 'A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality \u2014 not from assumptions.';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          el.textContent = text.substring(0, i + 1);
+          // Add blinking cursor
+          if (!el.querySelector('.typewriter-cursor')) {
+            el.innerHTML = el.textContent + '<span class="typewriter-cursor"></span>';
+          } else {
+            el.innerHTML = text.substring(0, i + 1) + '<span class="typewriter-cursor"></span>';
+          }
+          i++;
+          setTimeout(type, 30 + Math.random() * 20);
+        }
+      }
+      setTimeout(type, 2000);
+    })();
+
+    // ===== PARTICLE SYSTEM =====
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const PARTICLE_COUNT = window.innerWidth < 768 ? 40 : 80;
+    const CONNECTION_DIST = 120;
+    const MOUSE_REPULSE = 100;
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 2 + 1;
+      }
+      update() {
+        // Attraction to two centers (tension simulation)
+        const cx1 = canvas.width * 0.35, cy1 = canvas.height * 0.4;
+        const cx2 = canvas.width * 0.65, cy2 = canvas.height * 0.6;
+        const d1 = Math.hypot(this.x - cx1, this.y - cy1);
+        const d2 = Math.hypot(this.x - cx2, this.y - cy2);
+        this.vx += (cx1 - this.x) / d1 * 0.008 + (cx2 - this.x) / d2 * 0.008;
+        this.vy += (cy1 - this.y) / d1 * 0.008 + (cy2 - this.y) / d2 * 0.008;
+
+        // Mouse repulsion
+        const md = Math.hypot(this.x - mouseX, this.y - mouseY);
+        if (md < MOUSE_REPULSE) {
+          this.vx -= (mouseX - this.x) / md * 0.5;
+          this.vy -= (mouseY - this.y) / md * 0.5;
+        }
+
+        // Damping
+        this.vx *= 0.98;
+        this.vy *= 0.98;
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounds
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(196, 68, 68, 0.6)';
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+          if (d < CONNECTION_DIST) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(196, 68, 68, ${0.15 * (1 - d / CONNECTION_DIST)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // ===== PIPELINE INTERACTION =====
+    const pipelineNodes = document.querySelectorAll('.pipeline-node');
+    const pipelineLines = document.querySelectorAll('.pipeline-line');
+    const pipelineDetails = document.querySelectorAll('.pipeline-detail');
+
+    // Scroll-driven sequential node highlighting
+    const nodeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const phase = parseInt(entry.target.dataset.phase);
+          entry.target.classList.add('lit');
+          // Light up the line leading TO this node
+          if (phase > 1) {
+            const prevLine = document.getElementById('line-' + (phase - 1));
+            if (prevLine) prevLine.classList.add('active');
+          }
+          // Light up the loop line when phase 7 is visible
+          if (phase === 7) {
+            const loopLine = document.getElementById('line-7');
+            if (loopLine) setTimeout(() => loopLine.classList.add('active'), 400);
+          }
+        }
+      });
+    }, { threshold: 0.6, rootMargin: '0px 0px -20% 0px' });
+    pipelineNodes.forEach(node => nodeObserver.observe(node));
+
+    // Hover detail cards
+    pipelineNodes.forEach(node => {
+      node.addEventListener('mouseenter', () => {
+        const phase = node.dataset.phase;
+        document.getElementById('detail-' + phase).classList.add('visible');
+        node.querySelector('circle').setAttribute('fill-opacity', '0.35');
+      });
+      node.addEventListener('mouseleave', () => {
+        const phase = node.dataset.phase;
+        document.getElementById('detail-' + phase).classList.remove('visible');
+        if (node.classList.contains('lit')) {
+          node.querySelector('circle').setAttribute('fill-opacity', '0.15');
+        } else {
+          node.querySelector('circle').setAttribute('fill-opacity', '1');
+        }
+      });
+    });
+
+    // ===== ATLAS FORCE-DIRECTED GRAPH =====
+    const atlasData = {
+      nodes: [
+        // Tensions [CORE]
+        { id: 'T-EXP-001', name: 'Exploration vs Exploitation', type: 'tension', core: true, domain: 'Cognition' },
+        { id: 'T-LOC-004', name: 'Local vs Global', type: 'tension', core: true, domain: 'Computation' },
+        { id: 'T-IND-006', name: 'Individual vs Collective', type: 'tension', core: true, domain: 'Society' },
+        { id: 'T-CEN-007', name: 'Centralization vs Decentralization', type: 'tension', core: true, domain: 'Computation' },
+        { id: 'T-CMP-013', name: 'Compression vs Fidelity', type: 'tension', core: true, domain: 'Cognition' },
+        { id: 'T-SUR-014', name: 'Survival vs Exploration', type: 'tension', core: true, domain: 'Life' },
+        { id: 'T-ORD-016', name: 'Order vs Innovation', type: 'tension', core: true, domain: 'Society' },
+        { id: 'T-CON-012', name: 'Consistency vs Availability', type: 'tension', core: true, domain: 'Computation' },
+        { id: 'T-AUT-011', name: 'Autonomy vs Control', type: 'tension', core: true, domain: 'Design' },
+        // Tensions [EXPERIMENTAL]
+        { id: 'T-SPE-002', name: 'Specialization vs Generalization', type: 'tension', core: false, domain: 'Cognition' },
+        { id: 'T-AUT-005', name: 'Synchronicity vs Asynchronicity', type: 'tension', core: false, domain: 'Computation' },
+        { id: 'T-TRA-008', name: 'Transparency vs Privacy', type: 'tension', core: false, domain: 'Society' },
+        { id: 'T-SYN-010', name: 'Synthesis vs Analysis', type: 'tension', core: false, domain: 'Cognition' },
+        { id: 'T-COP-015', name: 'Cooperation vs Competition', type: 'tension', core: false, domain: 'Society' },
+        { id: 'T-SIM-017', name: 'Simulation vs Reality', type: 'tension', core: false, domain: 'Design' },
+        { id: 'T-CON-018', name: 'Convention vs Innovation', type: 'tension', core: false, domain: 'Design' },
+        { id: 'T-GDM-003', name: 'Generality vs Domain-Specific', type: 'tension', core: false, domain: 'Cognition' },
+        { id: 'T-FRE-009', name: 'Freedom vs Efficiency', type: 'tension', core: false, domain: 'Society' },
+        // Invariants [CORE]
+        { id: 'I-LRO-001', name: 'Local Rules Create Global Order', type: 'invariant', core: true, domain: 'Networks' },
+        { id: 'I-IDC-001', name: 'Identity Drives Cooperation', type: 'invariant', core: true, domain: 'Identity' },
+        { id: 'I-CRS-001', name: 'Compression Reveals Structure', type: 'invariant', core: true, domain: 'Information' },
+        { id: 'I-GDM-001', name: 'Gradients Drive Movement', type: 'invariant', core: true, domain: 'Networks' },
+        { id: 'I-VES-001', name: 'Variation Enables Selection', type: 'invariant', core: true, domain: 'Evolution' },
+        { id: 'I-FLS-001', name: 'Feedback Loops Stabilize', type: 'invariant', core: true, domain: 'Networks' },
+        { id: 'I-TIE-001', name: 'Tradeoffs Are Inescapable', type: 'invariant', core: true, domain: 'Information' },
+        // Invariants [EXPERIMENTAL]
+        { id: 'I-BSB-001', name: 'Boundaries Shape Behavior', type: 'invariant', core: false, domain: 'Identity' },
+        { id: 'I-PAF-001', name: 'Patterns Amplify Forces', type: 'invariant', core: false, domain: 'Information' },
+        { id: 'I-SWE-001', name: 'Small Worlds Emerge', type: 'invariant', core: false, domain: 'Networks' },
+        { id: 'I-FFG-001', name: 'Fitness Follows Gradients', type: 'invariant', core: false, domain: 'Evolution' },
+        { id: 'I-RRR-001', name: 'Redundancy Resists Risk', type: 'invariant', core: false, domain: 'Evolution' }
+      ],
+      links: [
+        { source: 'T-EXP-001', target: 'I-LRO-001' },
+        { source: 'T-LOC-004', target: 'I-LRO-001' },
+        { source: 'T-IND-006', target: 'I-IDC-001' },
+        { source: 'T-CEN-007', target: 'I-IDC-001' },
+        { source: 'T-CMP-013', target: 'I-CRS-001' },
+        { source: 'T-SUR-014', target: 'I-VES-001' },
+        { source: 'T-ORD-016', target: 'I-FLS-001' },
+        { source: 'T-CON-012', target: 'I-TIE-001' },
+        { source: 'T-AUT-011', target: 'I-FLS-001' },
+        { source: 'T-EXP-001', target: 'I-VES-001' },
+        { source: 'T-LOC-004', target: 'I-GDM-001' },
+        { source: 'T-CEN-007', target: 'I-TIE-001' },
+        { source: 'T-CMP-013', target: 'I-GDM-001' },
+        { source: 'T-SUR-014', target: 'I-LRO-001' },
+        { source: 'T-ORD-016', target: 'I-IDC-001' },
+        { source: 'T-SPE-002', target: 'I-CRS-001' },
+        { source: 'T-AUT-005', target: 'I-GDM-001' },
+        { source: 'T-TRA-008', target: 'I-BSB-001' },
+        { source: 'T-SYN-010', target: 'I-CRS-001' },
+        { source: 'T-COP-015', target: 'I-IDC-001' },
+        { source: 'T-SIM-017', target: 'I-PAF-001' },
+        { source: 'T-CON-018', target: 'I-PAF-001' },
+        { source: 'T-GDM-003', target: 'I-SWE-001' },
+        { source: 'T-FRE-009', target: 'I-FLS-001' }
+      ]
+    };
+
+    function initAtlas() {
+      const svg = document.getElementById('atlas-svg');
+      const tooltip = document.getElementById('atlas-tooltip');
+      const container = document.getElementById('atlas-viz');
+      const width = svg.clientWidth || 800;
+      const height = svg.clientHeight || 600;
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+      const nodes = atlasData.nodes.map(n => ({ ...n, x: width/2 + (Math.random()-0.5)*200, y: height/2 + (Math.random()-0.5)*200 }));
+      const links = atlasData.links.map(l => ({
+        source: nodes.find(n => n.id === l.source),
+        target: nodes.find(n => n.id === l.target)
+      })).filter(l => l.source && l.target);
+
+      // Simple force simulation with boundary constraints
+      function simulate() {
+        const padding = 50;
+        for (let i = 0; i < 60; i++) {
+          for (let a = 0; a < nodes.length; a++) {
+            for (let b = a + 1; b < nodes.length; b++) {
+              const dx = nodes[b].x - nodes[a].x;
+              const dy = nodes[b].y - nodes[a].y;
+              const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+              const force = Math.min(2000 / (dist * dist), 5);
+              const fx = (dx / dist) * force;
+              const fy = (dy / dist) * force;
+              nodes[a].x -= fx; nodes[a].y -= fy;
+              nodes[b].x += fx; nodes[b].y += fy;
+            }
+          }
+          links.forEach(l => {
+            const dx = l.target.x - l.source.x;
+            const dy = l.target.y - l.source.y;
+            const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+            const force = (dist - 80) * 0.01;
+            const fx = (dx / dist) * force;
+            const fy = (dy / dist) * force;
+            l.source.x += fx; l.source.y += fy;
+            l.target.x -= fx; l.target.y -= fy;
+          });
+          nodes.forEach(n => {
+            n.x += (width/2 - n.x) * 0.01;
+            n.y += (height/2 - n.y) * 0.01;
+          });
+          nodes.forEach(n => {
+            n.x = Math.max(padding, Math.min(width - padding, n.x));
+            n.y = Math.max(padding, Math.min(height - padding, n.y));
+          });
+        }
+      }
+      simulate();
+
+      // Render
+      svg.innerHTML = '';
+
+      // Create groups for links and nodes (links below nodes)
+      const linksGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      linksGroup.setAttribute('class', 'atlas-links');
+      svg.appendChild(linksGroup);
+
+      const nodesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      nodesGroup.setAttribute('class', 'atlas-nodes');
+      svg.appendChild(nodesGroup);
+
+      // Render links
+      const linkElements = [];
+      links.forEach(l => {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', l.source.x);
+        line.setAttribute('y1', l.source.y);
+        line.setAttribute('x2', l.target.x);
+        line.setAttribute('y2', l.target.y);
+        line.setAttribute('stroke', 'rgba(107, 140, 174, 0.15)');
+        line.setAttribute('stroke-width', '1');
+        linksGroup.appendChild(line);
+        linkElements.push({ el: line, source: l.source, target: l.target });
+      });
+
+      // Render nodes with labels and drag
+      const nodeElements = [];
+      nodes.forEach(n => {
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.style.cursor = 'none';
+
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', n.x);
+        circle.setAttribute('cy', n.y);
+        circle.setAttribute('r', n.core ? 8 : 5);
+        const color = n.type === 'tension' ? '#c44' : '#6b8cae';
+        circle.setAttribute('fill', color);
+        circle.setAttribute('fill-opacity', n.core ? '1' : '0.5');
+        circle.setAttribute('stroke', color);
+        circle.setAttribute('stroke-width', '1');
+
+        // Label for CORE nodes
+        if (n.core) {
+          const shortName = n.name.length > 20 ? n.name.substring(0, 18) + '...' : n.name;
+          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          text.setAttribute('x', n.x);
+          text.setAttribute('y', n.y + (n.core ? 18 : 14));
+          text.setAttribute('text-anchor', 'middle');
+          text.setAttribute('fill', 'rgba(232, 230, 227, 0.7)');
+          text.setAttribute('font-family', 'JetBrainsMono, monospace');
+          text.setAttribute('font-size', '8');
+          text.setAttribute('pointer-events', 'none');
+          text.textContent = shortName;
+          g.appendChild(text);
+          nodeElements.push({ el: g, circle, text, data: n });
+        } else {
+          nodeElements.push({ el: g, circle, data: n });
+        }
+
+        // Hover
+        g.addEventListener('mouseenter', (e) => {
+          circle.setAttribute('r', n.core ? 12 : 8);
+          circle.setAttribute('fill-opacity', '1');
+          tooltip.innerHTML = `<strong>${n.name}</strong><br><span style="color:var(--muted);font-size:0.75rem">${n.id} · ${n.domain} · ${n.type === 'tension' ? 'Tension' : 'Invariant'}${n.core ? ' [CORE]' : ' [EXP]'}</span>`;
+          tooltip.style.left = (e.pageX + 15) + 'px';
+          tooltip.style.top = (e.pageY - 30) + 'px';
+          tooltip.classList.add('visible');
+        });
+        g.addEventListener('mouseleave', () => {
+          circle.setAttribute('r', n.core ? 8 : 5);
+          circle.setAttribute('fill-opacity', n.core ? '1' : '0.5');
+          tooltip.classList.remove('visible');
+        });
+
+        // Drag interaction
+        let isDragging = false;
+        g.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          e.preventDefault();
+        });
+        g.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          const pt = svg.createSVGPoint();
+          pt.x = e.clientX;
+          pt.y = e.clientY;
+          const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+          n.x = svgPt.x;
+          n.y = svgPt.y;
+          circle.setAttribute('cx', n.x);
+          circle.setAttribute('cy', n.y);
+          if (nodeElements.find(ne => ne.data === n).text) {
+            nodeElements.find(ne => ne.data === n).text.setAttribute('x', n.x);
+            nodeElements.find(ne => ne.data === n).text.setAttribute('y', n.y + 18);
+          }
+          // Update connected links
+          linkElements.forEach(le => {
+            if (le.source === n) { le.el.setAttribute('x1', n.x); le.el.setAttribute('y1', n.y); }
+            if (le.target === n) { le.el.setAttribute('x2', n.x); le.el.setAttribute('y2', n.y); }
+          });
+        });
+        g.addEventListener('mouseup', () => { isDragging = false; });
+        g.addEventListener('mouseleave', () => { isDragging = false; });
+
+        g.appendChild(circle);
+        nodesGroup.appendChild(g);
+      });
+    }
+
+    // Init atlas when visible
+    const atlasObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          initAtlas();
+          atlasObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    atlasObserver.observe(document.getElementById('atlas-viz'));
+
+    // ===== WAVE DIVIDER =====
+    function initWave(canvasId) {
+      const c = document.getElementById(canvasId);
+      if (!c) return;
+      const cx = c.getContext('2d');
+      let w, h, time = 0;
+
+      function resize() {
+        w = c.width = c.offsetWidth;
+        h = c.height = c.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      function drawWave() {
+        cx.clearRect(0, 0, w, h);
+        cx.beginPath();
+        for (let x = 0; x < w; x++) {
+          const y = h/2 + Math.sin(x * 0.01 + time) * 15 + Math.sin(x * 0.02 + time * 1.5) * 8;
+          if (x === 0) cx.moveTo(x, y);
+          else cx.lineTo(x, y);
+        }
+        cx.strokeStyle = 'rgba(196, 68, 68, 0.15)';
+        cx.lineWidth = 1;
+        cx.stroke();
+
+        cx.beginPath();
+        for (let x = 0; x < w; x++) {
+          const y = h/2 + Math.sin(x * 0.015 + time * 0.8) * 12 + Math.sin(x * 0.025 + time) * 6;
+          if (x === 0) cx.moveTo(x, y);
+          else cx.lineTo(x, y);
+        }
+        cx.strokeStyle = 'rgba(107, 140, 174, 0.1)';
+        cx.lineWidth = 1;
+        cx.stroke();
+
+        time += 0.02;
+        requestAnimationFrame(drawWave);
+      }
+      drawWave();
+    }
+    initWave('wave-canvas');
+    initWave('wave-canvas-2');
+
+    // ===== COUNT UP ANIMATION =====
+    function countUp(el) {
+      const target = parseInt(el.dataset.count);
+      const duration = 2000;
+      const start = performance.now();
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.number').forEach(n => countUp(n));
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statsObserver.observe(document.querySelector('.stats-grid'));
+
+    // ===== ROADMAP SCROLL ANIMATION =====
+    const roadmapItems = document.querySelectorAll('.roadmap-item');
+    const roadmapObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+    roadmapItems.forEach(item => roadmapObserver.observe(item));
+
+    // ===== TAB SWITCHING =====
+    function showTab(tool, btn) {
+      const clickedBtn = btn || event.target;
+      document.querySelectorAll('.install-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.install-code').forEach(c => {
+        c.style.display = 'none';
+        c.setAttribute('role', 'tabpanel');
+      });
+      clickedBtn.classList.add('active');
+      clickedBtn.setAttribute('aria-selected', 'true');
       document.getElementById('code-' + tool).style.display = 'block';
     }
 
-    // Copy code
+    // ===== COPY FUNCTIONS =====
     function copyCode(btn) {
-      const code = btn.parentElement.innerText.replace('Copy', '').replace('Copy for AI', '').trim();
+      const code = btn.parentElement.innerText.replace(/Copy|Copy for AI/g, '').trim();
       navigator.clipboard.writeText(code).then(() => {
         btn.textContent = 'Copied!';
         setTimeout(() => btn.textContent = 'Copy', 1500);
       });
     }
 
-    // Copy for AI
     function copyForAI(btn) {
       const prompt = 'I want to analyze a complex system using the Tension Mining methodology. Here\'s the skill file — please read it and activate the 7-phase pipeline:\n\nhttps://github.com/zbbsdsb/Tension-Mining/blob/main/SKILL.md\n\nStart by asking me what system I want to analyze.';
       navigator.clipboard.writeText(prompt).then(() => {
@@ -734,17 +1794,6 @@
         setTimeout(() => btn.textContent = 'Copy for AI', 1500);
       });
     }
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
