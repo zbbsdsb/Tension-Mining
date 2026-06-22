@@ -15,6 +15,12 @@
 
 ---
 
+<p align="center">
+  English | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+---
+
 > **Most people search for solutions. Great researchers search for tensions.**
 
 A research methodology for discovering invariants hidden inside complex systems. Works as an **AI-executable Skill** across Claude Code, TRAE, Cursor, Windsurf, and any tool that supports Markdown-based skill files.

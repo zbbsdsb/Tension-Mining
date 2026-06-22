@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,7 +115,24 @@
       transition: width 0.3s;
     }
     nav .links a:hover {
-      color: var(--ink);
+      color: var(--accent);
+    }
+    nav .lang-switch {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      cursor: none;
+      transition: all 0.3s;
+      margin-left: 1rem;
+    }
+    nav .lang-switch:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
     nav .links a:hover::after {
       width: 100%;
@@ -916,40 +933,41 @@
   <nav role="navigation" aria-label="Main navigation">
     <div class="logo">Tension<span>Mining</span></div>
     <div class="links">
-      <a href="#pipeline">Pipeline</a>
-      <a href="#atlas">Atlas</a>
-      <a href="#cases">Cases</a>
-      <a href="#install">Install</a>
+      <a href="#pipeline" data-i18n="nav.pipeline">Pipeline</a>
+      <a href="#atlas" data-i18n="nav.atlas">Atlas</a>
+      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#install" data-i18n="nav.install">Install</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener">GitHub</a>
+      <button class="lang-switch" id="lang-switch" aria-label="Switch language">EN / 中</button>
     </div>
   </nav>
 
   <section class="hero" aria-label="Hero section">
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <div class="eyebrow">AI-Executable Research Methodology</div>
-      <h1>Discover the <span class="tension">Forces</span> Shaping Complex Systems</h1>
+      <div class="eyebrow" data-i18n="hero.eyebrow">AI-Executable Research Methodology</div>
+      <h1 data-i18n="hero.title">Discover the <span class="tension">Forces</span> Shaping Complex Systems</h1>
       <p class="subtitle" id="hero-subtitle"></p>
       <div class="cta-group">
-        <a href="#install" class="cta cta-primary">Get Started</a>
-        <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener" class="cta cta-secondary">View on GitHub</a>
+        <a href="#install" class="cta cta-primary" data-i18n="hero.cta1">Get Started</a>
+        <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener" class="cta cta-secondary" data-i18n="hero.cta2">View on GitHub</a>
       </div>
     </div>
     <div class="scroll-indicator">
-      <span>Scroll to explore</span>
+      <span data-i18n="hero.scroll">Scroll to explore</span>
       <div class="arrow"></div>
     </div>
   </section>
 
   <div class="quote-band">
-    <blockquote>"Most people search for solutions. Great researchers search for tensions."</blockquote>
-    <div class="attribution">— The Tension Mining Principle</div>
+    <blockquote data-i18n="quote.text">"Most people search for solutions. Great researchers search for tensions."</blockquote>
+    <div class="attribution" data-i18n="quote.attr">— The Tension Mining Principle</div>
   </div>
 
   <section id="pipeline" aria-labelledby="pipeline-title">
-    <div class="section-label">The Methodology</div>
-    <h2 class="section-title" id="pipeline-title">Seven Phases. Strict Order. No Skipping.</h2>
-    <p class="section-desc">Each phase has a gate condition. You cannot proceed until it is met. The AI interviews you one question at a time. You drive the content; the methodology enforces the discipline.</p>
+    <div class="section-label" data-i18n="pipeline.label">The Methodology</div>
+    <h2 class="section-title" id="pipeline-title" data-i18n="pipeline.title">Seven Phases. Strict Order. No Skipping.</h2>
+    <p class="section-desc" data-i18n="pipeline.desc">Each phase has a gate condition. You cannot proceed until it is met. The AI interviews you one question at a time. You drive the content; the methodology enforces the discipline.</p>
 
     <div class="pipeline-viz">
       <svg class="pipeline-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
@@ -966,74 +984,74 @@
         <g class="pipeline-node" data-phase="1" transform="translate(150, 100)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">01</text>
-          <text y="50" text-anchor="middle">Phenomenon</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p1">Phenomenon</text>
         </g>
         <g class="pipeline-node" data-phase="2" transform="translate(350, 200)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">02</text>
-          <text y="50" text-anchor="middle">Tension</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p2">Tension</text>
         </g>
         <g class="pipeline-node" data-phase="3" transform="translate(650, 200)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">03</text>
-          <text y="50" text-anchor="middle">Invariant</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p3">Invariant</text>
         </g>
         <g class="pipeline-node" data-phase="4" transform="translate(850, 300)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">04</text>
-          <text y="50" text-anchor="middle">Mechanism</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p4">Mechanism</text>
         </g>
         <g class="pipeline-node" data-phase="5" transform="translate(850, 500)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">05</text>
-          <text y="50" text-anchor="middle">System</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p5">System</text>
         </g>
         <g class="pipeline-node" data-phase="6" transform="translate(650, 600)">
           <circle r="24" fill="var(--bg2)" stroke="var(--accent)" stroke-width="2" />
           <text y="5" text-anchor="middle" class="node-num">06</text>
-          <text y="50" text-anchor="middle">Algorithm</text>
+          <text y="50" text-anchor="middle" data-i18n="pipeline.p6">Algorithm</text>
         </g>
         <g class="pipeline-node" data-phase="7" transform="translate(350, 600)">
           <circle r="28" fill="var(--bg2)" stroke="var(--accent)" stroke-width="3" />
           <text y="5" text-anchor="middle" class="node-num">07</text>
-          <text y="55" text-anchor="middle">Destruction</text>
+          <text y="55" text-anchor="middle" data-i18n="pipeline.p7">Destruction</text>
         </g>
       </svg>
 
       <div class="pipeline-detail" id="detail-1">
-        <h4>Phenomenon Mining</h4>
-        <p>Observe reality before building abstractions. Collect 5-10 real-world examples from at least 3 distinct domains.</p>
-        <div class="gate">Gate: 5+ phenomena from 3+ domains</div>
+        <h4 data-i18n="pipeline.d1h">Phenomenon Mining</h4>
+        <p data-i18n="pipeline.d1p">Observe reality before building abstractions. Collect 5-10 real-world examples from at least 3 distinct domains.</p>
+        <div class="gate" data-i18n="pipeline.d1g">Gate: 5+ phenomena from 3+ domains</div>
       </div>
       <div class="pipeline-detail" id="detail-2">
-        <h4>Tension Mining</h4>
-        <p>Identify forces pulling the system in different directions. Ineliminable tradeoffs, not "pros vs cons."</p>
-        <div class="gate">Gate: 5+ tensions with Force A/B identified</div>
+        <h4 data-i18n="pipeline.d2h">Tension Mining</h4>
+        <p data-i18n="pipeline.d2p">Identify forces pulling the system in different directions. Ineliminable tradeoffs, not "pros vs cons."</p>
+        <div class="gate" data-i18n="pipeline.d2g">Gate: 5+ tensions with Force A/B identified</div>
       </div>
       <div class="pipeline-detail" id="detail-3">
-        <h4>Invariant Mining</h4>
-        <p>Extract principles that appear across multiple tensions and domains. The "laws" of complex systems.</p>
-        <div class="gate">Gate: 3+ cross-domain invariants</div>
+        <h4 data-i18n="pipeline.d3h">Invariant Mining</h4>
+        <p data-i18n="pipeline.d3p">Extract principles that appear across multiple tensions and domains. The "laws" of complex systems.</p>
+        <div class="gate" data-i18n="pipeline.d3g">Gate: 3+ cross-domain invariants</div>
       </div>
       <div class="pipeline-detail" id="detail-4">
-        <h4>Mechanism Mining</h4>
-        <p>Study how reality resolves tensions. Nature, society, and technology have already developed solutions.</p>
-        <div class="gate">Gate: 3+ mechanisms mapped to tensions</div>
+        <h4 data-i18n="pipeline.d4h">Mechanism Mining</h4>
+        <p data-i18n="pipeline.d4p">Study how reality resolves tensions. Nature, society, and technology have already developed solutions.</p>
+        <div class="gate" data-i18n="pipeline.d4g">Gate: 3+ mechanisms mapped to tensions</div>
       </div>
       <div class="pipeline-detail" id="detail-5">
-        <h4>System Synthesis</h4>
-        <p>Combine tensions, invariants, and mechanisms into a coherent model with predicted behaviors.</p>
-        <div class="gate">Gate: Coherent model with failure modes</div>
+        <h4 data-i18n="pipeline.d5h">System Synthesis</h4>
+        <p data-i18n="pipeline.d5p">Combine tensions, invariants, and mechanisms into a coherent model with predicted behaviors.</p>
+        <div class="gate" data-i18n="pipeline.d5g">Gate: Coherent model with failure modes</div>
       </div>
       <div class="pipeline-detail" id="detail-6">
-        <h4>Algorithm Synthesis</h4>
-        <p>Only now design algorithms. Derive them from mechanisms, not from first principles.</p>
-        <div class="gate">Gate: Algorithms mapped to Phase 4 mechanisms</div>
+        <h4 data-i18n="pipeline.d6h">Algorithm Synthesis</h4>
+        <p data-i18n="pipeline.d6p">Only now design algorithms. Derive them from mechanisms, not from first principles.</p>
+        <div class="gate" data-i18n="pipeline.d6g">Gate: Algorithms mapped to Phase 4 mechanisms</div>
       </div>
       <div class="pipeline-detail" id="detail-7">
-        <h4>Destruction Phase</h4>
-        <p>Attack the model. Identify weak assumptions, missing tensions, and possible redesigns.</p>
-        <div class="gate">Gate: Failure analysis + D1-D5 evaluation</div>
+        <h4 data-i18n="pipeline.d7h">Destruction Phase</h4>
+        <p data-i18n="pipeline.d7p">Attack the model. Identify weak assumptions, missing tensions, and possible redesigns.</p>
+        <div class="gate" data-i18n="pipeline.d7g">Gate: Failure analysis + D1-D5 evaluation</div>
       </div>
     </div>
   </section>
@@ -1041,9 +1059,9 @@
   <div class="wave-divider" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
 
   <section id="atlas" aria-labelledby="atlas-title">
-    <div class="section-label">The Knowledge Base</div>
-    <h2 class="section-title" id="atlas-title">Atlas of Persistent Forces</h2>
-    <p class="section-desc">A living catalog of tensions and invariants discovered across domains. Drag nodes, zoom, and explore the network of relationships.</p>
+    <div class="section-label" data-i18n="atlas.label">The Knowledge Base</div>
+    <h2 class="section-title" id="atlas-title" data-i18n="atlas.title">Atlas of Persistent Forces</h2>
+    <p class="section-desc" data-i18n="atlas.desc">A living catalog of tensions and invariants discovered across domains. Drag nodes, zoom, and explore the network of relationships.</p>
 
     <div id="atlas-viz" role="img" aria-label="Interactive force-directed graph showing relationships between 19 tensions and 12 invariants">
       <svg id="atlas-svg"></svg>
@@ -1079,9 +1097,9 @@
   <div class="wave-divider" aria-hidden="true"><canvas id="wave-canvas-2"></canvas></div>
 
   <section id="cases" aria-labelledby="cases-title">
-    <div class="section-label">Validated in Practice</div>
-    <h2 class="section-title" id="cases-title">Case Studies</h2>
-    <p class="section-desc">Each case walks through the full 7-phase pipeline. From PageRank to Bitcoin to Transformers — see how hidden tensions shaped the systems that changed the world.</p>
+    <div class="section-label" data-i18n="cases.label">Validated in Practice</div>
+    <h2 class="section-title" id="cases-title" data-i18n="cases.title">Case Studies</h2>
+    <p class="section-desc" data-i18n="cases.desc">Each case walks through the full 7-phase pipeline. From PageRank to Bitcoin to Transformers — see how hidden tensions shaped the systems that changed the world.</p>
 
     <div class="cases-grid">
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/page-rank.md" class="case-card">
@@ -1168,20 +1186,20 @@
   </section>
 
   <section id="install" aria-labelledby="install-title">
-    <div class="section-label">Get Started</div>
-    <h2 class="section-title" id="install-title">Install in 30 Seconds</h2>
-    <p class="section-desc">Clone into your AI tool's skill directory. The AI auto-detects and activates based on your problem description.</p>
+    <div class="section-label" data-i18n="install.label">Get Started</div>
+    <h2 class="section-title" id="install-title" data-i18n="install.title">Install in 30 Seconds</h2>
+    <p class="section-desc" data-i18n="install.desc">Clone into your AI tool's skill directory. The AI auto-detects and activates based on your problem description.</p>
 
     <div class="install-block">
       <div class="install-tabs" role="tablist" aria-label="Installation methods">
-        <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)">Claude Code</button>
-        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)">TRAE</button>
-        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)">Cursor</button>
-        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)">Manual</button>
+        <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)" data-i18n="install.tab.claude">Claude Code</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)" data-i18n="install.tab.trae">TRAE</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)" data-i18n="install.tab.cursor">Cursor</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)" data-i18n="install.tab.manual">Manual</button>
       </div>
       <div class="install-code" id="code-claude">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="comment"># Project-level (recommended)</span><br>
         <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git .claude/skills/tension-mining</span><br><br>
         <span class="comment"># User-level (all projects)</span><br>
@@ -1191,20 +1209,20 @@
       </div>
       <div class="install-code" id="code-trae" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git .trae/skills/tension-mining</span><br><br>
         <span class="comment"># TRAE auto-discovers skills in .trae/skills/</span><br>
         <span class="comment"># Describe a complex system problem to activate</span>
       </div>
       <div class="install-code" id="code-cursor" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="comment"># Place anywhere accessible, then add to your .cursorrules:</span><br><br>
         <span class="cmd">When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md</span>
       </div>
       <div class="install-code" id="code-manual" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="comment"># No AI tool? Read SKILL.md for the activation skeleton,</span><br>
         <span class="comment"># then load references/execution-protocol.md for detailed phase instructions.</span><br>
         <span class="comment"># Use templates/ for structured fill-in-the-blank analysis.</span><br><br>
@@ -1215,15 +1233,15 @@
   </section>
 
   <section id="roadmap" aria-labelledby="roadmap-title">
-    <div class="section-label">What's Next</div>
-    <h2 class="section-title" id="roadmap-title">Roadmap</h2>
-    <p class="section-desc">From methodology to ecosystem. Each milestone builds on the tensions and invariants discovered so far.</p>
+    <div class="section-label" data-i18n="roadmap.label">What's Next</div>
+    <h2 class="section-title" id="roadmap-title" data-i18n="roadmap.title">Roadmap</h2>
+    <p class="section-desc" data-i18n="roadmap.desc">From methodology to ecosystem. Each milestone builds on the tensions and invariants discovered so far.</p>
 
     <div class="roadmap-timeline">
       <div class="roadmap-item done">
         <div class="roadmap-dot">v2.0</div>
         <div class="roadmap-content">
-          <div class="roadmap-version">v2.0 — Foundation (Complete)</div>
+          <div class="roadmap-version" data-i18n="roadmap.v20">v2.0 — Foundation (Complete)</div>
           <ul class="roadmap-list">
             <li>7-phase pipeline with gate conditions</li>
             <li>Progressive Disclosure architecture</li>
@@ -1239,7 +1257,7 @@
       <div class="roadmap-item current">
         <div class="roadmap-dot">v2.1</div>
         <div class="roadmap-content">
-          <div class="roadmap-version">v2.1 — Expansion (In Progress)</div>
+          <div class="roadmap-version" data-i18n="roadmap.v21">v2.1 — Expansion (In Progress)</div>
           <ul class="roadmap-list">
             <li>Interactive web visualization</li>
             <li>Additional case studies</li>
@@ -1252,7 +1270,7 @@
       <div class="roadmap-item planned">
         <div class="roadmap-dot">v3.0</div>
         <div class="roadmap-content">
-          <div class="roadmap-version">v3.0 — Ecosystem (Planned)</div>
+          <div class="roadmap-version" data-i18n="roadmap.v30">v3.0 — Ecosystem (Planned)</div>
           <ul class="roadmap-list">
             <li>Plugin system for custom phases</li>
             <li>API for programmatic access</li>
@@ -1267,7 +1285,7 @@
   <footer>
     <div class="footer-logo">Tension<span>Mining</span></div>
     <div class="footer-links">
-      <a href="https://github.com/zbbsdsb/Tension-Mining">GitHub</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining" data-i18n="footer.github">GitHub</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md">Contribute</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/LICENSE">License</a>
@@ -1299,7 +1317,10 @@
     // ===== TYPEWRITER EFFECT =====
     (function() {
       const el = document.getElementById('hero-subtitle');
-      const text = 'A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality \u2014 not from assumptions.';
+      const isZh = document.documentElement.lang === 'zh-CN' || (typeof I18N !== 'undefined' && I18N.currentLang === 'zh-CN');
+      const text = isZh
+        ? '一个用于挖掘张力、提取不变量、从现实中推导算法（而非从假设中）的 7 阶段管道。'
+        : 'A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality \u2014 not from assumptions.';
       let i = 0;
       function type() {
         if (i < text.length) {
@@ -1794,6 +1815,156 @@
         setTimeout(() => btn.textContent = 'Copy for AI', 1500);
       });
     }
+
+    // ===== I18N SYSTEM =====
+    const I18N = {
+      currentLang: 'en',
+      originals: new Map(),
+      typewriterInterval: null,
+      translations: {
+        'zh-CN': {
+          'nav.pipeline': '管道',
+          'nav.atlas': '图谱',
+          'nav.cases': '案例',
+          'nav.install': '安装',
+          'hero.eyebrow': 'AI 可执行的研究方法论',
+          'hero.title': 'Discover the <span class="tension">Forces</span> Shaping Complex Systems',
+          'hero.cta1': '开始使用',
+          'hero.cta2': '在 GitHub 上查看',
+          'hero.scroll': '向下滚动探索',
+          'quote.text': '"大多数人寻找解决方案。杰出的研究者寻找张力。"',
+          'quote.attr': '—— 张力挖掘原则',
+          'pipeline.label': '方法论',
+          'pipeline.title': '七个阶段。严格顺序。不可跳过。',
+          'pipeline.desc': '每个阶段都有门控条件。不满足就不能进入下一阶段。AI 每次只问一个问题。你驱动内容；方法论强制执行纪律。',
+          'pipeline.p1': '现象',
+          'pipeline.p2': '张力',
+          'pipeline.p3': '不变量',
+          'pipeline.p4': '机制',
+          'pipeline.p5': '系统',
+          'pipeline.p6': '算法',
+          'pipeline.p7': '摧毁',
+          'pipeline.d1h': '现象挖掘',
+          'pipeline.d1p': '在建立抽象之前先观察现实。从至少 3 个不同领域收集 5-10 个真实案例。',
+          'pipeline.d1g': '门控：3+ 领域的 5+ 个现象',
+          'pipeline.d2h': '张力挖掘',
+          'pipeline.d2p': '识别将系统拉向不同方向的力量。不可消除的权衡，不是"优缺点"。',
+          'pipeline.d2g': '门控：识别出力 A/B 的 5+ 个张力',
+          'pipeline.d3h': '不变量挖掘',
+          'pipeline.d3p': '提取在多个张力和领域中出现的基本原理。复杂系统的"法则"。',
+          'pipeline.d3g': '门控：3+ 个跨领域不变量',
+          'pipeline.d4h': '机制挖掘',
+          'pipeline.d4p': '研究现实如何解决张力。自然、社会和技术已经发展出了解决方案。',
+          'pipeline.d4g': '门控：3+ 个映射到张力的机制',
+          'pipeline.d5h': '系统综合',
+          'pipeline.d5p': '将张力、不变量和机制组合成一个具有预测行为的连贯模型。',
+          'pipeline.d5g': '门控：具有预测失效模式的连贯模型',
+          'pipeline.d6h': '算法综合',
+          'pipeline.d6p': '只在此时设计算法。从机制推导它们，而不是从第一性原理。',
+          'pipeline.d6g': '门控：从机制而非假设推导的算法',
+          'pipeline.d7h': '摧毁阶段',
+          'pipeline.d7p': '攻击模型。识别薄弱假设、缺失张力和可能的重新设计。',
+          'pipeline.d7g': '门控：3+ 次攻击 + 1 个重新设计提议',
+          'atlas.label': '知识库',
+          'atlas.title': '持久力量图谱',
+          'atlas.desc': '跨领域发现张力和不变量的活目录。拖拽节点、缩放，探索关系网络。',
+          'atlas.legend.core': '核心张力',
+          'atlas.legend.exp': '实验性张力',
+          'atlas.legend.inv': '不变量',
+          'stats.tensions': '持久张力',
+          'stats.invariants': '跨领域不变量',
+          'stats.domains': '已验证领域',
+          'stats.cases': '深度案例研究',
+          'cases.label': '实践中验证',
+          'cases.title': '案例研究',
+          'cases.desc': '每个案例都完整走过 7 阶段管道。从 PageRank 到 Bitcoin 到 Transformer —— 看看隐藏的张力如何塑造了改变世界的系统。',
+          'install.label': '开始使用',
+          'install.title': '30 秒安装',
+          'install.desc': '克隆到你的 AI 工具的 Skill 目录。AI 根据你的问题描述自动检测并激活。',
+          'install.tab.claude': 'Claude Code',
+          'install.tab.trae': 'TRAE',
+          'install.tab.cursor': 'Cursor',
+          'install.tab.manual': '手动',
+          'install.copyai': '复制给 AI',
+          'install.copy': '复制',
+          'roadmap.label': '下一步',
+          'roadmap.title': '路线图',
+          'roadmap.desc': '从方法论到生态系统。每个里程碑都建立在迄今为止发现的张力和不变量之上。',
+          'roadmap.v20': 'v2.0 — 基础（已完成）',
+          'roadmap.v21': 'v2.1 — 扩展（进行中）',
+          'roadmap.v30': 'v3.0 — 生态（计划中）',
+          'footer.github': 'GitHub',
+          'footer.contribute': '参与贡献',
+          'footer.changelog': '更新日志',
+          'footer.license': '许可证',
+          'footer.copyright': 'MIT 许可证 — 用张力挖掘构建',
+        }
+      },
+
+      init() {
+        // Save original English text
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (!this.originals.has(key)) {
+            this.originals.set(key, el.innerHTML);
+          }
+        });
+
+        const saved = localStorage.getItem('tm-lang');
+        const browser = navigator.language || navigator.userLanguage;
+        this.currentLang = saved || (browser.startsWith('zh') ? 'zh-CN' : 'en');
+        this.apply();
+        this.updateButton();
+
+        document.getElementById('lang-switch').addEventListener('click', () => {
+          this.currentLang = this.currentLang === 'en' ? 'zh-CN' : 'en';
+          localStorage.setItem('tm-lang', this.currentLang);
+          this.apply();
+          this.updateButton();
+        });
+      },
+
+      apply() {
+        const t = this.translations[this.currentLang];
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (this.currentLang === 'en') {
+            // Restore original English
+            if (this.originals.has(key)) {
+              el.innerHTML = this.originals.get(key);
+            }
+          } else if (t && t[key]) {
+            el.innerHTML = t[key];
+          }
+        });
+
+        // Handle typewriter subtitle specially
+        const subtitle = document.getElementById('hero-subtitle');
+        if (subtitle) {
+          if (this.currentLang === 'zh-CN') {
+            const zhText = '一个用于挖掘张力、提取不变量、从现实中推导算法（而非从假设中）的 7 阶段管道。';
+            subtitle.textContent = zhText;
+            subtitle.innerHTML = zhText + '<span class="typewriter-cursor"></span>';
+            if (this.typewriterInterval) clearInterval(this.typewriterInterval);
+          } else {
+            const enText = 'A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality \u2014 not from assumptions.';
+            subtitle.textContent = enText;
+            subtitle.innerHTML = enText + '<span class="typewriter-cursor"></span>';
+            if (this.typewriterInterval) clearInterval(this.typewriterInterval);
+          }
+        }
+
+        document.documentElement.lang = this.currentLang === 'zh-CN' ? 'zh-CN' : 'en';
+      },
+
+      updateButton() {
+        const btn = document.getElementById('lang-switch');
+        btn.textContent = this.currentLang === 'zh-CN' ? '中 / EN' : 'EN / 中';
+      }
+    };
+
+    I18N.init();
   </script>
 
 </body>
