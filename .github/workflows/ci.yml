@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-atlas:
+    name: Validate Atlas Cross-References
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run atlas validation
+        run: python scripts/validate-atlas.py
+
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint Markdown files
+        uses: actionshub/markdownlint-action@main
+        with:
+          config: ""
+          args: "**/*.md"
+
+  link-check:
+    name: Check Markdown Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: "**/*.md"
+          fail: true
+
+  check-duplicate-files:
+    name: Check for Redundant Root Atlas Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for duplicate atlas files
+        run: |
+          DUPLICATES=""
+          for f in tension-atlas.md invariant-atlas.md; do
+            if [ -f "$f" ]; then
+              echo "::error file=$f::Redundant root-level atlas file found. Canonical version is in references/$f"
+              DUPLICATES="$DUPLICATES $f"
+            fi
+          done
+          if [ -n "$DUPLICATES" ]; then
+            echo "Error: redundant files found:$DUPLICATES"
+            exit 1
+          fi
+          echo "No redundant root-level atlas files found."

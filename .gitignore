@@ -1,0 +1,37 @@
+# OS temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# TRAE internal files
+.trae/
+
+# Audit report output
+tension-mining-audit/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Node (if any tooling is added)
+node_modules/
+.npm
+
+# Environment
+.env
+.env.local
