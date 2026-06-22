@@ -13,10 +13,10 @@ This repository is a self-contained AI Skill. Install it into your AI tool's ski
 
 ```bash
 # Project-level (recommended — keeps skill scoped to one project)
-git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git .claude/skills/tension-mining
 
 # User-level (available across all projects)
-git clone https://github.com/CeaserZhao/Tension-Mining.git ~/.claude/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git ~/.claude/skills/tension-mining
 ```
 
 Invoke with `/tension-mining` or let Claude Code auto-trigger based on the `description` field.
@@ -24,7 +24,7 @@ Invoke with `/tension-mining` or let Claude Code auto-trigger based on the `desc
 ### TRAE
 
 ```bash
-git clone https://github.com/CeaserZhao/Tension-Mining.git .trae/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git .trae/skills/tension-mining
 ```
 
 TRAE auto-discovers skills in `.trae/skills/` and activates based on SKILL.md description.

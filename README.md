@@ -3,14 +3,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/CeaserZhao/Tension-Mining/stargazers"><img src="https://img.shields.io/github/stars/CeaserZhao/Tension-Mining?style=flat-square&color=e63946" alt="GitHub Stars"></a>
-  <a href="https://github.com/CeaserZhao/Tension-Mining/network/members"><img src="https://img.shields.io/github/forks/CeaserZhao/Tension-Mining?style=flat-square&color=f4a261" alt="GitHub Forks"></a>
+  <a href="https://github.com/zbbsdsb/Tension-Mining/stargazers"><img src="https://img.shields.io/github/stars/zbbsdsb/Tension-Mining?style=flat-square&color=e63946" alt="GitHub Stars"></a>
+  <a href="https://github.com/zbbsdsb/Tension-Mining/network/members"><img src="https://img.shields.io/github/forks/zbbsdsb/Tension-Mining?style=flat-square&color=f4a261" alt="GitHub Forks"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square&color=2a9d8f" alt="MIT License"></a>
   <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v2.0-blue?style=flat-square&color=4a6fa5" alt="Skill v2.0"></a>
   <a href="./references/tension-atlas.md"><img src="https://img.shields.io/badge/tensions-19-4a6fa5?style=flat-square" alt="19 Tensions"></a>
   <a href="./references/invariant-atlas.md"><img src="https://img.shields.io/badge/invariants-12-4a6fa5?style=flat-square" alt="12 Invariants"></a>
   <a href="./examples/"><img src="https://img.shields.io/badge/cases-8_studies-6b7280?style=flat-square" alt="8 Case Studies"></a>
-  <a href="https://github.com/CeaserZhao/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/CeaserZhao/Tension-Mining/ci.yml?style=flat-square&color=2a9d8f" alt="CI Status"></a>
+  <a href="https://github.com/zbbsdsb/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/zbbsdsb/Tension-Mining/ci.yml?style=flat-square&color=2a9d8f" alt="CI Status"></a>
 </p>
 
 ---
@@ -77,13 +77,13 @@ Clone this repository into your AI tool's skill directory:
 
 ```bash
 # Claude Code — project-level (recommended)
-git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git .claude/skills/tension-mining
 
 # Claude Code — user-level (all projects)
-git clone https://github.com/CeaserZhao/Tension-Mining.git ~/.claude/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git ~/.claude/skills/tension-mining
 
 # TRAE
-git clone https://github.com/CeaserZhao/Tension-Mining.git .trae/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git .trae/skills/tension-mining
 
 # Cursor / Windsurf / other
 # Place the repo anywhere accessible. Reference SKILL.md in your project instructions.
@@ -274,6 +274,6 @@ The answer is often more valuable than the algorithm.
 
 ## License
 
-MIT License — Copyright (c) 2026 CeaserZhao
+MIT License — Copyright (c) 2026 zbbsdsb
 
 See [LICENSE](./LICENSE) for details.

@@ -396,6 +396,25 @@
       color: var(--ink);
       border-color: var(--accent);
     }
+    .install-code .copy-for-ai-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 5.5rem;
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      background: var(--bg3);
+      border: 1px solid var(--accent2);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .install-code .copy-for-ai-btn:hover {
+      color: var(--accent2);
+      border-color: var(--accent2);
+    }
     .install-code .comment { color: #5a5a5a; }
     .install-code .cmd { color: var(--accent3); }
 
@@ -468,7 +487,7 @@
       <a href="#atlas">Atlas</a>
       <a href="#cases">Cases</a>
       <a href="#install">Install</a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining">GitHub</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining">GitHub</a>
     </div>
   </nav>
 
@@ -478,7 +497,7 @@
     <p class="subtitle">A 7-phase pipeline for mining tensions, extracting invariants, and deriving algorithms from reality — not from assumptions.</p>
     <div class="cta-group">
       <a href="#install" class="cta cta-primary">Get Started</a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining" class="cta cta-secondary">View on GitHub</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining" class="cta cta-secondary">View on GitHub</a>
     </div>
   </section>
 
@@ -588,42 +607,42 @@
     <p class="section-desc">Each case walks through the full 7-phase pipeline. From PageRank to Bitcoin to Transformers — see how hidden tensions shaped the systems that changed the world.</p>
 
     <div class="cases-grid">
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/page-rank.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/page-rank.md" class="case-card reveal">
         <div class="case-domain">Information Retrieval</div>
         <div class="case-name">PageRank</div>
         <div class="case-tension">Local vs Global<br>Freedom vs Efficiency</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/transformer.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/transformer.md" class="case-card reveal">
         <div class="case-domain">Deep Learning</div>
         <div class="case-name">Transformer</div>
         <div class="case-tension">Synchronicity vs Asynchronicity<br>Compression vs Fidelity</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/bitcoin.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/bitcoin.md" class="case-card reveal">
         <div class="case-domain">Cryptocurrency</div>
         <div class="case-name">Bitcoin</div>
         <div class="case-tension">Centralization vs Decentralization<br>Competition vs Cooperation</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/git.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/git.md" class="case-card reveal">
         <div class="case-domain">Version Control</div>
         <div class="case-name">Git</div>
         <div class="case-tension">Consistency vs Availability<br>Local vs Global</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/wikipedia.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/wikipedia.md" class="case-card reveal">
         <div class="case-domain">Collaborative Knowledge</div>
         <div class="case-name">Wikipedia</div>
         <div class="case-tension">Freedom vs Efficiency<br>Individual vs Collective</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/npc-society.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/npc-society.md" class="case-card reveal">
         <div class="case-domain">Multi-Agent Systems</div>
         <div class="case-name">NPC Society</div>
         <div class="case-tension">Survival vs Exploration<br>Individual vs Collective</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/agent-organization.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/agent-organization.md" class="case-card reveal">
         <div class="case-domain">AI Coordination</div>
         <div class="case-name">Agent Organization</div>
         <div class="case-tension">Autonomy vs Control<br>Centralization vs Decentralization</div>
       </a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/examples/dialogue-example.md" class="case-card reveal">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/dialogue-example.md" class="case-card reveal">
         <div class="case-domain">Walkthrough</div>
         <div class="case-name">Dialogue Demo</div>
         <div class="case-tension">Full 7-phase interaction<br>Recommended first read</div>
@@ -644,31 +663,35 @@
         <button class="install-tab" onclick="showTab('manual')">Manual</button>
       </div>
       <div class="install-code" id="code-claude">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         <span class="comment"># Project-level (recommended)</span><br>
-        <span class="cmd">git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining</span><br><br>
+        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git .claude/skills/tension-mining</span><br><br>
         <span class="comment"># User-level (all projects)</span><br>
-        <span class="cmd">git clone https://github.com/CeaserZhao/Tension-Mining.git ~/.claude/skills/tension-mining</span><br><br>
+        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git ~/.claude/skills/tension-mining</span><br><br>
         <span class="comment"># Then invoke with</span><br>
         <span class="cmd">/tension-mining</span>
       </div>
       <div class="install-code" id="code-trae" style="display:none">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-        <span class="cmd">git clone https://github.com/CeaserZhao/Tension-Mining.git .trae/skills/tension-mining</span><br><br>
+        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git .trae/skills/tension-mining</span><br><br>
         <span class="comment"># TRAE auto-discovers skills in .trae/skills/</span><br>
         <span class="comment"># Describe a complex system problem to activate</span>
       </div>
       <div class="install-code" id="code-cursor" style="display:none">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         <span class="comment"># Place anywhere accessible, then add to your .cursorrules:</span><br><br>
         <span class="cmd">When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md</span>
       </div>
       <div class="install-code" id="code-manual" style="display:none">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
         <span class="comment"># No AI tool? Read SKILL.md for the activation skeleton,</span><br>
         <span class="comment"># then load references/execution-protocol.md for detailed phase instructions.</span><br>
         <span class="comment"># Use templates/ for structured fill-in-the-blank analysis.</span><br><br>
-        <span class="cmd">git clone https://github.com/CeaserZhao/Tension-Mining.git</span><br>
+        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git</span><br>
         <span class="cmd">cd Tension-Mining && cat SKILL.md</span>
       </div>
     </div>
@@ -677,12 +700,12 @@
   <footer>
     <div class="footer-logo">Tension<span>Mining</span></div>
     <div class="footer-links">
-      <a href="https://github.com/CeaserZhao/Tension-Mining">GitHub</a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/CONTRIBUTING.md">Contribute</a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/CHANGELOG.md">Changelog</a>
-      <a href="https://github.com/CeaserZhao/Tension-Mining/blob/main/LICENSE">License</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining">GitHub</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md">Contribute</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/LICENSE">License</a>
     </div>
-    <div class="copyright">MIT License — Copyright (c) 2026 CeaserZhao</div>
+    <div class="copyright">MIT License — Copyright (c) 2026 zbbsdsb</div>
   </footer>
 
   <script>
@@ -696,10 +719,19 @@
 
     // Copy code
     function copyCode(btn) {
-      const code = btn.parentElement.innerText.replace('Copy', '').trim();
+      const code = btn.parentElement.innerText.replace('Copy', '').replace('Copy for AI', '').trim();
       navigator.clipboard.writeText(code).then(() => {
         btn.textContent = 'Copied!';
         setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
+    }
+
+    // Copy for AI
+    function copyForAI(btn) {
+      const prompt = 'I want to analyze a complex system using the Tension Mining methodology. Here\'s the skill file — please read it and activate the 7-phase pipeline:\n\nhttps://github.com/zbbsdsb/Tension-Mining/blob/main/SKILL.md\n\nStart by asking me what system I want to analyze.';
+      navigator.clipboard.writeText(prompt).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy for AI', 1500);
       });
     }
 

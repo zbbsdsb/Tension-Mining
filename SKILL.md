@@ -7,7 +7,7 @@ description: >
 user-invocable: true
 version: "2.0"
 # --- Extended metadata (not parsed by skill loaders, kept for documentation) ---
-# author: CeaserZhao
+# author: zbbsdsb
 # domain: complex-systems-research
 # methodology: tension-driven-discovery
 # phases: 7

@@ -130,7 +130,7 @@ Installation takes 30 seconds:
 
 ```bash
 # Claude Code
-git clone https://github.com/CeaserZhao/Tension-Mining.git .claude/skills/tension-mining
+git clone https://github.com/zbbsdsb/Tension-Mining.git .claude/skills/tension-mining
 
 # Then invoke with
 /tension-mining
@@ -159,6 +159,6 @@ The answer is often more valuable than the algorithm.
 
 ---
 
-*Try Tension Mining on your next complex system problem: [github.com/CeaserZhao/Tension-Mining](https://github.com/CeaserZhao/Tension-Mining)*
+*Try Tension Mining on your next complex system problem: [github.com/zbbsdsb/Tension-Mining](https://github.com/zbbsdsb/Tension-Mining)*
 
-*MIT License — Contributions welcome. See [CONTRIBUTING.md](https://github.com/CeaserZhao/Tension-Mining/blob/main/CONTRIBUTING.md) for how to add new tensions, invariants, and case studies.*
+*MIT License — Contributions welcome. See [CONTRIBUTING.md](https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md) for how to add new tensions, invariants, and case studies.*
