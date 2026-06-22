@@ -1,20 +1,71 @@
 <p align="center">
-  <img src="./social-preview.png" alt="Tension Mining" width="800">
+  <img src="./social-preview.jpg" alt="Tension Mining" width="100%">
 </p>
 
 <p align="center">
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License"></a>
-  <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v2.0-blue?style=flat-square" alt="Skill v2.0"></a>
-  <a href="./references/tension-atlas.md"><img src="https://img.shields.io/badge/atlas-19_tensions-4a6fa5?style=flat-square" alt="Tensions"></a>
-  <a href="./references/invariant-atlas.md"><img src="https://img.shields.io/badge/atlas-12_invariants-4a6fa5?style=flat-square" alt="Invariants"></a>
-  <a href="./examples/"><img src="https://img.shields.io/badge/cases-8_studies-6b7280?style=flat-square" alt="Case Studies"></a>
+  <a href="https://github.com/CeaserZhao/Tension-Mining/stargazers"><img src="https://img.shields.io/github/stars/CeaserZhao/Tension-Mining?style=flat-square&color=e63946" alt="GitHub Stars"></a>
+  <a href="https://github.com/CeaserZhao/Tension-Mining/network/members"><img src="https://img.shields.io/github/forks/CeaserZhao/Tension-Mining?style=flat-square&color=f4a261" alt="GitHub Forks"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square&color=2a9d8f" alt="MIT License"></a>
+  <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v2.0-blue?style=flat-square&color=4a6fa5" alt="Skill v2.0"></a>
+  <a href="./references/tension-atlas.md"><img src="https://img.shields.io/badge/tensions-19-4a6fa5?style=flat-square" alt="19 Tensions"></a>
+  <a href="./references/invariant-atlas.md"><img src="https://img.shields.io/badge/invariants-12-4a6fa5?style=flat-square" alt="12 Invariants"></a>
+  <a href="./examples/"><img src="https://img.shields.io/badge/cases-8_studies-6b7280?style=flat-square" alt="8 Case Studies"></a>
+  <a href="https://github.com/CeaserZhao/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/CeaserZhao/Tension-Mining/ci.yml?style=flat-square&color=2a9d8f" alt="CI Status"></a>
 </p>
 
 ---
 
-> Most people search for solutions. Great researchers search for tensions.
+> **Most people search for solutions. Great researchers search for tensions.**
 
-A research methodology for discovering invariants hidden inside complex systems. Works as an AI-executable Skill across Claude Code, TRAE, Cursor, Windsurf, and any tool that supports Markdown-based skill files.
+A research methodology for discovering invariants hidden inside complex systems. Works as an **AI-executable Skill** across Claude Code, TRAE, Cursor, Windsurf, and any tool that supports Markdown-based skill files.
+
+[Quick Start](#quick-start) · [How It Works](#how-it-works) · [Case Studies](#case-studies) · [Documentation](#documentation) · [Contribute](./CONTRIBUTING.md)
+
+---
+
+## Table of Contents
+
+- [Why Tension Mining?](#why-tension-mining)
+- [Quick Start](#quick-start)
+- [How It Works](#how-it-works)
+- [The Seven Phases](#the-seven-phases)
+- [Case Studies](#case-studies)
+- [What This Is Not](#what-this-is-not)
+- [Documentation](#documentation)
+- [Roadmap](#roadmap)
+- [License](#license)
+
+---
+
+## Why Tension Mining?
+
+Most innovation workflows start too late.
+
+They begin with algorithms, architectures, implementations, optimizations. But the most influential systems rarely emerge from optimization.
+
+- **PageRank** began with a question about importance — not a matrix equation.
+- **Bitcoin** began with a tension between decentralization and trust — not a blockchain data structure.
+- **Wikipedia** began with a tension between openness and reliability — not a revision control system.
+- **Transformer** began with a question about whether recurrence was necessary at all — not an attention mechanism.
+
+The breakthrough appears long before the algorithm. It appears when a hidden tension is finally made visible.
+
+**Tension Mining is a lens.** Its purpose is simple: help researchers discover the forces shaping a system before attempting to design the system itself.
+
+### The Core Idea
+
+Every persistent system is shaped by a set of unresolved tensions.
+
+| Domain | Tension |
+|--------|---------|
+| Organization | Freedom ↔ Efficiency |
+| Society | Order ↔ Innovation |
+| AI Agents | Autonomy ↔ Control |
+| NPC Worlds | Survival ↔ Exploration |
+| Products | Simplicity ↔ Capability |
+| Markets | Competition ↔ Cooperation |
+
+Most people focus on behavior. Tension Mining focuses on the forces underneath behavior.
 
 ---
 
@@ -94,38 +145,6 @@ Tension Mining uses a **Pipeline + Inversion + Generator** hybrid pattern:
 
 ---
 
-## Why Tensions?
-
-Most innovation workflows start too late.
-
-They begin with algorithms, architectures, implementations, optimizations. But the most influential systems rarely emerge from optimization.
-
-- **PageRank** began with a question about importance.
-- **Bitcoin** began with a tension between decentralization and trust.
-- **Wikipedia** began with a tension between openness and reliability.
-- **Transformer** began with a question about whether recurrence was necessary at all.
-
-The breakthrough often appears long before the algorithm. It appears when a hidden tension is finally made visible.
-
----
-
-## Core Idea
-
-Every persistent system is shaped by a set of unresolved tensions.
-
-| Domain | Tension |
-|--------|---------|
-| Organization | Freedom ↔ Efficiency |
-| Society | Order ↔ Innovation |
-| AI Agents | Autonomy ↔ Control |
-| NPC Worlds | Survival ↔ Exploration |
-| Products | Simplicity ↔ Capability |
-| Markets | Competition ↔ Cooperation |
-
-Most people focus on behavior. Tension Mining focuses on the forces underneath behavior.
-
----
-
 ## The Seven Phases
 
 ### 1. Phenomenon Mining
@@ -172,6 +191,23 @@ Attack the model. Assume it is wrong. Identify weak assumptions, missing tension
 
 ---
 
+## Case Studies
+
+Each case study walks through the full 7-phase pipeline:
+
+| Case Study | Domain | Key Tensions | Key Invariants |
+|-----------|--------|-------------|----------------|
+| [PageRank](./examples/page-rank.md) | Information Retrieval | Local vs Global, Freedom vs Efficiency | Local Rules Create Global Order, Gradients Drive Movement |
+| [Transformer](./examples/transformer.md) | Deep Learning | Synchronicity vs Asynchronicity, Compression vs Fidelity | Compression Reveals Structure, Gradients Drive Movement |
+| [Bitcoin](./examples/bitcoin.md) | Cryptocurrency | Centralization vs Decentralization, Competition vs Cooperation | Identity Drives Cooperation, Tradeoffs Are Inescapable |
+| [Git](./examples/git.md) | Version Control | Consistency vs Availability, Local vs Global | Local Rules Create Global Order, Identity Drives Cooperation |
+| [Wikipedia](./examples/wikipedia.md) | Collaborative Knowledge | Freedom vs Efficiency, Individual vs Collective | Identity Drives Cooperation, Compression Reveals Structure |
+| [NPC Society](./examples/npc-society.md) | Multi-Agent Systems | Survival vs Exploration, Individual vs Collective | Local Rules Create Global Order, Variation Enables Selection |
+| [Agent Organization](./examples/agent-organization.md) | AI Coordination | Autonomy vs Control, Centralization vs Decentralization | Identity Drives Cooperation, Feedback Loops Stabilize |
+| [Dialogue Walkthrough](./examples/dialogue-example.md) | Decentralized Identity | *Full 7-phase interaction demo* | *Recommended first read* |
+
+---
+
 ## What This Is Not
 
 - **Not** a prompt collection
@@ -184,7 +220,7 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 
 ---
 
-## Repository Navigation
+## Documentation
 
 | Path | Purpose |
 |------|---------|
@@ -192,14 +228,37 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 | [`references/execution-protocol.md`](./references/execution-protocol.md) | Detailed 7-phase instructions (Goal / Interview / Output / Gate) |
 | [`references/interface-contract.md`](./references/interface-contract.md) | Input/output specification and error handling |
 | [`references/quality-rubric.md`](./references/quality-rubric.md) | 5-dimension scoring rubric (D1-D5, 0-15 scale) |
-| [`references/tension-atlas.md`](./references/tension-atlas.md) | Catalog of 19 persistent tensions across domains |
-| [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Catalog of 12 cross-domain invariants |
-| [`references/methodology-primer.md`](./references/methodology-primer.md) | Extended methodology reference |
-| [`examples/dialogue-example.md`](./examples/dialogue-example.md) | Full user-AI dialogue walkthrough (recommended first read) |
+| [`references/tension-atlas.md`](./references/tension-atlas.md) | Catalog of 19 persistent tensions across 5 domains |
+| [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Catalog of 12 cross-domain invariants across 4 layers |
+| [`references/methodology-primer.md`](./references/methodology-primer.md) | Extended methodology reference & FAQ |
+| [`examples/dialogue-example.md`](./examples/dialogue-example.md) | Full user-AI dialogue walkthrough (**recommended first read**) |
 | [`examples/`](./examples/) | 7 additional case studies |
 | [`templates/_core-template.md`](./templates/_core-template.md) | Shared 7-phase workflow skeleton |
 | [`templates/`](./templates/) | 5 domain-specific templates (Algorithm, AI Agent, NPC Society, Organization, Protocol) |
 | [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md) | Directory layout, dependency graph, governance rules |
+| [`CONTRIBUTING.md`](./CONTRIBUTING.md) | How to contribute tensions, invariants, cases, and templates |
+| [`CHANGELOG.md`](./CHANGELOG.md) | Version history |
+
+---
+
+## Roadmap
+
+### v2.0 (Current)
+- [x] 7-phase pipeline with gate conditions
+- [x] Progressive Disclosure architecture
+- [x] Atlas with [CORE]/[EXPERIMENTAL] labeling
+- [x] 5 domain-specific templates
+- [x] 8 case studies
+- [x] Quality rubric (D1-D5)
+- [x] CI/CD with automated atlas validation
+- [x] Anti-Rationalization defense mechanisms
+
+### v2.1 (Planned)
+- [ ] Interactive web demo
+- [ ] Additional case studies (Distributed Systems, Biological Systems, Economics)
+- [ ] Template expansion (API Design, Consensus Protocols, Game Design)
+- [ ] Community-contributed tensions and invariants
+- [ ] Multi-language support (Chinese, Japanese)
 
 ---
 
@@ -215,4 +274,6 @@ The answer is often more valuable than the algorithm.
 
 ## License
 
-MIT License - Copyright (c) 2026 CeaserZhao
+MIT License — Copyright (c) 2026 CeaserZhao
+
+See [LICENSE](./LICENSE) for details.
