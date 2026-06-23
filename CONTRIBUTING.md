@@ -19,6 +19,19 @@ Before starting work, consider opening an issue using the appropriate template:
 - [New Invariant](https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-invariant.yml) — Submit a new cross-domain invariant
 - [New Case Study](https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-case-study.yml) — Propose a new case study
 
+## Spread the Word
+
+Help the methodology reach researchers, students, and engineers who could benefit from it:
+
+- **Star the repo** on GitHub — it helps others discover the project
+- **Share on Twitter/X** — use the [pre-made tweet](https://twitter.com/intent/tweet?text=Tension%20Mining%20%E2%80%94%20Discover%20cross-domain%20invariants%20in%20complex%20systems&url=https://github.com/zbbsdsb/Tension-Mining) or write your own
+- **Post on Reddit** — share in r/MachineLearning, r/ClaudeAI, r/ChatGPTCoding, or r/complexsystems
+- **Write about it** — a blog post, LinkedIn article, or mention in your paper's related work section
+- **Tell your advisor** — professors and lab mates are the best vector for academic adoption
+- **Use it in class** — the [workshop module](./docs/workshop-module.md) works as a graduate seminar exercise
+
+Every share, star, and mention helps. Thank you for spreading the idea!
+
 ## Adding a New Tension
 
 Follow the rules defined in [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md)

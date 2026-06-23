@@ -19,6 +19,14 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a> | <a href="./README.es.md">Español</a> | हिन्दी
 </p>
 
+<p align="center">
+  <strong>
+    ⭐ इस रेपो को स्टार करें &nbsp;·&nbsp;
+    <a href="https://github.com/zbbsdsb/Tension-Mining/discussions">💬 चर्चा</a> &nbsp;·&nbsp;
+    <a href="https://twitter.com/intent/tweet?text=Tension%20Mining%20%E2%80%94%20Discover%20cross-domain%20invariants%20in%20complex%20systems&url=https://github.com/zbbsdsb/Tension-Mining">🐦 Twitter पर साझा करें</a>
+  </strong>
+</p>
+
 ---
 
 > **अधिकांश लोग समाधान खोजते हैं। महान शोधकर्ता तनाव खोजते हैं।**

@@ -13,6 +13,14 @@
   <a href="https://github.com/zbbsdsb/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/zbbsdsb/Tension-Mining/ci.yml?style=flat-square&color=2a9d8f" alt="CI Status"></a>
 </p>
 
+<p align="center">
+  <strong>
+    ⭐ Dale estrella a este repositorio &nbsp;·&nbsp;
+    <a href="https://github.com/zbbsdsb/Tension-Mining/discussions">💬 Discusiones</a> &nbsp;·&nbsp;
+    <a href="https://twitter.com/intent/tweet?text=Tension%20Mining%20%E2%80%94%20Descubre%20invariantes%20entre%20dominios%20en%20sistemas%20complejos&url=https://github.com/zbbsdsb/Tension-Mining">🐦 Compartir en Twitter</a>
+  </strong>
+</p>
+
 ---
 
 <p align="center">

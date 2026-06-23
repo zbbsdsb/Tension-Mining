@@ -3,6 +3,14 @@
 </p>
 
 <p align="center">
+  <strong>
+    ⭐ Star 这个仓库 &nbsp;·&nbsp;
+    <a href="https://github.com/zbbsdsb/Tension-Mining/discussions">💬 讨论区</a> &nbsp;·&nbsp;
+    <a href="https://twitter.com/intent/tweet?text=Tension%20Mining%20%E2%80%94%20Discover%20cross-domain%20invariants%20in%20complex%20systems&url=https://github.com/zbbsdsb/Tension-Mining">🐦 分享到 Twitter</a>
+  </strong>
+</p>
+
+<p align="center">
   <a href="https://github.com/zbbsdsb/Tension-Mining/stargazers"><img src="https://img.shields.io/github/stars/zbbsdsb/Tension-Mining?style=flat-square&color=e63946" alt="GitHub Stars"></a>
   <a href="https://github.com/zbbsdsb/Tension-Mining/network/members"><img src="https://img.shields.io/github/forks/zbbsdsb/Tension-Mining?style=flat-square&color=f4a261" alt="GitHub Forks"></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square&color=2a9d8f" alt="MIT License"></a>
