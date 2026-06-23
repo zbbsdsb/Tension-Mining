@@ -161,26 +161,43 @@ OODA Loop is for fast, competitive decision-making. Tension Mining is for slow, 
 - Mitchell, M. (2009). *Complexity: A Guided Tour*. Oxford University Press.
 - Holland, J. H. (1995). *Hidden Order: How Adaptation Builds Complexity*. Addison-Wesley.
 - Kauffman, S. A. (1995). *At Home in the Universe: The Search for the Laws of Self-Organization and Complexity*. Oxford University Press.
+- Simon, H. A. (1962). "The Architecture of Complexity". *Proceedings of the American Philosophical Society*, 106(6), 467–482.
+- Holland, J. H. (1992). "Complex Adaptive Systems". *Daedalus*, 121(1), 17–30.
+- Levin, S. A. (1998). "Ecosystems and the Biosphere as Complex Adaptive Systems". *Ecosystems*, 1(5), 431–436. DOI: 10.1007/s100219900037
 
 ### Network Science
 
-- Barabasi, A.-L. (2016). *Network Science*. Cambridge University Press.
+- Barabási, A.-L. (2016). *Network Science*. Cambridge University Press.
 - Watts, D. J. (2003). *Six Degrees: The Science of a Connected Age*. W. W. Norton.
+- Barabási, A.-L. & Albert, R. (1999). "Emergence of Scaling in Random Networks". *Science*, 286(5439), 509–512. DOI: 10.1126/science.286.5439.509
+- Watts, D. J. & Strogatz, S. H. (1998). "Collective Dynamics of Small-World Networks". *Nature*, 393(6684), 440–442. DOI: 10.1038/30918
 
 ### Evolution and Adaptation
 
 - Dawkins, R. (1976). *The Selfish Gene*. Oxford University Press.
 - Boyd, R., & Richerson, P. J. (1985). *Culture and the Evolutionary Process*. University of Chicago Press.
+- Axelrod, R. (1997). *The Complexity of Cooperation: Agent-Based Models of Competition and Collaboration*. Princeton University Press. ISBN: 978-0691015675
 
 ### Design and Innovation
 
 - Meadows, D. H. (2008). *Thinking in Systems: A Primer*. Chelsea Green Publishing.
 - Norman, D. A. (2013). *The Design of Everyday Things: Revised and Expanded Edition*. Basic Books.
+- Schön, D. A. (1983). *The Reflective Practitioner: How Professionals Think in Action*. Basic Books. ISBN: 978-0465068788
+- Alexander, C., Ishikawa, S., & Silverstein, M. (1977). *A Pattern Language: Towns, Buildings, Construction*. Oxford University Press. ISBN: 978-0195019193
+- Cross, N. (2006). *Designerly Ways of Knowing*. Springer. ISBN: 978-1846283000
 
 ### Research Methodology
 
 - Kuhn, T. S. (1962). *The Structure of Scientific Revolutions*. University of Chicago Press.
-- Lakatos, I. (1976). *Proofs and Refutations: The Logic of Mathematical Discovery*. Cambridge University Press.
+- Lakatos, I. (1970). "Falsification and the Methodology of Scientific Research Programmes". In Lakatos, I. & Musgrave, A. (Eds.), *Criticism and the Growth of Knowledge*. Cambridge University Press. ISBN: 978-0521096232
+- Newell, A. & Simon, H. A. (1976). "Computer Science as Empirical Inquiry: Symbols and Search". *Communications of the ACM*, 19(3), 113–126. DOI: 10.1145/360018.360022
+- Page, S. E. (2018). *The Model Thinker: What You Need to Know to Make Data Work for You*. Basic Books. ISBN: 978-0465094626
+- Arthur, W. B. (2015). *Complexity and the Economy*. Oxford University Press. ISBN: 978-0199334292
+
+### Decision-Making & Strategy
+
+- Snowden, D. J. & Boone, M. E. (2007). "A Leader's Framework for Decision Making". *Harvard Business Review*, 85(11), 68–76.
+- Senge, P. M. (1990). *The Fifth Discipline: The Art and Practice of the Learning Organization*. Doubleday. ISBN: 978-0385517256
 
 ---
 

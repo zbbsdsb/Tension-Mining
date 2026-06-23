@@ -25,7 +25,7 @@
 
 A research methodology for discovering invariants hidden inside complex systems. Works as an **AI-executable Skill** across Claude Code, TRAE, Cursor, Windsurf, and any tool that supports Markdown-based skill files.
 
-[Quick Start](#quick-start) · [How It Works](#how-it-works) · [Case Studies](#case-studies) · [Documentation](#documentation) · [Contribute](./CONTRIBUTING.md)
+[Quick Start](#quick-start) · [How It Works](#how-it-works) · [Academic Foundations](#academic-foundations) · [Case Studies](#case-studies) · [Documentation](#documentation) · [References](#references) · [Contribute](./CONTRIBUTING.md)
 
 ---
 
@@ -72,6 +72,31 @@ Every persistent system is shaped by a set of unresolved tensions.
 | Markets | Competition ↔ Cooperation |
 
 Most people focus on behavior. Tension Mining focuses on the forces underneath behavior.
+
+---
+
+## Academic Foundations
+
+Tension Mining draws on and synthesizes concepts from multiple established research traditions.
+
+| Field | Key References | Relationship |
+|-------|---------------|--------------|
+| Complex Systems | Mitchell (2009) [1], Holland (1995) [2] | Core framework for emergence, self-organization, and adaptation |
+| Design Thinking | Schön (1983) [3], Cross (2006) [4] | Phenomenon-first approach, problem reframing before solution |
+| Systems Thinking | Meadows (2008) [5], Senge (1990) [6] | Feedback loops, leverage points, system structure analysis |
+| Cynefin Framework | Snowden & Boone (2007) [7] | Distinguishing ordered vs complex problem domains |
+| Research Methodology | Kuhn (1962) [8], Lakatos (1970) [9] | Paradigm shifts, research program structure, falsification |
+| Evolutionary Theory | Dawkins (1976) [10], Boyd & Richerson (1985) [11] | Variation-selection-retention as invariant discovery engine |
+| Network Science | Barabási & Albert (1999) [12], Watts & Strogatz (1998) [13] | Emergent properties from local interactions, small-world phenomena |
+
+These foundations are not decorative. Each directly informs a specific phase of the pipeline:
+- **Complex Systems** → Phase 1 (phenomena must cross domains, not reinforce domain myopia)
+- **Design Thinking** → Phase 2-3 (tensions before solutions, reframing as core skill)
+- **Systems Thinking** → Phase 4-5 (mechanisms interact through feedback, not linear causality)
+- **Cynefin** → Phase 7 (destruction reveals whether the problem was in a complicated or complex domain)
+- **Evolutionary Theory** → Phase 3 (invariants are selected by cross-domain survival, not designer intent)
+
+See the [Methodology Primer](./references/methodology-primer.md) for a detailed comparison with related methodologies and a complete reading list.
 
 ---
 
@@ -126,6 +151,16 @@ The AI will guide you through 7 phases, asking one question at a time:
 ```
 
 **Core principle:** Do not start from solutions. Start from reality.
+
+### For Researchers
+
+Tension Mining provides a structured framework for academic research and teaching:
+
+- **Thesis work**: A ready-made methodology chapter framework for complex systems, HCI, or design research theses
+- **Paper writing**: The 7-phase pipeline maps naturally to paper sections (Introduction → Related Work → Method → Analysis → Results → Discussion)
+- **Teaching**: Use the [90-minute workshop module](./docs/workshop-module.md) for graduate seminars
+- **Citation**: [Cite this repository](./CITATION.cff) in your publications
+- **Collaboration**: [Contribute](./CONTRIBUTING.md) a case study or tension and earn co-authorship credit on the methodology paper
 
 ---
 
@@ -277,6 +312,24 @@ Before designing anything, ask:
 > What tension am I actually looking at?
 
 The answer is often more valuable than the algorithm.
+
+---
+
+## References
+
+1. Mitchell, M. (2009). *Complexity: A Guided Tour*. Oxford University Press. ISBN: 978-0195124415
+2. Holland, J. H. (1995). *Hidden Order: How Adaptation Builds Complexity*. Addison-Wesley. ISBN: 978-0201442931
+3. Schön, D. A. (1983). *The Reflective Practitioner: How Professionals Think in Action*. Basic Books. ISBN: 978-0465068788
+4. Cross, N. (2006). *Designerly Ways of Knowing*. Springer. ISBN: 978-1846283000
+5. Meadows, D. H. (2008). *Thinking in Systems: A Primer*. Chelsea Green Publishing. ISBN: 978-1603580557
+6. Senge, P. M. (1990). *The Fifth Discipline: The Art and Practice of the Learning Organization*. Doubleday. ISBN: 978-0385517256
+7. Snowden, D. J. & Boone, M. E. (2007). "A Leader's Framework for Decision Making". *Harvard Business Review*, 85(11), 68–76.
+8. Kuhn, T. S. (1962). *The Structure of Scientific Revolutions*. University of Chicago Press. ISBN: 978-0226458083
+9. Lakatos, I. (1970). "Falsification and the Methodology of Scientific Research Programmes". In Lakatos, I. & Musgrave, A. (Eds.), *Criticism and the Growth of Knowledge*. Cambridge University Press. ISBN: 978-0521096232
+10. Dawkins, R. (1976). *The Selfish Gene*. Oxford University Press. ISBN: 978-0199291151
+11. Boyd, R. & Richerson, P. J. (1985). *Culture and the Evolutionary Process*. University of Chicago Press. ISBN: 978-0226069333
+12. Barabási, A.-L. & Albert, R. (1999). "Emergence of Scaling in Random Networks". *Science*, 286(5439), 509–512. DOI: 10.1126/science.286.5439.509
+13. Watts, D. J. & Strogatz, S. H. (1998). "Collective Dynamics of Small-World Networks". *Nature*, 393(6684), 440–442. DOI: 10.1038/30918
 
 ---
 

@@ -76,3 +76,29 @@ Before submitting a Pull Request, ensure:
 - [ ] All new IDs follow the `{T|I}-{3-letters}-{3-digits}` format
 - [ ] All cross-references are bidirectional (tension <-> invariant)
 - [ ] New entries include the `[EXPERIMENTAL]` marker unless CORE criteria are met
+
+## Academic Credit
+
+We encourage academic contributions and provide the following credit mechanisms for researchers:
+
+### Citation
+
+If you use Tension Mining in your research, please cite the repository:
+
+```
+Zhao, C. (2026). Tension Mining: A Methodology for Discovering Invariants in Complex Systems (Version 2.0.0) [Software]. https://github.com/zbbsdsb/Tension-Mining
+```
+
+A `CITATION.cff` file is included in the repository root for automatic citation generation.
+
+### Co-Authorship
+
+Contributors who add validated `[CORE]` tensions or invariants (following the promotion criteria above) are eligible for co-authorship on the official methodology paper (planned Q3 2026). Each contributor's specific additions will be documented in the paper's Contributions section.
+
+### Acknowledgement
+
+All contributors are listed in the Acknowledgements section of the Atlas documentation (`references/tension-atlas.md` and `references/invariant-atlas.md`). Contributors who add case studies or templates are acknowledged in the respective case study file.
+
+### Contact
+
+For academic collaboration inquiries, open an issue or reach out via the GitHub repository.
