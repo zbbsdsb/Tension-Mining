@@ -1,0 +1,82 @@
+name: "New Invariant"
+description: "Submit a new cross-domain invariant for the atlas"
+title: "[Invariant]: "
+labels: ["invariant", "experimental"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a new invariant! All new invariants start as `[EXPERIMENTAL]`.
+        Please fill in the fields below. See `references/invariant-atlas.md` for the extension guide.
+
+  - type: input
+    id: id
+    attributes:
+      label: Proposed ID
+      description: "Format: I-{3-letter-domain}-{3-digit-number} (e.g., I-SOC-002)"
+      placeholder: "e.g., I-SOC-002"
+    validations:
+      required: true
+
+  - type: textarea
+    id: statement
+    attributes:
+      label: Invariant Statement
+      description: "The core principle that holds across domains"
+      placeholder: "e.g., Trust requires repeated interaction"
+    validations:
+      required: true
+
+  - type: textarea
+    id: supporting-phenomena
+    attributes:
+      label: Supporting Phenomena
+      description: "Provide 3+ examples from distinct domains"
+      placeholder: "1. Domain A: ...\n2. Domain B: ...\n3. Domain C: ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Mechanism Explanation
+      description: "How does this invariant manifest in systems?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundary-conditions
+    attributes:
+      label: Boundary Conditions
+      description: "When does this invariant break down?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-tensions
+    attributes:
+      label: Related Tensions
+      description: "Known tension IDs this invariant connects to (if known)"
+      placeholder: "e.g., T-CEN-007, T-COP-015"
+
+  - type: textarea
+    id: mathematical-intuition
+    attributes:
+      label: Mathematical Intuition (optional)
+      description: "Any formal or mathematical intuition"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "ID follows I-xxx-xxx format"
+          required: true
+        - label: "Invariant is cross-domain (at least 3 distinct domains)"
+          required: true
+        - label: "Boundary conditions are identified"
+          required: true
+        - label: "I have read the extension guide in references/invariant-atlas.md"
+          required: true

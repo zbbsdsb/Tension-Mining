@@ -1,0 +1,110 @@
+name: "New Tension"
+description: "Submit a new persistent tension for the atlas"
+title: "[Tension]: "
+labels: ["tension", "experimental"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a new tension! All new tensions start as `[EXPERIMENTAL]`.
+        Please fill in the fields below. See `references/tension-atlas.md` for the extension guide.
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: "The domain this tension operates in (e.g., Cognition, Society, Computation, Design)"
+      placeholder: "e.g., Society"
+    validations:
+      required: true
+
+  - type: input
+    id: id
+    attributes:
+      label: Proposed ID
+      description: "Format: T-{3-letter-domain}-{3-digit-number} (e.g., T-SOC-020)"
+      placeholder: "e.g., T-SOC-020"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tension-name
+    attributes:
+      label: Tension Name
+      description: "The name of the tension (e.g., Safety vs Liveness)"
+      placeholder: "e.g., Safety vs Liveness"
+    validations:
+      required: true
+
+  - type: textarea
+    id: force-a
+    attributes:
+      label: Force A
+      description: "What is the first polar force?"
+      placeholder: "e.g., Guaranteeing safety (no two nodes decide conflicting values)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: force-b
+    attributes:
+      label: Force B
+      description: "What is the opposing polar force?"
+      placeholder: "e.g., Guaranteeing liveness (the system keeps making progress)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-ineliminable
+    attributes:
+      label: Why Ineliminable
+      description: "Why can't this tension be eliminated, only managed?"
+      placeholder: "Explain why both forces are necessary and cannot be fully reconciled..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: cross-domain
+    attributes:
+      label: Cross-Domain Examples
+      description: "Provide 2-3 examples from different domains"
+      placeholder: "1. Domain A: example...\n2. Domain B: example..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: overoptimize-a
+    attributes:
+      label: Over-optimizing Force A
+      description: "What happens when Force A is over-optimized?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: overoptimize-b
+    attributes:
+      label: Over-optimizing Force B
+      description: "What happens when Force B is over-optimized?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-invariants
+    attributes:
+      label: Related Invariants
+      description: "Known invariant IDs this tension connects to (if known)"
+      placeholder: "e.g., I-TIE-001, I-FLS-001"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "ID follows T-xxx-xxx format"
+          required: true
+        - label: "Both Force A and Force B are well-defined"
+          required: true
+        - label: "At least 2 cross-domain examples are provided"
+          required: true
+        - label: "I have read the extension guide in references/tension-atlas.md"
+          required: true

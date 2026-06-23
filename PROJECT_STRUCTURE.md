@@ -37,6 +37,14 @@ Clone or download the repository anywhere accessible. Add a reference to `SKILL.
 When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md
 ```
 
+### Statuz
+
+```bash
+statuz unite skill https://github.com/zbbsdsb/Tension-Mining.git
+```
+
+Statuz auto-discovers and activates the skill upon matching system descriptions.
+
 ### Manual / No Tool
 
 Read `SKILL.md` for the activation skeleton, then load `references/execution-protocol.md` for detailed phase instructions. Use `templates/` for structured fill-in-the-blank analysis. Read `examples/dialogue-example.md` for a complete walkthrough.

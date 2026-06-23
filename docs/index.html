@@ -958,6 +958,84 @@
       <span data-i18n="hero.scroll">Scroll to explore</span>
       <div class="arrow"></div>
     </div>
+
+    <!-- Interactive phase walkthrough -->
+    <div class="walkthrough" style="margin-top:3rem">
+      <p class="section-desc" style="margin-bottom:1.5rem;max-width:none" data-i18n="walkthrough.desc">Click a phase to learn what happens at each stage and what gate conditions must be met before proceeding.</p>
+      <div class="walkthrough-accordion" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0.75rem">
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 01</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p1">Phenomenon Mining</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p1">Observe reality before building abstractions. Collect 5-10 real-world examples from at least 3 distinct domains. The goal is to see what systems actually do, not what you assume they do.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g1">Gate: 5+ phenomena from 3+ domains</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 02</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p2">Tension Mining</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p2">Identify forces pulling the system in different directions. These are ineliminable tradeoffs, not "pros vs cons." Each tension must have a clear Force A and Force B.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g2">Gate: 5+ tensions with Force A/B identified</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 03</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p3">Invariant Mining</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p3">Extract principles that appear across multiple tensions and domains. These are the "laws" of complex systems — patterns that hold regardless of the specific domain.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g3">Gate: 3+ cross-domain invariants</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 04</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p4">Mechanism Mining</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p4">Study how reality resolves tensions. Nature, society, and technology have already developed solutions. Don't invent — discover what already works.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g4">Gate: 3+ mechanisms mapped to tensions</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 05</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p5">System Synthesis</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p5">Combine tensions, invariants, and mechanisms into a coherent model with predicted behaviors. This is where everything connects.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g5">Gate: Coherent model with failure modes</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 06</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p6">Algorithm Synthesis</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p6">Only now design algorithms. Derive them from the mechanisms discovered in Phase 4, not from first principles. The algorithm should feel inevitable.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g6">Gate: Algorithms derived from mechanisms</div>
+          </div>
+        </div>
+        <div class="wt-item" style="background:var(--bg2);border:1px solid var(--rule);border-radius:4px;padding:1.25rem;cursor:pointer;transition:all 0.3s" onclick="toggleWalkthrough(this)">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-family:'JetBrainsMono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem"><span>Phase 07</span><span style="font-size:0.8rem">+</span></div>
+          <div style="font-family:'CrimsonPro',Georgia,serif;font-size:1.05rem" data-i18n="pipeline.p7">Destruction</div>
+          <div class="wt-body" style="max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0">
+            <p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin-top:0.75rem" data-i18n="walkthrough.p7">Attack the model. Assume it is wrong. Identify weak assumptions, missing tensions, and possible redesigns. The strongest models survive their own destruction.</p>
+            <div style="font-family:'JetBrainsMono',monospace;font-size:0.65rem;color:var(--accent2);margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid var(--rule)" data-i18n="walkthrough.g7">Gate: Failure analysis + D1-D5 evaluation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleWalkthrough(el) {
+        const body = el.querySelector('.wt-body');
+        const expanded = body.style.maxHeight !== '0px' && body.style.maxHeight !== '';
+        const allBodies = document.querySelectorAll('.wt-body');
+        const allItems = document.querySelectorAll('.wt-item');
+        allBodies.forEach(b => { b.style.maxHeight = '0'; b.style.opacity = '0'; });
+        allItems.forEach(i => i.style.borderColor = 'var(--rule)');
+        if (!expanded) {
+          body.style.maxHeight = body.scrollHeight + 80 + 'px';
+          body.style.opacity = '1';
+          el.style.borderColor = 'var(--accent)';
+        }
+      }
+    </script>
   </section>
 
   <div class="quote-band">
@@ -1085,7 +1163,7 @@
         <div class="label" data-i18n="stats.invariants">Cross-Domain Invariants</div>
       </div>
       <div class="stat-card">
-        <div class="number" data-count="8">0</div>
+        <div class="number" data-count="11">0</div>
         <div class="label" data-i18n="stats.cases">Case Studies</div>
       </div>
       <div class="stat-card">
@@ -1183,6 +1261,36 @@
         </div>
         <div class="case-arrow">Read Analysis →</div>
       </a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/consensus-protocols.md" class="case-card">
+        <div class="case-domain">Distributed Systems</div>
+        <div class="case-name">Consensus Protocols</div>
+        <div class="case-tension">Safety vs Liveness · Consistency vs Availability</div>
+        <div class="case-expand">
+          <div class="case-invariant">Local Rules Create Global Order · Tradeoffs Are Inescapable</div>
+          <div class="case-summary">How Paxos, Raft, and PBFT solve the problem of agreement across unreliable networks.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
+      </a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/ant-colony.md" class="case-card">
+        <div class="case-domain">Biological Systems</div>
+        <div class="case-name">Ant Colony Foraging</div>
+        <div class="case-tension">Individual vs Collective · Survival vs Exploration</div>
+        <div class="case-expand">
+          <div class="case-invariant">Local Rules Create Global Order · Boundaries Shape Behavior</div>
+          <div class="case-summary">How decentralized insects produce globally optimized foraging networks through stigmergy.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
+      </a>
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/market-efficiency.md" class="case-card">
+        <div class="case-domain">Economics</div>
+        <div class="case-name">Market Efficiency</div>
+        <div class="case-tension">Order vs Innovation · Competition vs Cooperation</div>
+        <div class="case-expand">
+          <div class="case-invariant">Patterns Amplify Forces · Tradeoffs Are Inescapable</div>
+          <div class="case-summary">How information flows through markets and why perfect efficiency remains an unreachable ideal.</div>
+        </div>
+        <div class="case-arrow">Read Analysis →</div>
+      </a>
     </div>
   </section>
 
@@ -1196,6 +1304,7 @@
         <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)" data-i18n="install.tab.claude">Claude Code</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)" data-i18n="install.tab.trae">TRAE</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)" data-i18n="install.tab.cursor">Cursor</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-windsurf" onclick="showTab('windsurf', this)" data-i18n="install.tab.windsurf">Windsurf</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-statuz" onclick="showTab('statuz', this)" data-i18n="install.tab.statuz">Statuz</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)" data-i18n="install.tab.manual">Manual</button>
       </div>
@@ -1220,6 +1329,12 @@
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
         <span class="comment"># Place anywhere accessible, then add to your .cursorrules:</span><br><br>
+        <span class="cmd">When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md</span>
+      </div>
+      <div class="install-code" id="code-windsurf" style="display:none">
+        <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
+        <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
+        <span class="comment"># Clone the repo, then add to your .windsurfrules:</span><br><br>
         <span class="cmd">When analyzing complex systems or designing from scratch, follow the methodology in ./path/to/Tension-Mining/SKILL.md</span>
       </div>
       <div class="install-code" id="code-statuz" style="display:none">
@@ -1473,6 +1588,15 @@
           node.querySelector('circle').setAttribute('fill-opacity', '1');
         }
       });
+      // Click to scroll to detail
+      node.addEventListener('click', () => {
+        const phase = node.dataset.phase;
+        const detail = document.getElementById('detail-' + phase);
+        detail.classList.add('visible');
+        detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => detail.classList.remove('visible'), 3000);
+      });
+      node.style.cursor = 'pointer';
     });
 
     // ===== ATLAS FORCE-DIRECTED GRAPH =====
@@ -1839,7 +1963,7 @@
           'nav.install': '安装',
           'nav.author': '作者',
           'hero.eyebrow': 'AI 可执行的研究方法论',
-          'hero.title': 'Discover the <span class="tension">Forces</span> Shaping Complex Systems',
+          'hero.title': '发现塑造复杂系统的<span class="tension">力量</span>',
           'hero.cta1': '开始使用',
           'hero.cta2': '在 GitHub 上查看',
           'hero.scroll': '向下滚动探索',
@@ -1876,6 +2000,21 @@
           'pipeline.d7h': '摧毁阶段',
           'pipeline.d7p': '攻击模型。识别薄弱假设、缺失张力和可能的重新设计。',
           'pipeline.d7g': '门控：3+ 次攻击 + 1 个重新设计提议',
+          'walkthrough.desc': '点击阶段卡片了解每个阶段的内容和门控条件。',
+          'walkthrough.p1': '在建立抽象之前先观察现实。从至少 3 个不同领域收集 5-10 个真实案例。目标不是假设系统应该做什么，而是观察系统实际做什么。',
+          'walkthrough.g1': '门控：3+ 领域的 5+ 个现象',
+          'walkthrough.p2': '识别将系统拉向不同方向的力量。这些是不可消除的权衡，不是"优缺点"。每个张力必须明确定义 Force A 和 Force B。',
+          'walkthrough.g2': '门控：识别出力 A/B 的 5+ 个张力',
+          'walkthrough.p3': '提取在多个张力和领域中重复出现的基本原理。这些是复杂系统的"定律"——无论领域如何都成立的模式。',
+          'walkthrough.g3': '门控：3+ 个跨领域不变量',
+          'walkthrough.p4': '研究现实如何解决张力。自然、社会和技术已经发展出了解决方案。不要发明——去发现已经有效的东西。',
+          'walkthrough.g4': '门控：3+ 个映射到张力的机制',
+          'walkthrough.p5': '将张力、不变量和机制组合成一个带有预测行为的连贯模型。这是所有线索汇合的地方。',
+          'walkthrough.g5': '门控：具有预测失效模式的连贯模型',
+          'walkthrough.p6': '只在此时设计算法。从第 4 阶段发现的机制中推导，而不是从第一性原理。算法应该让人感到"必然如此"。',
+          'walkthrough.g6': '门控：从机制而非假设推导的算法',
+          'walkthrough.p7': '攻击你的模型。假设它是错的。识别薄弱假设、缺失张力和可能的重新设计。最强大的模型能在自我摧毁中存活。',
+          'walkthrough.g7': '门控：3+ 次攻击 + 1 个重新设计提议',
           'atlas.label': '知识库',
           'atlas.title': '持久力量图谱',
           'atlas.desc': '跨领域发现张力和不变量的活目录。拖拽节点、缩放，探索关系网络。',
@@ -1892,9 +2031,12 @@
           'install.label': '开始使用',
           'install.title': '30 秒安装',
           'install.desc': '克隆到你的 AI 工具的 Skill 目录。AI 根据你的问题描述自动检测并激活。',
+          'meta.title': '张力挖掘 — 从复杂系统中发现隐藏的规律',
+          'meta.desc': '一种可嵌入 AI 的研究方法论，用于发现复杂系统中隐藏的不变量。支持 Claude Code、TRAE、Cursor、Windsurf 等平台。',
           'install.tab.claude': 'Claude Code',
           'install.tab.trae': 'TRAE',
           'install.tab.cursor': 'Cursor',
+          'install.tab.windsurf': 'Windsurf',
           'install.tab.statuz': 'Statuz',
           'install.tab.manual': '手动',
           'install.copyai': '复制给 AI',
@@ -1952,6 +2094,20 @@
             el.innerHTML = t[key];
           }
         });
+
+        // Update SEO meta tags on language switch
+        if (t) {
+          if (t['meta.title']) document.title = t['meta.title'];
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc && t['meta.desc']) metaDesc.content = t['meta.desc'];
+        } else {
+          // Restore English meta
+          const enTitle = this.originals.get('meta.title');
+          if (enTitle) document.title = enTitle;
+          const metaDesc = document.querySelector('meta[name="description"]');
+          const enDesc = this.originals.get('meta.desc');
+          if (metaDesc && enDesc) metaDesc.content = enDesc;
+        }
 
         // Handle typewriter subtitle specially
         const subtitle = document.getElementById('hero-subtitle');

@@ -9,14 +9,14 @@
   <a href="./SKILL.md"><img src="https://img.shields.io/badge/skill-v2.0-blue?style=flat-square&color=4a6fa5" alt="Skill v2.0"></a>
   <a href="./references/tension-atlas.md"><img src="https://img.shields.io/badge/tensions-19-4a6fa5?style=flat-square" alt="19 Tensions"></a>
   <a href="./references/invariant-atlas.md"><img src="https://img.shields.io/badge/invariants-12-4a6fa5?style=flat-square" alt="12 Invariants"></a>
-  <a href="./examples/"><img src="https://img.shields.io/badge/cases-8_studies-6b7280?style=flat-square" alt="8 Case Studies"></a>
+  <a href="./examples/"><img src="https://img.shields.io/badge/cases-11_studies-6b7280?style=flat-square" alt="11 Case Studies"></a>
   <a href="https://github.com/zbbsdsb/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/zbbsdsb/Tension-Mining/ci.yml?style=flat-square&color=2a9d8f" alt="CI Status"></a>
 </p>
 
 ---
 
 <p align="center">
-  English | <a href="./README.zh-CN.md">简体中文</a>
+  English | <a href="./README.zh-CN.md">简体中文</a> | <a href="./README.es.md">Español</a> | <a href="./README.hi.md">हिन्दी</a>
 </p>
 
 ---
@@ -211,7 +211,9 @@ Each case study walks through the full 7-phase pipeline:
 | [NPC Society](./examples/npc-society.md) | Multi-Agent Systems | Survival vs Exploration, Individual vs Collective | Local Rules Create Global Order, Variation Enables Selection |
 | [Agent Organization](./examples/agent-organization.md) | AI Coordination | Autonomy vs Control, Centralization vs Decentralization | Identity Drives Cooperation, Feedback Loops Stabilize |
 | [Dialogue Walkthrough](./examples/dialogue-example.md) | Decentralized Identity | *Full 7-phase interaction demo* | *Recommended first read* |
-
+| [Consensus Protocols](./examples/consensus-protocols.md) | Distributed Systems | Safety vs Liveness, Consistency vs Availability | Local Rules Create Global Order, Tradeoffs Are Inescapable |
+| [Ant Colony Foraging](./examples/ant-colony.md) | Biological Systems | Individual vs Collective, Survival vs Exploration | Local Rules Create Global Order, Variation Enables Selection |
+| [Market Efficiency](./examples/market-efficiency.md) | Economics | Order vs Innovation, Competition vs Cooperation | Patterns Amplify Forces, Tradeoffs Are Inescapable |
 ---
 
 ## What This Is Not

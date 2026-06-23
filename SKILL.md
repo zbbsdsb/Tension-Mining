@@ -79,3 +79,22 @@ Execute strictly in order. Do not skip phases. Do not proceed past a phase until
 - **Invariant Atlas:** `references/invariant-atlas.md`
 - **Examples:** `examples/` (7 case studies + 1 dialogue example)
 - **Templates:** `templates/` (5 domain templates)
+
+## Tool Activation
+
+Each AI platform activates this skill differently. Choose your platform below:
+
+| Platform | Mechanism | Command / Setup |
+|----------|-----------|-----------------|
+| Claude Code | Auto-detect via SKILL.md description; explicit `/tension-mining` | `git clone ... .claude/skills/tension-mining` |
+| TRAE | Auto-discover from `.trae/skills/` | `git clone ... .trae/skills/tension-mining` |
+| Cursor | Reference SKILL.md in `.cursorrules` | Add: *"When analyzing complex systems... follow ./path/to/SKILL.md"* |
+| Windsurf | Reference SKILL.md in `.windsurfrules` | Same as Cursor |
+| Statuz | `statuz unite skill` | `statuz unite skill https://github.com/zbbsdsb/Tension-Mining.git` |
+
+### Platform-Specific Notes
+
+- **Claude Code**: Best for deep 7-phase analysis. Supports interruption and phase confirmation.
+- **TRAE**: Best for multi-file research with Explore agent. Use `general_purpose_task` sub-agent for Phase 6-7 execution.
+- **Cursor / Windsurf**: Best for Phase 4-5-6 (mechanism → system → algorithm). Read `tension-atlas.md` and `invariant-atlas.md` first.
+- **Statuz**: Auto-activates on matching system descriptions. Supports partial phase execution.

@@ -1,0 +1,65 @@
+name: "New Case Study"
+description: "Propose a new case study for the examples directory"
+title: "[Case Study]: "
+labels: ["case-study"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a case study! This will help validate the methodology
+        in a new domain. See `examples/` for existing case studies.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: "The subject of the case study"
+      placeholder: "e.g., P2P File Sharing (BitTorrent)"
+    validations:
+      required: true
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: "The primary domain (e.g., Distributed Systems, Biology, Economics)"
+      placeholder: "e.g., Distributed Systems"
+    validations:
+      required: true
+
+  - type: textarea
+    id: tensions
+    attributes:
+      label: Key Tensions (hypothesized)
+      description: "Which tensions do you expect to find?"
+      placeholder: "e.g., Centralization vs Decentralization, Competition vs Cooperation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Brief Summary
+      description: "What is the system and why does it make a good case study?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Reference Sources
+      description: "Any references, papers, or links that describe the system"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "The system involves well-documented tensions/ tradeoffs"
+          required: true
+        - label: "At least 3 phenomena from different domains can be identified"
+          required: true
+        - label: "I can commit to writing the full 7-phase analysis after approval"
+          required: false

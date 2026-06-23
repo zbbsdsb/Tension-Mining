@@ -9,7 +9,15 @@ invariants.
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/my-contribution`)
 3. Run the atlas validation script: `python scripts/validate-atlas.py`
-4. Commit your changes and open a Pull Request
+4. Commit your changes and open a [Pull Request](./.github/PULL_REQUEST_TEMPLATE.md)
+
+### Issue Templates
+
+Before starting work, consider opening an issue using the appropriate template:
+
+- [New Tension](https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-tension.yml) — Submit a new persistent tension
+- [New Invariant](https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-invariant.yml) — Submit a new cross-domain invariant
+- [New Case Study](https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-case-study.yml) — Propose a new case study
 
 ## Adding a New Tension
 
