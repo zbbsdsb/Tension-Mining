@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tension Mining — Discover Invariants in Complex Systems</title>
   <meta name="description" content="A research methodology for discovering invariants hidden inside complex systems. Works as an AI-executable Skill across Claude Code, TRAE, Cursor, and Windsurf.">
-  <meta property="og:image" content="./assets/social-preview.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/zbbsdsb/Tension-Mining/main/social-preview.jpg">
 
   <style>
     @font-face { font-family: 'CrimsonPro'; src: url('./assets/CrimsonPro-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
@@ -938,6 +938,7 @@
       <a href="#cases" data-i18n="nav.cases">Cases</a>
       <a href="#install" data-i18n="nav.install">Install</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/zbbsdsb" target="_blank" rel="noopener" data-i18n="nav.author">Author</a>
       <button class="lang-switch" id="lang-switch" aria-label="Switch language">EN / 中</button>
     </div>
   </nav>
@@ -1077,19 +1078,19 @@
     <div class="stats-grid">
       <div class="stat-card">
         <div class="number" data-count="19">0</div>
-        <div class="label">Persistent Tensions</div>
+        <div class="label" data-i18n="stats.tensions">Persistent Tensions</div>
       </div>
       <div class="stat-card">
         <div class="number" data-count="12">0</div>
-        <div class="label">Cross-Domain Invariants</div>
+        <div class="label" data-i18n="stats.invariants">Cross-Domain Invariants</div>
       </div>
       <div class="stat-card">
         <div class="number" data-count="8">0</div>
-        <div class="label">Case Studies</div>
+        <div class="label" data-i18n="stats.cases">Case Studies</div>
       </div>
       <div class="stat-card">
         <div class="number" data-count="5">0</div>
-        <div class="label">Domain Templates</div>
+        <div class="label" data-i18n="stats.templates">Domain Templates</div>
       </div>
     </div>
   </section>
@@ -1195,7 +1196,7 @@
         <button class="install-tab active" role="tab" aria-selected="true" aria-controls="code-claude" onclick="showTab('claude', this)" data-i18n="install.tab.claude">Claude Code</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-trae" onclick="showTab('trae', this)" data-i18n="install.tab.trae">TRAE</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-cursor" onclick="showTab('cursor', this)" data-i18n="install.tab.cursor">Cursor</button>
-        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-statuz" onclick="showTab('statuz', this)">Statuz</button>
+        <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-statuz" onclick="showTab('statuz', this)" data-i18n="install.tab.statuz">Statuz</button>
         <button class="install-tab" role="tab" aria-selected="false" aria-controls="code-manual" onclick="showTab('manual', this)" data-i18n="install.tab.manual">Manual</button>
       </div>
       <div class="install-code" id="code-claude">
@@ -1224,10 +1225,9 @@
       <div class="install-code" id="code-statuz" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
         <button class="copy-btn" onclick="copyCode(this)" data-i18n="install.copy">Copy</button>
-        <span class="comment"># Statuz — Unite Skill</span><br>
-        <span class="cmd">git clone https://github.com/zbbsdsb/Tension-Mining.git</span><br><br>
-        <span class="comment"># Statuz unites this skill into your workflow.</span><br>
-        <span class="comment"># Reference the repository in your Statuz configuration.</span>
+        <span class="comment"># Unite the skill into your Statuz workspace:</span><br><br>
+        <span class="cmd">statuz unite skill https://github.com/zbbsdsb/Tension-Mining.git</span><br><br>
+        <span class="comment"># Statuz will auto-discover and activate the skill.</span>
       </div>
       <div class="install-code" id="code-manual" style="display:none">
         <button class="copy-for-ai-btn" onclick="copyForAI(this)">Copy for AI</button>
@@ -1272,7 +1272,7 @@
             <li>Additional case studies</li>
             <li>Template expansion</li>
             <li>Community-contributed tensions</li>
-            <li>Multi-language support</li>
+            <li data-i18n="roadmap.i18n" style="text-decoration:line-through;opacity:0.5">Multi-language support</li>
           </ul>
         </div>
       </div>
@@ -1295,12 +1295,12 @@
     <div class="footer-logo">Tension<span>Mining</span></div>
     <div class="footer-links">
       <a href="https://github.com/zbbsdsb/Tension-Mining" data-i18n="footer.github">GitHub</a>
-      <a href="https://github.com/zbbsdsb" target="_blank" rel="noopener">Author</a>
+      <a href="https://github.com/zbbsdsb" data-i18n="footer.author">Author</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md">Contribute</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/LICENSE">License</a>
     </div>
-    <div class="copyright">MIT License — Copyright (c) 2026 <a href="https://github.com/zbbsdsb" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;">zbbsdsb</a></div>
+    <div class="copyright">MIT License — Copyright (c) 2026 zbbsdsb</div>
   </footer>
 
   <script>
@@ -1837,6 +1837,7 @@
           'nav.atlas': '图谱',
           'nav.cases': '案例',
           'nav.install': '安装',
+          'nav.author': '作者',
           'hero.eyebrow': 'AI 可执行的研究方法论',
           'hero.title': 'Discover the <span class="tension">Forces</span> Shaping Complex Systems',
           'hero.cta1': '开始使用',
@@ -1883,8 +1884,8 @@
           'atlas.legend.inv': '不变量',
           'stats.tensions': '持久张力',
           'stats.invariants': '跨领域不变量',
-          'stats.domains': '已验证领域',
-          'stats.cases': '深度案例研究',
+          'stats.cases': '案例研究',
+          'stats.templates': '领域模板',
           'cases.label': '实践中验证',
           'cases.title': '案例研究',
           'cases.desc': '每个案例都完整走过 7 阶段管道。从 PageRank 到 Bitcoin 到 Transformer —— 看看隐藏的张力如何塑造了改变世界的系统。',
@@ -1894,6 +1895,7 @@
           'install.tab.claude': 'Claude Code',
           'install.tab.trae': 'TRAE',
           'install.tab.cursor': 'Cursor',
+          'install.tab.statuz': 'Statuz',
           'install.tab.manual': '手动',
           'install.copyai': '复制给 AI',
           'install.copy': '复制',
@@ -1902,8 +1904,10 @@
           'roadmap.desc': '从方法论到生态系统。每个里程碑都建立在迄今为止发现的张力和不变量之上。',
           'roadmap.v20': 'v2.0 — 基础（已完成）',
           'roadmap.v21': 'v2.1 — 扩展（进行中）',
+          'roadmap.i18n': '多语言支持',
           'roadmap.v30': 'v3.0 — 生态（计划中）',
           'footer.github': 'GitHub',
+          'footer.author': '作者',
           'footer.contribute': '参与贡献',
           'footer.changelog': '更新日志',
           'footer.license': '许可证',
