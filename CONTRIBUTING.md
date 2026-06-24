@@ -102,7 +102,19 @@ If you use Tension Mining in your research, please cite the repository:
 Zhao, C. (2026). Tension Mining: A Methodology for Discovering Invariants in Complex Systems (Version 2.0.0) [Software]. https://github.com/zbbsdsb/Tension-Mining
 ```
 
-A `CITATION.cff` file is included in the repository root for automatic citation generation.
+Or in BibTeX format:
+
+```bibtex
+@software{zhao2026tension,
+  author = {Zhao, Ceaser},
+  title = {{Tension Mining}: A Methodology for Discovering Invariants in Complex Systems},
+  year = {2026},
+  version = {2.0.0},
+  url = {https://github.com/zbbsdsb/Tension-Mining}
+}
+```
+
+A `CITATION.cff` and `CITATION.bib` file are included in the repository root for automatic citation generation. An accompanying arXiv paper describing the methodology in detail is forthcoming. Contributors who participate in the methodology paper (see Co-Authorship below) will be listed as co-authors.
 
 ### Co-Authorship
 
