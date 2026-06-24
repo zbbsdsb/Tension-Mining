@@ -83,6 +83,31 @@ La mayoría se enfoca en el comportamiento. Tension Mining se enfoca en las fuer
 
 ---
 
+## Fundamentos Académicos
+
+Tension Mining se basa y sintetiza conceptos de múltiples tradiciones de investigación establecidas.
+
+| Campo | Referencias Clave | Relación |
+|-------|------------------|----------|
+| Sistemas Complejos | Mitchell (2009) [1], Holland (1995) [2] | Marco central para emergencia, autoorganización y adaptación |
+| Pensamiento de Diseño | Schön (1983) [3], Cross (2006) [4] | Enfoque centrado en el fenómeno, redefinición del problema antes de la solución |
+| Pensamiento Sistémico | Meadows (2008) [5], Senge (1990) [6] | Bucles de retroalimentación, puntos de apalancamiento, análisis de estructura de sistemas |
+| Marco Cynefin | Snowden & Boone (2007) [7] | Distinguir entre dominios de problemas ordenados y complejos |
+| Metodología de Investigación | Kuhn (1962) [8], Lakatos (1970) [9] | Cambios de paradigma, estructura de programas de investigación, falsación |
+| Teoría Evolutiva | Dawkins (1976) [10], Boyd & Richerson (1985) [11] | Variación-selección-retención como motor de descubrimiento de invariantes |
+| Ciencias de Redes | Barabási & Albert (1999) [12], Watts & Strogatz (1998) [13] | Propiedades emergentes de interacciones locales, fenómenos de mundo pequeño |
+
+Estos fundamentos no son decorativos. Cada uno informa directamente una fase específica del pipeline:
+- **Sistemas Complejos** → Fase 1 (los fenómenos deben cruzar dominios, no reforzar la miopía disciplinaria)
+- **Pensamiento de Diseño** → Fase 2-3 (tensiones antes que soluciones, redefinición como habilidad central)
+- **Pensamiento Sistémico** → Fase 4-5 (los mecanismos interactúan mediante retroalimentación, no causalidad lineal)
+- **Cynefin** → Fase 7 (la destrucción revela si el problema estaba en un dominio complicado o complejo)
+- **Teoría Evolutiva** → Fase 3 (los invariantes se seleccionan por supervivencia entre dominios, no por intención del diseñador)
+
+Consulte la [Guía de Metodología](./references/methodology-primer.md) para una comparación detallada con metodologías relacionadas y una lista de lectura completa.
+
+---
+
 ## Inicio Rápido
 
 ### 1. Instalación

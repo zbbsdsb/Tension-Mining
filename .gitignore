@@ -16,8 +16,8 @@ ehthumbs.db
 # TRAE internal files
 .trae/
 
-# Audit report output
-tension-mining-audit/
+# Audit report output (moved to assets/audit/)
+assets/audit/
 
 # Python
 __pycache__/

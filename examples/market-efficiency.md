@@ -75,12 +75,12 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 
 **Goal:** Discover patterns that appear across multiple phenomena.
 
-### Invariant 1: Patterns Amplify Forces (`I-PAF-001`)
-- **Statement:** Positive feedback loops amplify small advantages into dominant patterns.
+### Invariant 1: Preferential Attachment (`I-PAF-001`)
+- **Statement:** Systems with cumulative advantage produce power-law distributions; successful patterns attract more resources and amplify themselves.
 - **Supporting phenomena:** Herd behavior in financial markets, trend-following strategies, momentum effect, panic selling cascades.
 - **Explanation:** In markets, successful predictions attract followers, which amplifies the price movement, which validates the prediction. This creates a feedback loop that can temporarily overpower fundamental valuation. EMH argues these loops are self-correcting, but behavioral finance shows they can persist.
 
-### Invariant 2: Tradeoffs Are Inescapable (`I-TIE-001`)
+### Invariant 2: Tradeoffs Are Inescapable (`I-TAE-001`)
 - **Statement:** Optimizing one dimension of a system necessarily degrades another.
 - **Supporting phenomena:** Speed vs accuracy in information processing, liquidity vs volatility in market design, transparency vs privacy in disclosure rules.
 - **Explanation:** Market efficiency is not a free lunch. Increasing efficiency (faster price adjustment) increases volatility (larger price swings as information hits the market). Reducing volatility through circuit breakers delays price discovery. Every design choice is a tradeoff.
@@ -111,7 +111,7 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 ### Mechanism 3: Market Microstructure
 - **Function:** The institutional rules (bid-ask spreads, priority rules, tick size) that govern how information is translated into prices.
 - **Related tensions:** `T-COP-015` (Competition vs Cooperation)
-- **Related invariants:** `I-TIE-001`
+- **Related invariants:** `I-TAE-001`
 - **Explanation:** The bid-ask spread is the price of immediacy -- a compensation to market makers for providing liquidity. Tighter spreads mean more efficient information incorporation but less compensation for market makers. The microstructure design determines how much information is captured in prices and at what cost. Electronic exchanges with tighter spreads have higher information efficiency but also higher volatility.
 
 ### Mechanism 4: News Propagation
@@ -124,7 +124,7 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 ### Mechanism 5: Herding and Information Cascades
 - **Function:** Explains how individual traders following others can accelerate or distort information aggregation.
 - **Related tensions:** `T-ORD-016` (Order vs Innovation)
-- **Related invariants:** `I-PAF-001` (Patterns Amplify Forces)
+- **Related invariants:** `I-PAF-001` (Preferential Attachment)
 - **Explanation:** When traders observe others buying an asset, they infer positive information and buy as well. This creates a cascade where the initial buying signal is amplified beyond what the underlying information justifies. Information cascades explain both rapid price discovery (good) and speculative bubbles (bad). The critical insight is that cascades are fragile: they can reverse instantly when new information contradicts the cascade direction.
 - **Real-world example:** In the GameStop short squeeze of 2021, retail traders on Reddit coordinated buying that triggered a cascade, driving the price from $20 to $480 in weeks, far beyond any fundamental valuation.
 

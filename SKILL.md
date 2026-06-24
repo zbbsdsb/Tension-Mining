@@ -77,8 +77,8 @@ Execute strictly in order. Do not skip phases. Do not proceed past a phase until
 - **Quality Rubric (self-evaluation):** `references/quality-rubric.md`
 - **Tension Atlas:** `references/tension-atlas.md`
 - **Invariant Atlas:** `references/invariant-atlas.md`
-- **Examples:** `examples/` (7 case studies + 1 dialogue example)
-- **Templates:** `templates/` (5 domain templates)
+- **Examples:** `examples/` (10 case studies + 1 dialogue example)
+- **Templates:** `templates/` (9 domain templates)
 
 ## Tool Activation
 

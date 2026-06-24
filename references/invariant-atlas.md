@@ -120,7 +120,7 @@
 - **Mathematical intuition:** Barabasi-Albert model, Yule process, Polya's urn
 - **Boundary conditions:** Fails when new nodes have no preference (random attachment produces exponential distributions) or when preferential attachment is counteracted by aging or fitness effects
 - **Related tensions:** `T-COP-015`, `T-IND-007`, `T-CEN-011`
-- **Related cases:** [`examples/page-rank.md`](./examples/page-rank.md)
+- **Related cases:** [`examples/page-rank.md`](./examples/page-rank.md), [`examples/market-efficiency.md`](./examples/market-efficiency.md)
 
 ### I-SWE-001: Small Worlds Emerge [EXPERIMENTAL]
 
@@ -180,7 +180,7 @@
 - **Mathematical intuition:** Pareto optimality, convex optimization duality, no-free-lunch theorems
 - **Boundary conditions:** Fails when resources are truly infinite (no scarcity) or when functions are perfectly aligned (no conflict)
 - **Related tensions:** `T-LOC-004`, `T-IND-007`, `T-COP-015`, `T-SHO-019`, `T-SPR-016`
-- **Related cases:** [`examples/agent-organization.md`](./examples/agent-organization.md), [`examples/bitcoin.md`](./examples/bitcoin.md)
+- **Related cases:** [`examples/agent-organization.md`](./examples/agent-organization.md), [`examples/bitcoin.md`](./examples/bitcoin.md), [`examples/market-efficiency.md`](./examples/market-efficiency.md)
 
 ### I-RRR-001: Robustness Requires Redundancy [EXPERIMENTAL]
 

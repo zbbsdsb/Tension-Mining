@@ -1,0 +1,59 @@
+name: "Feature Request"
+description: "Suggest an idea or enhancement for the Tension Mining project"
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement! Feature requests help us grow the
+        methodology and its tooling. Please describe your idea clearly so the
+        community and maintainer can evaluate it.
+
+  - type: textarea
+    id: feature-name
+    attributes:
+      label: Feature Description
+      description: "A clear and concise description of the feature or enhancement you are requesting"
+      placeholder: "e.g., Add a CLI command to auto-validate all atlas files in one pass"
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: "Describe the problem you are trying to solve. What gap does this feature fill?"
+      placeholder: "e.g., Currently, contributors must manually run the validation script for each file. An auto-validate command would streamline the contribution workflow and reduce errors."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: "Describe how you envision this feature working. Be as specific as you can."
+      placeholder: "e.g., A new command `python scripts/validate-all.py` that walks the entire repository, validates all atlas entries, and outputs a consolidated report."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered (optional)
+      description: "Have you considered any alternative solutions or workarounds?"
+      placeholder: "e.g., Using a pre-commit hook instead of a separate command, or integrating validation into CI only."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "I have searched the existing issues and feature requests to confirm this is not a duplicate"
+          required: true
+        - label: "I have described the use case clearly"
+          required: true
+        - label: "I have provided a concrete proposed solution"
+          required: true

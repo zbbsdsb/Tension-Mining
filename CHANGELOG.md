@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **7-phase methodology** with Progressive Disclosure architecture
-  (Phase 0: Triage -> Phase 6: Synthesis)
+  (Phase 1: Phenomenon Mining -> Phase 7: Destruction)
 - **Atlas three-tier marking system**: `[CORE]`, `[EXPERIMENTAL]`, and unmarked
   entries with clear promotion criteria
 - **Tension Atlas** with 19 cataloged tensions across 5 domains:
@@ -20,8 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Information, Identity & Boundaries, Networks & Flows, Evolution & Adaptation
 - **5 domain templates**: AI Agent, NPC Society, Organization,
   Protocol Design, Algorithm Discovery
+- **Additional templates**: API Design, Consensus Protocol, Game Design
 - **8 case studies**: PageRank, Transformer, Bitcoin, Git, Wikipedia,
   NPC Society, Agent Organization, Dialogue Example
+- **Additional case studies**: Consensus Protocols, Ant Colony Foraging, Market Efficiency
 - **Cross-reference validation** via `scripts/validate-atlas.py`
 - **GitHub Actions CI** with atlas validation, markdown lint, and link checking
 - **Extension guides** in both atlases for adding new tensions and invariants

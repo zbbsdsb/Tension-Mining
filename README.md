@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="./assets/logo.svg" alt="Tension Mining" width="64" height="64" style="vertical-align: middle; margin-right: 12px;">
   <img src="./social-preview.jpg" alt="Tension Mining" width="100%">
 </p>
 
@@ -256,7 +257,7 @@ Each case study walks through the full 7-phase pipeline:
 | [Dialogue Walkthrough](./examples/dialogue-example.md) | Decentralized Identity | *Full 7-phase interaction demo* | *Recommended first read* |
 | [Consensus Protocols](./examples/consensus-protocols.md) | Distributed Systems | Safety vs Liveness, Consistency vs Availability | Local Rules Create Global Order, Tradeoffs Are Inescapable |
 | [Ant Colony Foraging](./examples/ant-colony.md) | Biological Systems | Individual vs Collective, Survival vs Exploration | Local Rules Create Global Order, Variation Enables Selection |
-| [Market Efficiency](./examples/market-efficiency.md) | Economics | Order vs Innovation, Competition vs Cooperation | Patterns Amplify Forces, Tradeoffs Are Inescapable |
+| [Market Efficiency](./examples/market-efficiency.md) | Economics | Order vs Innovation, Competition vs Cooperation | Preferential Attachment, Tradeoffs Are Inescapable |
 ---
 
 ## What This Is Not
@@ -283,9 +284,9 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 | [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Catalog of 12 cross-domain invariants across 4 layers |
 | [`references/methodology-primer.md`](./references/methodology-primer.md) | Extended methodology reference & FAQ |
 | [`examples/dialogue-example.md`](./examples/dialogue-example.md) | Full user-AI dialogue walkthrough (**recommended first read**) |
-| [`examples/`](./examples/) | 7 additional case studies |
+| [`examples/`](./examples/) | 10 additional case studies |
 | [`templates/_core-template.md`](./templates/_core-template.md) | Shared 7-phase workflow skeleton |
-| [`templates/`](./templates/) | 5 domain-specific templates (Algorithm, AI Agent, NPC Society, Organization, Protocol) |
+| [`templates/`](./templates/) | 9 domain-specific templates (Algorithm, AI Agent, NPC Society, Organization, Protocol, API Design, Consensus Protocol, Game Design) |
 | [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md) | Directory layout, dependency graph, governance rules |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | How to contribute tensions, invariants, cases, and templates |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Version history |
@@ -299,17 +300,17 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 - [x] Progressive Disclosure architecture
 - [x] Atlas with [CORE]/[EXPERIMENTAL] labeling
 - [x] 5 domain-specific templates
-- [x] 8 case studies
+- [x] 11 case studies
 - [x] Quality rubric (D1-D5)
 - [x] CI/CD with automated atlas validation
 - [x] Anti-Rationalization defense mechanisms
 
 ### v2.1 (Planned)
 - [ ] Interactive web demo
-- [ ] Additional case studies (Distributed Systems, Biological Systems, Economics)
-- [ ] Template expansion (API Design, Consensus Protocols, Game Design)
+- [x] Additional case studies (Distributed Systems, Biological Systems, Economics)
+- [x] Template expansion (API Design, Consensus Protocols, Game Design)
 - [ ] Community-contributed tensions and invariants
-- [ ] Multi-language support (Chinese, Japanese)
+- [x] Multi-language support (Chinese, Spanish, Hindi)
 
 ---
 
@@ -340,6 +341,8 @@ The answer is often more valuable than the algorithm.
 13. Watts, D. J. & Strogatz, S. H. (1998). "Collective Dynamics of Small-World Networks". *Nature*, 393(6684), 440–442. DOI: 10.1038/30918
 
 ---
+
+[![Star History](https://img.shields.io/badge/Star_History-View_Chart-7c3aed?style=flat-square)](https://star-history.com/#zbbsdsb/Tension-Mining&Date)
 
 ## License
 

@@ -1,0 +1,194 @@
+name: "Bug Report"
+description: "Report a bug or unexpected behavior in the Tension Mining project"
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in the details below
+        so we can investigate and fix the issue as quickly as possible.
+
+  - type: textarea
+    id: bug-name
+    attributes:
+      label: Bug Description
+      description: "A clear and concise description of what the bug is"
+      placeholder: "e.g., The atlas validation script crashes when a tension has a missing cross-domain example"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: "Detailed steps to reproduce the behavior"
+      placeholder: |
+        1. Open the atlas file at `references/tension-atlas.md`
+        2. Add a new tension with ID `T-TST-999` but omit the `cross-domain` field
+        3. Run `python scripts/validate-atlas.py`
+        4. See error: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: "What did you expect to happen instead?"
+      placeholder: "e.g., The script should output a clear validation error and exit with code 1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: "What actually happened? Include any error messages, stack traces, or screenshots."
+      placeholder: "e.g., The script crashed with a KeyError and no helpful error message"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "Please provide details about your environment"
+      placeholder: |
+        - OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
+        - AI Tool: [e.g., Claude Code, TRAE, Cursor, Windsurf]
+        - Tool Version: [e.g., 1.2.3]
+        - Python Version (if relevant): [e.g., 3.11]
+        - Tension Mining Version: [e.g., 2.0.0]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: "How severe is this bug?"
+      multiple: false
+      options:
+        - "Critical — blocks core methodology usage"
+        - "Major — breaks a specific feature or workflow"
+        - "Minor — cosmetic or non-blocking issue"
+        - "Trivial — documentation typo or very low impact"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context (optional)
+      description: "Any other relevant context, logs, or screenshots"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "I have searched the existing issues to confirm this is not a duplicate"
+          required: true
+        - label: "I have included all relevant environment information"
+          required: true
+        - label: "I have provided clear steps to reproduce the issue"
+          required: truename: "Bug Report"
+description: "Report a bug or unexpected behavior in the Tension Mining project"
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in the details below
+        so we can investigate and fix the issue as quickly as possible.
+
+  - type: textarea
+    id: bug-name
+    attributes:
+      label: Bug Description
+      description: "A clear and concise description of what the bug is"
+      placeholder: "e.g., The atlas validation script crashes when a tension has a missing cross-domain example"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: "Detailed steps to reproduce the behavior"
+      placeholder: |
+        1. Open the atlas file at `references/tension-atlas.md`
+        2. Add a new tension with ID `T-TST-999` but omit the `cross-domain` field
+        3. Run `python scripts/validate-atlas.py`
+        4. See error: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: "What did you expect to happen instead?"
+      placeholder: "e.g., The script should output a clear validation error and exit with code 1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: "What actually happened? Include any error messages, stack traces, or screenshots."
+      placeholder: "e.g., The script crashed with a KeyError and no helpful error message"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "Please provide details about your environment"
+      placeholder: |
+        - OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
+        - AI Tool: [e.g., Claude Code, TRAE, Cursor, Windsurf]
+        - Tool Version: [e.g., 1.2.3]
+        - Python Version (if relevant): [e.g., 3.11]
+        - Tension Mining Version: [e.g., 2.0.0]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: "How severe is this bug?"
+      multiple: false
+      options:
+        - "Critical — blocks core methodology usage"
+        - "Major — breaks a specific feature or workflow"
+        - "Minor — cosmetic or non-blocking issue"
+        - "Trivial — documentation typo or very low impact"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context (optional)
+      description: "Any other relevant context, logs, or screenshots"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Submission Checklist
+      options:
+        - label: "I have searched the existing issues to confirm this is not a duplicate"
+          required: true
+        - label: "I have included all relevant environment information"
+          required: true
+        - label: "I have provided clear steps to reproduce th

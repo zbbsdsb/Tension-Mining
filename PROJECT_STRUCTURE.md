@@ -56,18 +56,25 @@ Read `SKILL.md` for the activation skeleton, then load `references/execution-pro
 ```
 Tension-Mining/
 ├── README.md                           # Project overview and entry point
+├── README.zh-CN.md                     # Chinese translation
+├── README.es.md                        # Spanish translation
+├── README.hi.md                        # Hindi translation
 ├── LICENSE                             # MIT License
 ├── SKILL.md                            # Activation skeleton (~80 lines)
 ├── PROJECT_STRUCTURE.md                # [THIS FILE] Governance docs
-├── social-preview.png                  # Social preview image
+├── CONTRIBUTING.md                     # Contribution guide
+├── CHANGELOG.md                        # Version history
+├── CITATION.cff                        # Academic citation metadata
+├── social-preview.jpg                  # Social preview image
+├── .gitattributes                      # Git attributes
 │
 ├── references/
 │   ├── tension-atlas.md                # 19 cataloged tensions [CORE/EXPERIMENTAL]
 │   ├── invariant-atlas.md              # 12 cataloged invariants [CORE/EXPERIMENTAL]
 │   ├── methodology-primer.md           # Extended methodology reference
-│   ├── execution-protocol.md          # Detailed 7-phase instructions
-│   ├── interface-contract.md          # Input/Output/Error handling
-│   └── quality-rubric.md              # 5-dimension scoring rubric
+│   ├── execution-protocol.md           # Detailed 7-phase instructions
+│   ├── interface-contract.md           # Input/Output/Error handling
+│   └── quality-rubric.md               # 5-dimension scoring rubric
 │
 ├── examples/
 │   ├── dialogue-example.md             # Full user-AI interaction demo
@@ -77,15 +84,52 @@ Tension-Mining/
 │   ├── git.md                          # Case study: Git
 │   ├── wikipedia.md                    # Case study: Wikipedia
 │   ├── npc-society.md                  # Case study: NPC Society
-│   └── agent-organization.md           # Case study: Agent Organization
+│   ├── agent-organization.md           # Case study: Agent Organization
+│   ├── consensus-protocols.md          # Case study: Consensus Protocols
+│   ├── ant-colony.md                   # Case study: Ant Colony Foraging
+│   └── market-efficiency.md            # Case study: Market Efficiency
 │
-└── templates/
-    ├── _core-template.md               # Shared 7-phase workflow skeleton
-    ├── algorithm-discovery.md          # Real-world phenomena
-    ├── ai-agent.md                     # Domain template: AI Agent
-    ├── npc-society.md                  # Domain template: NPC Society
-    ├── organization.md                 # Domain template: Organization
-    └── protocol-design.md              # Domain template: Protocol Design
+├── templates/
+│   ├── _core-template.md               # Shared 7-phase workflow skeleton
+│   ├── algorithm-discovery.md          # Domain template: Algorithm Discovery
+│   ├── ai-agent.md                     # Domain template: AI Agent
+│   ├── npc-society.md                  # Domain template: NPC Society
+│   ├── organization.md                 # Domain template: Organization
+│   ├── protocol-design.md              # Domain template: Protocol Design
+│   ├── api-design.md                   # Domain template: API Design
+│   ├── consensus-protocol.md           # Domain template: Consensus Protocol
+│   └── game-design.md                  # Domain template: Game Design
+│
+├── docs/
+│   ├── index.html                      # Project website (single-page app)
+│   ├── workshop-module.md              # 90-minute graduate seminar module
+│   └── zh-CN/
+│       └── cases-summary.md            # Chinese case study summaries
+│
+├── scripts/
+│   └── validate-atlas.py               # Atlas validation script
+│
+├── assets/
+│   ├── logo.svg                        # Project logo
+│   ├── font/                           # Web fonts for docs/index.html
+│   └── promotion/
+│       └── launch-kit.md               # Social media launch materials
+│
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml                      # CI: atlas validation, lint, link check
+│   └── ISSUE_TEMPLATE/
+│       ├── new-tension.yml             # Issue template: new tension
+│       ├── new-invariant.yml           # Issue template: new invariant
+│       ├── new-case-study.yml          # Issue template: new case study
+│       ├── bug-report.yml              # Issue template: bug report
+│       └── feature-request.yml         # Issue template: feature request
+│
+├── .trae/
+│   └── documents/                      # Planning documents
+│
+└── tests/                              # Unit tests (pytest)
+    └── test_validate_atlas.py          # Tests for validate-atlas.py
 ```
 
 ---
@@ -119,10 +163,10 @@ SKILL.md (concise skeleton, ~80 lines)
     │       └── references/methodology-primer.md
     │
     ├── When examples are needed
-    │       └── examples/ (8 .md files)
+    │       └── examples/ (11 .md files)
     │
     └── When templates are needed
-            └── templates/ (6 .md files)
+            └── templates/ (9 .md files)
                 └── _core-template.md (shared skeleton)
                     └── domain templates reference this
 ```
@@ -140,6 +184,9 @@ Each case study in `examples/` references specific tensions and invariants in th
 | Wikipedia | T-FRE-006, T-IND-007 | I-IDC-001, I-CRS-001 |
 | NPC Society | T-SUR-014, T-IND-007, T-FRE-006 | I-LCG-001, I-GDM-001, I-IDC-001 |
 | Agent Organization | T-AUT-005, T-CEN-011 | I-IDC-001, I-FLS-001 |
+| Consensus Protocols | T-SAF-020, T-CON-012 | I-LCG-001, I-TAE-001 |
+| Ant Colony Foraging | T-IND-007, T-SUR-014, T-EXP-001 | I-LCG-001, I-VES-001, I-BSB-001 |
+| Market Efficiency | T-ORD-021, T-COP-015 | I-PAF-001, I-FFG-001, I-TAE-001 |
 
 ---
 
