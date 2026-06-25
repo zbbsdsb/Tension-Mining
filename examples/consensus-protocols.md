@@ -59,7 +59,7 @@ Three protocol families dominate the landscape:
 - **Over-optimizing Safety:** The protocol blocks indefinitely under network partition, offering zero availability.
 - **Over-optimizing Liveness:** The protocol commits conflicting values under partition, violating consistency guarantees.
 
-### Tension 2: Centralization vs Decentralization (`T-CEN-007`)
+### Tension 2: Centralization vs Decentralization (`T-CEN-011`)
 - **Force A:** Centralized leadership -- a single leader coordinates all decisions, enabling high throughput and simple design.
 - **Force B:** Decentralized resilience -- no single point of failure; any node can take over if the leader fails.
 - **Why both matter:** Centralization gives speed and clarity; decentralization gives fault tolerance and censorship resistance. Raft and Paxos lean toward centralization (single leader); PBFT and EPaxos lean toward decentralization (multiple leaders or no leader).
@@ -79,7 +79,7 @@ Three protocol families dominate the landscape:
 
 **Goal:** Discover patterns that appear across multiple phenomena.
 
-### Invariant 1: Local Rules Create Global Order (`I-LRO-001`)
+### Invariant 1: Local Rules Create Global Order (`I-LCG-001`)
 - **Statement:** Local interactions between simple agents produce emergent global structure without centralized control.
 - **Supporting phenomena:** Flocking birds, ant trail formation, traffic flow, distributed consensus
 - **Explanation:** In Raft, each node only knows its own log, its election timeout, and the messages it receives. Yet the collective behavior -- leader election, log replication, commitment -- produces a globally consistent state machine. No node needs to know the full network topology or the state of every other node. The protocol is a set of local rules that guarantee global consistency.
@@ -89,7 +89,7 @@ Three protocol families dominate the landscape:
 - **Supporting phenomena:** Homeostasis, price mechanisms, thermostats, social norms
 - **Explanation:** Heartbeat mechanisms in Raft create a negative feedback loop: followers reset their election timers upon receiving a leader heartbeat, which reinforces the leader's authority and prevents unnecessary elections. When the heartbeat stops (leader failure), the absence of feedback triggers a phase transition -- a new election. Similarly, PBFT's view-change mechanism uses timeouts as negative feedback to rotate the primary when it misbehaves.
 
-### Invariant 3: Tradeoffs Are Inescapable (`I-TIE-001`)
+### Invariant 3: Tradeoffs Are Inescapable (`I-TAE-001`)
 - **Statement:** Every optimization has a cost; the best systems are those that manage tradeoffs, not those that eliminate them.
 - **Supporting phenomena:** CAP theorem, uncertainty principle, production possibility frontier
 - **Explanation:** The CAP theorem proves that no distributed system can simultaneously provide Consistency, Availability, and Partition tolerance. Every consensus protocol is a specific resolution of this tradeoff. Paxos favors consistency and partition tolerance over availability during reconfiguration. CRDTs favor availability and partition tolerance over strong consistency. The choice is not about eliminating the tradeoff but about which side to prioritize for the target use case.
@@ -102,26 +102,26 @@ Three protocol families dominate the landscape:
 
 ### Mechanism 1: Leader Election
 - **Function:** Select a single node to coordinate all decisions, resolving the coordination problem.
-- **Related tensions:** `T-CEN-007` (Centralization vs Decentralization)
-- **Related invariants:** `I-LRO-001`
+- **Related tensions:** `T-CEN-011` (Centralization vs Decentralization)
+- **Related invariants:** `I-LCG-001`
 - **Explanation:** Nodes generate random election timeouts. The first node to expire transitions to candidate state, requests votes, and if it receives a majority, becomes leader. This is a randomized, decentralized process that produces a centralized outcome -- a practical resolution of the centralization tension. The randomness ensures that leader elections are fair and unlikely to split votes repeatedly.
 
 ### Mechanism 2: Log Replication
 - **Function:** Ensure all nodes apply the same sequence of commands in the same order.
 - **Related tensions:** `T-CON-012` (Safety vs Liveness)
-- **Related invariants:** `I-LRO-001`, `I-FLS-001`
+- **Related invariants:** `I-LCG-001`, `I-FLS-001`
 - **Explanation:** The leader appends client commands to its log, then sends AppendEntries RPCs to followers. A majority of nodes must acknowledge before the entry is committed. Followers accept entries only if they match the leader's log at the previous index. This chained consistency check ensures that once committed, an entry can never be overwritten -- satisfying the safety requirement.
 
 ### Mechanism 3: Quorum Intersection
 - **Function:** Guarantee that any two decisions intersect in at least one node, preventing conflicting outcomes.
 - **Related tensions:** `T-CON-012` (Safety vs Liveness), `T-CON-018` (Latency vs Durability)
-- **Related invariants:** `I-TIE-001`
+- **Related invariants:** `I-TAE-001`
 - **Explanation:** Any majority set (N/2 + 1 nodes) intersects with any other majority set. This means two consecutive rounds of voting cannot produce different results: the first round's decision is witnessed by at least one node in the second round's quorum. This is the mathematical foundation of Paxos, Raft, and PBFT -- and it explains why quorum size is always a majority rather than a simple plurality.
 
 ### Mechanism 4: View-Change / Leader Rotation
 - **Function:** Replace a failed or faulty leader without losing committed state.
-- **Related tensions:** `T-CEN-007` (Centralization vs Decentralization)
-- **Related invariants:** `I-FLS-001`, `I-TIE-001`
+- **Related tensions:** `T-CEN-011` (Centralization vs Decentralization)
+- **Related invariants:** `I-FLS-001`, `I-TAE-001`
 - **Explanation:** When followers detect leader failure (missed heartbeats), they trigger a new election. The new leader must ensure its log is at least as up-to-date as any other node's log (in Raft) or that no committed entries are lost (in PBFT). This mechanism provides liveness: even if the leader fails, the system can recover. The cost is a temporary unavailability window during leader transition.
 
 ---
@@ -132,13 +132,13 @@ Three protocol families dominate the landscape:
 
 ### Core Tensions
 - Safety must be guaranteed, but the system must also make progress (`T-CON-012`)
-- Leadership centralization enables efficiency, but decentralization provides resilience (`T-CEN-007`)
+- Leadership centralization enables efficiency, but decentralization provides resilience (`T-CEN-011`)
 - Fast commits conflict with durable commits (`T-CON-018`)
 
 ### Core Invariants
-- Local rules (election timeouts, log matching) create global consistency (`I-LRO-001`)
+- Local rules (election timeouts, log matching) create global consistency (`I-LCG-001`)
 - Heartbeat feedback loops maintain stable leadership (`I-FLS-001`)
-- Every protocol must trade off among consistency, availability, and partition tolerance (`I-TIE-001`)
+- Every protocol must trade off among consistency, availability, and partition tolerance (`I-TAE-001`)
 
 ### Core Mechanisms
 - Randomized leader election for decentralized leader selection

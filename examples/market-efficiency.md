@@ -48,7 +48,7 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 
 **Goal:** Identify forces that continuously shape the system.
 
-### Tension 1: Order vs Innovation (`T-ORD-016`)
+### Tension 1: Order vs Innovation (`T-CON-018`)
 - **Force A:** Market order requires that prices accurately reflect information, creating stable and predictable valuation.
 - **Force B:** Innovation in trading strategies requires pricing inefficiencies to exist; arbitrageurs need mispriced assets to profit.
 - **Why both matter:** An perfectly efficient market has no incentive for information discovery. If there are no profits to be made from research, why would anyone gather information? Yet without order, markets cannot function as reliable price-discovery mechanisms.
@@ -98,7 +98,7 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 
 ### Mechanism 1: Arbitrage
 - **Function:** Exploits price discrepancies across related assets, driving prices toward their fundamental values.
-- **Related tensions:** `T-ORD-016` (Order vs Innovation)
+- **Related tensions:** `T-CON-018` (Order vs Innovation)
 - **Related invariants:** `I-GDM-001`
 - **Explanation:** When an asset is mispriced relative to its peers, arbitrageurs buy the cheap one and sell the expensive one. This convergence trade pushes prices back into alignment. In theory, arbitrage guarantees efficiency. In practice, limits to arbitrage (funding constraints, horizon risk, noise trader risk) prevent complete convergence. The existence of arbitrage is itself a contradiction: if markets were perfectly efficient, there would be no arbitrage opportunities; but without arbitrage opportunities, markets would not become efficient.
 
@@ -123,7 +123,7 @@ The Efficient Market Hypothesis (EMH), formalized by Eugene Fama in 1970, states
 
 ### Mechanism 5: Herding and Information Cascades
 - **Function:** Explains how individual traders following others can accelerate or distort information aggregation.
-- **Related tensions:** `T-ORD-016` (Order vs Innovation)
+- **Related tensions:** `T-CON-018` (Order vs Innovation)
 - **Related invariants:** `I-PAF-001` (Preferential Attachment)
 - **Explanation:** When traders observe others buying an asset, they infer positive information and buy as well. This creates a cascade where the initial buying signal is amplified beyond what the underlying information justifies. Information cascades explain both rapid price discovery (good) and speculative bubbles (bad). The critical insight is that cascades are fragile: they can reverse instantly when new information contradicts the cascade direction.
 - **Real-world example:** In the GameStop short squeeze of 2021, retail traders on Reddit coordinated buying that triggered a cascade, driving the price from $20 to $480 in weeks, far beyond any fundamental valuation.

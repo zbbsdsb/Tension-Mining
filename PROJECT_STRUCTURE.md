@@ -184,9 +184,9 @@ Each case study in `examples/` references specific tensions and invariants in th
 | Wikipedia | T-FRE-006, T-IND-007 | I-IDC-001, I-CRS-001 |
 | NPC Society | T-SUR-014, T-IND-007, T-FRE-006 | I-LCG-001, I-GDM-001, I-IDC-001 |
 | Agent Organization | T-AUT-005, T-CEN-011 | I-IDC-001, I-FLS-001 |
-| Consensus Protocols | T-SAF-020, T-CON-012 | I-LCG-001, I-TAE-001 |
+| Consensus Protocols | T-CON-012 | I-LCG-001, I-TAE-001 |
 | Ant Colony Foraging | T-IND-007, T-SUR-014, T-EXP-001 | I-LCG-001, I-VES-001, I-BSB-001 |
-| Market Efficiency | T-ORD-021, T-COP-015 | I-PAF-001, I-FFG-001, I-TAE-001 |
+| Market Efficiency | T-CON-018, T-COP-015 | I-PAF-001, I-FFG-001, I-TAE-001 |
 
 ---
 

@@ -27,8 +27,8 @@
 - **Mechanism explanation:** Repeated local interactions create feedback loops that amplify certain patterns while suppressing others. The global structure is a statistical regularity of local behavior, not a designed outcome.
 - **Mathematical intuition:** Cellular automata (Rule 110), Ising model phase transitions, percolation theory
 - **Boundary conditions:** Fails when local interactions are too sparse (no amplification) or when external forcing dominates (no emergence)
-- **Related tensions:** `T-LOC-004`, `T-CEN-011`, `T-SYN-010`
-- **Related cases:** [`examples/page-rank.md`](./examples/page-rank.md), [`examples/npc-society.md`](./examples/npc-society.md)
+- **Related tensions:** `T-LOC-004`, `T-CEN-011`, `T-SYN-010`, `T-EXP-001`
+- **Related cases:** [`examples/page-rank.md`](./examples/page-rank.md), [`examples/npc-society.md`](./examples/npc-society.md), [`examples/git.md`](./examples/git.md), [`examples/consensus-protocols.md`](./examples/consensus-protocols.md), [`examples/ant-colony.md`](./examples/ant-colony.md)
 
 ### I-CRS-001: Compression Reveals Structure [CORE]
 
@@ -41,8 +41,8 @@
 - **Mechanism explanation:** Compression requires identifying regularities and redundancies. The compression algorithm implicitly builds a model of the data's structure. Maximum compression corresponds to maximum understanding of the generative process.
 - **Mathematical intuition:** Minimum description length (MDL), Kolmogorov complexity, information bottleneck
 - **Boundary conditions:** Fails with random data (no structure to reveal) or when the compression method is mismatched to the data's structure
-- **Related tensions:** `T-COM-003`, `T-SPE-002`, `T-CMP-013`
-- **Related cases:** [`examples/transformer.md`](./examples/transformer.md)
+- **Related tensions:** `T-COM-003`, `T-SPE-002`, `T-CMP-013`, `T-SIM-017`
+- **Related cases:** [`examples/transformer.md`](./examples/transformer.md), [`examples/wikipedia.md`](./examples/wikipedia.md)
 
 ### I-GDM-001: Gradients Drive Movement [CORE]
 
@@ -55,7 +55,7 @@
 - **Mechanism explanation:** Any system with conserved quantities and local interactions will evolve to reduce gradients. The direction of flow is determined by the gradient; the rate is determined by resistance/conductance.
 - **Mathematical intuition:** Fick's law of diffusion, Ohm's law, gradient descent update rule
 - **Boundary conditions:** Fails in systems with active transport (energy input against gradient) or when gradients are too small to overcome activation barriers
-- **Related tensions:** `T-EXP-001`, `T-SUR-014`, `T-COM-003`
+- **Related tensions:** `T-EXP-001`, `T-SUR-014`, `T-COM-003`, `T-CMP-013`
 - **Related cases:** [`examples/page-rank.md`](./examples/page-rank.md), [`examples/transformer.md`](./examples/transformer.md)
 
 ---
@@ -73,8 +73,8 @@
 - **Mechanism explanation:** Identity solves the recognition problem in cooperation -- who is "us" vs "them". Once recognized, in-group favoritism triggers cooperative behavior without requiring repeated interaction or genetic relatedness.
 - **Mathematical intuition:** Evolutionary game theory (tag-based models), network homophily
 - **Boundary conditions:** Fails when identity is too inclusive (free-riding) or too exclusive (missed cooperation opportunities). Also fails when identity signals are forgeable.
-- **Related tensions:** `T-AUT-005`, `T-IND-007`, `T-COP-015`, `T-CEN-011`
-- **Related cases:** [`examples/bitcoin.md`](./examples/bitcoin.md), [`examples/wikipedia.md`](./examples/wikipedia.md)
+- **Related tensions:** `T-AUT-005`, `T-IND-007`, `T-COP-015`, `T-CEN-011`, `T-TRA-008`
+- **Related cases:** [`examples/bitcoin.md`](./examples/bitcoin.md), [`examples/wikipedia.md`](./examples/wikipedia.md), [`examples/git.md`](./examples/git.md), [`examples/agent-organization.md`](./examples/agent-organization.md)
 
 ### I-BSB-001: Boundaries Shape Behavior [EXPERIMENTAL]
 
@@ -101,7 +101,7 @@
 - **Mechanism explanation:** Negative feedback compares current state to setpoint and applies corrective force. The loop gain determines response speed and stability margin. Positive feedback amplifies deviations until saturation or system restructuring.
 - **Mathematical intuition:** Control theory (PID controllers), dynamical systems (attractors and bifurcations), eigenvalue analysis
 - **Boundary conditions:** Negative feedback fails with too much delay (oscillation) or too much gain (instability). Positive feedback requires energy input or it self-terminates.
-- **Related tensions:** `T-AUT-005`, `T-STA-009`, `T-SYN-010`, `T-CON-012`
+- **Related tensions:** `T-AUT-005`, `T-STA-009`, `T-SYN-010`, `T-CON-012`, `T-CON-018`, `T-SHO-019`
 - **Related cases:** [`examples/wikipedia.md`](./examples/wikipedia.md), [`examples/agent-organization.md`](./examples/agent-organization.md)
 
 ---
@@ -165,8 +165,8 @@
 - **Mechanism explanation:** Selection is a filter; variation is the input. The rate of adaptation depends on the product of variation generation rate and selection pressure. Too little variation: no adaptation. Too much: no accumulation of useful traits.
 - **Mathematical intuition:** Fisher's fundamental theorem, genetic algorithm convergence, exploration-exploitation tradeoff
 - **Boundary conditions:** Fails when variation is completely random with no heritability, or when selection pressure is zero (neutral drift)
-- **Related tensions:** `T-EXP-001`, `T-SUR-014`, `T-SPR-016`, `T-CON-018`
-- **Related cases:** [`examples/npc-society.md`](./examples/npc-society.md), [`examples/wikipedia.md`](./examples/wikipedia.md)
+- **Related tensions:** `T-EXP-001`, `T-SUR-014`, `T-SPR-016`, `T-CON-018`, `T-FRE-006`, `T-STA-009`
+- **Related cases:** [`examples/npc-society.md`](./examples/npc-society.md), [`examples/wikipedia.md`](./examples/wikipedia.md), [`examples/ant-colony.md`](./examples/ant-colony.md)
 
 ### I-TAE-001: Tradeoffs Are Inescapable [CORE]
 
@@ -179,7 +179,7 @@
 - **Mechanism explanation:** Resources are finite and multifunctional. Optimizing one function reallocates resources from others. The "no free lunch" theorem generalizes this: no single solution dominates all problems.
 - **Mathematical intuition:** Pareto optimality, convex optimization duality, no-free-lunch theorems
 - **Boundary conditions:** Fails when resources are truly infinite (no scarcity) or when functions are perfectly aligned (no conflict)
-- **Related tensions:** `T-LOC-004`, `T-IND-007`, `T-COP-015`, `T-SHO-019`, `T-SPR-016`
+- **Related tensions:** `T-LOC-004`, `T-IND-007`, `T-COP-015`, `T-SHO-019`, `T-SPR-016`, `T-FRE-006`, `T-CON-012`
 - **Related cases:** [`examples/agent-organization.md`](./examples/agent-organization.md), [`examples/bitcoin.md`](./examples/bitcoin.md), [`examples/market-efficiency.md`](./examples/market-efficiency.md)
 
 ### I-RRR-001: Robustness Requires Redundancy [EXPERIMENTAL]

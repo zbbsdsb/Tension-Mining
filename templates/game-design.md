@@ -83,7 +83,7 @@ When selecting phenomena, consider both **real-world** and **game-world** source
   - Positive feedback (snowballing) and negative feedback (catch-up mechanics) shape game pacing. Without proper feedback, games become either runaway or stagnant.
 - [ ] **Boundaries Shape Behavior** (`I-BSB-001`)
   - Rules, physics constraints, level boundaries, and resource limits define the design space. Creativity flourishes within well-defined constraints.
-- [ ] **Tradeoffs Are Inescapable** (`I-TIE-001`)
+- [ ] **Tradeoffs Are Inescapable** (`I-TAE-001`)
   - Every design choice sacrifices something. No game can maximize all five core tensions simultaneously; the art is in choosing which tradeoffs create the most engaging experience.
 
 ---

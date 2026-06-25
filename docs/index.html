@@ -1180,7 +1180,7 @@
         <div class="label" data-i18n="stats.cases">Case Studies</div>
       </div>
       <div class="stat-card">
-        <div class="number" data-count="5">0</div>
+        <div class="number" data-count="9">0</div>
         <div class="label" data-i18n="stats.templates">Domain Templates</div>
       </div>
     </div>
@@ -1209,7 +1209,7 @@
         <div class="case-name">Transformer</div>
         <div class="case-tension">Synchronicity vs Asynchronicity · Compression vs Fidelity</div>
         <div class="case-expand">
-          <div class="case-invariant">Compression Reveals Structure · Tradeoffs Are Inescapable</div>
+          <div class="case-invariant">Compression Reveals Structure · Gradients Drive Movement</div>
           <div class="case-summary">Why attention replaced recurrence — and what was lost in the process.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1219,7 +1219,7 @@
         <div class="case-name">Bitcoin</div>
         <div class="case-tension">Centralization vs Decentralization · Competition vs Cooperation</div>
         <div class="case-expand">
-          <div class="case-invariant">Identity Drives Cooperation · Feedback Loops Stabilize</div>
+          <div class="case-invariant">Identity Drives Cooperation · Tradeoffs Are Inescapable</div>
           <div class="case-summary">A trustless consensus mechanism born from ineliminable social tensions.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1229,7 +1229,7 @@
         <div class="case-name">Git</div>
         <div class="case-tension">Consistency vs Availability · Local vs Global</div>
         <div class="case-expand">
-          <div class="case-invariant">Local Rules Create Global Order · Tradeoffs Are Inescapable</div>
+          <div class="case-invariant">Local Rules Create Global Order · Identity Drives Cooperation</div>
           <div class="case-summary">Distributed version control as a tension resolution between speed and consistency.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1239,7 +1239,7 @@
         <div class="case-name">Wikipedia</div>
         <div class="case-tension">Freedom vs Efficiency · Individual vs Collective</div>
         <div class="case-expand">
-          <div class="case-invariant">Identity Drives Cooperation · Boundaries Shape Behavior</div>
+          <div class="case-invariant">Identity Drives Cooperation · Compression Reveals Structure</div>
           <div class="case-summary">How open editing created the world's largest encyclopedia through governed chaos.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1259,7 +1259,7 @@
         <div class="case-name">Agent Organization</div>
         <div class="case-tension">Autonomy vs Control · Centralization vs Decentralization</div>
         <div class="case-expand">
-          <div class="case-invariant">Feedback Loops Stabilize · Tradeoffs Are Inescapable</div>
+          <div class="case-invariant">Identity Drives Cooperation · Feedback Loops Stabilize</div>
           <div class="case-summary">Organizing AI agents requires resolving the same tensions as human organizations.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1289,7 +1289,7 @@
         <div class="case-name">Ant Colony Foraging</div>
         <div class="case-tension">Individual vs Collective · Survival vs Exploration</div>
         <div class="case-expand">
-          <div class="case-invariant">Local Rules Create Global Order · Boundaries Shape Behavior</div>
+          <div class="case-invariant">Local Rules Create Global Order · Variation Enables Selection</div>
           <div class="case-summary">How decentralized insects produce globally optimized foraging networks through stigmergy.</div>
         </div>
         <div class="case-arrow">Read Analysis →</div>
@@ -1629,63 +1629,64 @@
         // Tensions [CORE]
         { id: 'T-EXP-001', name: 'Exploration vs Exploitation', type: 'tension', core: true, domain: 'Cognition' },
         { id: 'T-LOC-004', name: 'Local vs Global', type: 'tension', core: true, domain: 'Computation' },
-        { id: 'T-IND-006', name: 'Individual vs Collective', type: 'tension', core: true, domain: 'Society' },
-        { id: 'T-CEN-007', name: 'Centralization vs Decentralization', type: 'tension', core: true, domain: 'Computation' },
-        { id: 'T-CMP-013', name: 'Compression vs Fidelity', type: 'tension', core: true, domain: 'Cognition' },
-        { id: 'T-SUR-014', name: 'Survival vs Exploration', type: 'tension', core: true, domain: 'Life' },
-        { id: 'T-ORD-016', name: 'Order vs Innovation', type: 'tension', core: true, domain: 'Society' },
-        { id: 'T-CON-012', name: 'Consistency vs Availability', type: 'tension', core: true, domain: 'Computation' },
-        { id: 'T-AUT-011', name: 'Autonomy vs Control', type: 'tension', core: true, domain: 'Design' },
+        { id: 'T-IND-007', name: 'Individual vs Collective', type: 'tension', core: true, domain: 'Society' },
+        { id: 'T-CEN-011', name: 'Centralization vs Decentralization', type: 'tension', core: true, domain: 'Computation' },
+        { id: 'T-COM-003', name: 'Compression vs Fidelity', type: 'tension', core: true, domain: 'Cognition' },
+        { id: 'T-SUR-014', name: 'Survival vs Exploration', type: 'tension', core: false, domain: 'Life' },
+        { id: 'T-FRE-006', name: 'Freedom vs Efficiency', type: 'tension', core: true, domain: 'Society' },
+        { id: 'T-CON-012', name: 'Consistency vs Availability', type: 'tension', core: false, domain: 'Computation' },
+        { id: 'T-AUT-005', name: 'Autonomy vs Control', type: 'tension', core: false, domain: 'Design' },
         // Tensions [EXPERIMENTAL]
-        { id: 'T-SPE-002', name: 'Specialization vs Generalization', type: 'tension', core: false, domain: 'Cognition' },
-        { id: 'T-AUT-005', name: 'Synchronicity vs Asynchronicity', type: 'tension', core: false, domain: 'Computation' },
+        { id: 'T-SPE-002', name: 'Specificity vs Generality', type: 'tension', core: false, domain: 'Cognition' },
+        { id: 'T-SYN-010', name: 'Synchronicity vs Asynchronicity', type: 'tension', core: false, domain: 'Computation' },
         { id: 'T-TRA-008', name: 'Transparency vs Privacy', type: 'tension', core: false, domain: 'Society' },
-        { id: 'T-SYN-010', name: 'Synthesis vs Analysis', type: 'tension', core: false, domain: 'Cognition' },
-        { id: 'T-COP-015', name: 'Cooperation vs Competition', type: 'tension', core: false, domain: 'Society' },
-        { id: 'T-SIM-017', name: 'Simulation vs Reality', type: 'tension', core: false, domain: 'Design' },
+        { id: 'T-STA-009', name: 'Stability vs Adaptation', type: 'tension', core: true, domain: 'Life' },
+        { id: 'T-COP-015', name: 'Competition vs Cooperation', type: 'tension', core: false, domain: 'Society' },
+        { id: 'T-SIM-017', name: 'Simplicity vs Capability', type: 'tension', core: false, domain: 'Design' },
         { id: 'T-CON-018', name: 'Convention vs Innovation', type: 'tension', core: false, domain: 'Design' },
-        { id: 'T-GDM-003', name: 'Generality vs Domain-Specific', type: 'tension', core: false, domain: 'Cognition' },
-        { id: 'T-FRE-009', name: 'Freedom vs Efficiency', type: 'tension', core: false, domain: 'Society' },
+        { id: 'T-SPR-016', name: 'Specialization vs Resilience', type: 'tension', core: true, domain: 'Life' },
+        { id: 'T-CMP-013', name: 'Compute vs Memory', type: 'tension', core: false, domain: 'Computation' },
+        { id: 'T-SHO-019', name: 'Short-term vs Long-term', type: 'tension', core: true, domain: 'Design' },
         // Invariants [CORE]
-        { id: 'I-LRO-001', name: 'Local Rules Create Global Order', type: 'invariant', core: true, domain: 'Networks' },
+        { id: 'I-LCG-001', name: 'Local Rules Create Global Order', type: 'invariant', core: true, domain: 'Networks' },
         { id: 'I-IDC-001', name: 'Identity Drives Cooperation', type: 'invariant', core: true, domain: 'Identity' },
         { id: 'I-CRS-001', name: 'Compression Reveals Structure', type: 'invariant', core: true, domain: 'Information' },
         { id: 'I-GDM-001', name: 'Gradients Drive Movement', type: 'invariant', core: true, domain: 'Networks' },
         { id: 'I-VES-001', name: 'Variation Enables Selection', type: 'invariant', core: true, domain: 'Evolution' },
         { id: 'I-FLS-001', name: 'Feedback Loops Stabilize', type: 'invariant', core: true, domain: 'Networks' },
-        { id: 'I-TIE-001', name: 'Tradeoffs Are Inescapable', type: 'invariant', core: true, domain: 'Information' },
+        { id: 'I-TAE-001', name: 'Tradeoffs Are Inescapable', type: 'invariant', core: true, domain: 'Information' },
         // Invariants [EXPERIMENTAL]
         { id: 'I-BSB-001', name: 'Boundaries Shape Behavior', type: 'invariant', core: false, domain: 'Identity' },
-        { id: 'I-PAF-001', name: 'Patterns Amplify Forces', type: 'invariant', core: false, domain: 'Information' },
+        { id: 'I-PAF-001', name: 'Preferential Attachment', type: 'invariant', core: false, domain: 'Information' },
         { id: 'I-SWE-001', name: 'Small Worlds Emerge', type: 'invariant', core: false, domain: 'Networks' },
-        { id: 'I-FFG-001', name: 'Fitness Follows Gradients', type: 'invariant', core: false, domain: 'Evolution' },
-        { id: 'I-RRR-001', name: 'Redundancy Resists Risk', type: 'invariant', core: false, domain: 'Evolution' }
+        { id: 'I-FFG-001', name: 'Flow Finds Gradient', type: 'invariant', core: false, domain: 'Evolution' },
+        { id: 'I-RRR-001', name: 'Robustness Requires Redundancy', type: 'invariant', core: false, domain: 'Evolution' }
       ],
       links: [
-        { source: 'T-EXP-001', target: 'I-LRO-001' },
-        { source: 'T-LOC-004', target: 'I-LRO-001' },
-        { source: 'T-IND-006', target: 'I-IDC-001' },
-        { source: 'T-CEN-007', target: 'I-IDC-001' },
-        { source: 'T-CMP-013', target: 'I-CRS-001' },
+        { source: 'T-EXP-001', target: 'I-LCG-001' },
+        { source: 'T-LOC-004', target: 'I-LCG-001' },
+        { source: 'T-IND-007', target: 'I-IDC-001' },
+        { source: 'T-CEN-011', target: 'I-IDC-001' },
+        { source: 'T-COM-003', target: 'I-CRS-001' },
         { source: 'T-SUR-014', target: 'I-VES-001' },
-        { source: 'T-ORD-016', target: 'I-FLS-001' },
-        { source: 'T-CON-012', target: 'I-TIE-001' },
-        { source: 'T-AUT-011', target: 'I-FLS-001' },
+        { source: 'T-FRE-006', target: 'I-FLS-001' },
+        { source: 'T-CON-012', target: 'I-TAE-001' },
+        { source: 'T-AUT-005', target: 'I-FLS-001' },
         { source: 'T-EXP-001', target: 'I-VES-001' },
         { source: 'T-LOC-004', target: 'I-GDM-001' },
-        { source: 'T-CEN-007', target: 'I-TIE-001' },
-        { source: 'T-CMP-013', target: 'I-GDM-001' },
-        { source: 'T-SUR-014', target: 'I-LRO-001' },
-        { source: 'T-ORD-016', target: 'I-IDC-001' },
+        { source: 'T-CEN-011', target: 'I-TAE-001' },
+        { source: 'T-COM-003', target: 'I-GDM-001' },
+        { source: 'T-SUR-014', target: 'I-LCG-001' },
+        { source: 'T-FRE-006', target: 'I-IDC-001' },
         { source: 'T-SPE-002', target: 'I-CRS-001' },
-        { source: 'T-AUT-005', target: 'I-GDM-001' },
+        { source: 'T-SYN-010', target: 'I-GDM-001' },
         { source: 'T-TRA-008', target: 'I-BSB-001' },
-        { source: 'T-SYN-010', target: 'I-CRS-001' },
+        { source: 'T-STA-009', target: 'I-CRS-001' },
         { source: 'T-COP-015', target: 'I-IDC-001' },
         { source: 'T-SIM-017', target: 'I-PAF-001' },
         { source: 'T-CON-018', target: 'I-PAF-001' },
-        { source: 'T-GDM-003', target: 'I-SWE-001' },
-        { source: 'T-FRE-009', target: 'I-FLS-001' }
+        { source: 'T-SPR-016', target: 'I-VES-001' },
+        { source: 'T-FRE-006', target: 'I-TAE-001' }
       ]
     };
 

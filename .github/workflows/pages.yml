@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -r docs/* _site/
-          cp -r assets _site/assets
+          cp -r assets _site/
           # Copy root-level assets needed by the site
           cp social-preview.jpg _site/ 2>/dev/null || true
           cp logo.svg _site/ 2>/dev/null || true

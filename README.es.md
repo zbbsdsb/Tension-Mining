@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="./assets/logo.svg" alt="Tension Mining" width="64" height="64" style="vertical-align: middle; margin-right: 12px;">
   <img src="./social-preview.jpg" alt="Tension Mining" width="100%">
 </p>
 
@@ -246,7 +247,7 @@ Cada caso de estudio recorre el Pipeline completo de 7 fases:
 | [Dialogue Walkthrough](./examples/dialogue-example.md) | Identidad Descentralizada | *Demostración completa de interacción de 7 fases* | *Primera lectura recomendada* |
 | [Consensus Protocols](./examples/consensus-protocols.md) | Sistemas Distribuidos | Safety vs Liveness, Consistency vs Availability | Local Rules Create Global Order, Tradeoffs Are Inescapable |
 | [Ant Colony Foraging](./examples/ant-colony.md) | Sistemas Biológicos | Individual vs Collective, Survival vs Exploration | Local Rules Create Global Order, Variation Enables Selection |
-| [Market Efficiency](./examples/market-efficiency.md) | Economía | Order vs Innovation, Competition vs Cooperation | Patterns Amplify Forces, Tradeoffs Are Inescapable |
+| [Market Efficiency](./examples/market-efficiency.md) | Economía | Order vs Innovation, Competition vs Cooperation | Preferential Attachment, Tradeoffs Are Inescapable |
 
 ---
 
@@ -274,9 +275,9 @@ Tension Mining es un lente. Su propósito es simple: ayudar a los investigadores
 | [`references/invariant-atlas.md`](./references/invariant-atlas.md) | Catálogo de 12 Invariants transversales en 4 capas |
 | [`references/methodology-primer.md`](./references/methodology-primer.md) | Referencia metodológica extendida y FAQ |
 | [`examples/dialogue-example.md`](./examples/dialogue-example.md) | Demostración completa de diálogo usuario-IA (**primera lectura recomendada**) |
-| [`examples/`](./examples/) | 7 casos de estudio adicionales |
+| [`examples/`](./examples/) | 10 casos de estudio adicionales |
 | [`templates/_core-template.md`](./templates/_core-template.md) | Esqueleto de flujo de trabajo compartido de 7 fases |
-| [`templates/`](./templates/) | 5 plantillas específicas por dominio (Algoritmo, Agente IA, Sociedad NPC, Organización, Protocolo) |
+| [`templates/`](./templates/) | 9 plantillas específicas por dominio (Algoritmo, Agente IA, Sociedad NPC, Organización, Protocolo, Diseño de API, Protocolo de Consenso, Diseño de Juegos) |
 | [`PROJECT_STRUCTURE.md`](./PROJECT_STRUCTURE.md) | Diseño de directorios, gráfico de dependencias, reglas de gobernanza |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Cómo contribuir tensiones, Invariants, casos y plantillas |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Historial de versiones |
@@ -289,7 +290,7 @@ Tension Mining es un lente. Su propósito es simple: ayudar a los investigadores
 - [x] Pipeline de 7 fases con condiciones de puerta (Gate Conditions)
 - [x] Arquitectura de Divulgación Progresiva
 - [x] Atlas con etiquetado [CORE]/[EXPERIMENTAL]
-- [x] 5 plantillas específicas por dominio
+- [x] 9 plantillas específicas por dominio
 - [x] 8 casos de estudio
 - [x] Rúbrica de calidad (D1-D5)
 - [x] CI/CD con validación automatizada de Atlas

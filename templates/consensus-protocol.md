@@ -45,7 +45,7 @@ Consensus protocols operate in a **distributed failure model** where nodes may c
   - Must the protocol guarantee that all correct nodes agree on the same value?
   - Can the protocol make progress even when some nodes are faulty or messages are delayed?
 
-- [ ] **Centralization vs Decentralization** (`T-CEN-007`)
+- [ ] **Centralization vs Decentralization** (`T-CEN-011`)
   - Does the protocol rely on a single leader for coordination? What happens if the leader fails?
   - What is the cost (in messages, rounds, or complexity) of fully decentralized coordination?
 
@@ -72,7 +72,7 @@ Consensus protocols operate in a **distributed failure model** where nodes may c
 
 ## Pre-Filled Invariant Checklist
 
-- [ ] **Tradeoffs Are Inescapable** (`I-TIE-001`)
+- [ ] **Tradeoffs Are Inescapable** (`I-TAE-001`)
 - [ ] **Feedback Loops Stabilize** (`I-FLS-001`)
 - [ ] **Local Rules Create Global Order** (`I-LCG-001`)
 - [ ] **Consensus Requires Cost** (`I-CRC-001`)

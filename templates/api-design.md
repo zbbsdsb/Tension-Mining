@@ -84,7 +84,7 @@ API design occupies a unique position: the API is simultaneously a **contract** 
 
 ## Pre-Filled Invariant Checklist
 
-- [ ] **Tradeoffs Are Inescapable** (`I-TIE-001`)
+- [ ] **Tradeoffs Are Inescapable** (`I-TAE-001`)
 - [ ] **Local Rules Create Global Order** (`I-LCG-001`)
 - [ ] **Compression Reveals Structure** (`I-CRS-001`)
 - [ ] **Boundaries Shape Behavior** (`I-BSB-001`)

@@ -47,7 +47,7 @@ The tension mining analysis reveals that ant colony foraging is not merely a bio
 
 **Goal:** Identify forces that continuously shape the system.
 
-### Tension 1: Individual vs Collective (`T-IND-006`)
+### Tension 1: Individual vs Collective (`T-IND-007`)
 - **Force A:** Each ant acts independently, following simple local rules triggered by individual sensory input. No ant has a global plan or can see the entire colony. Decision-making is fully distributed across thousands or millions of individual agents, each operating on its own sensory data.
 - **Force B:** The colony exhibits collective intelligence that outperforms any individual ant. Trail networks are globally efficient. Task allocation responds to colony-level needs. Colony-level behavior is robust to individual ant death. The colony as a whole chooses optimal foraging paths, allocates labor efficiently, and defends territory -- none of which any single ant could achieve alone.
 - **Why both matter:** The individual ant's autonomy is what enables parallel exploration of the environment. Without it, the colony would be a brittle, centralized system. But individual autonomy alone does not explain the colony-level optimization -- the collective mechanisms (pheromone, stigmergy) are equally essential. The productive interaction between individual and collective is the engine of emergent intelligence.
@@ -74,7 +74,7 @@ The tension mining analysis reveals that ant colony foraging is not merely a bio
 
 **Goal:** Discover patterns that appear across multiple phenomena.
 
-### Invariant 1: Local Rules Create Global Order (`I-LRO-001`)
+### Invariant 1: Local Rules Create Global Order (`I-LCG-001`)
 - **Statement:** Simple, locally-executed rules followed by many agents produce coherent global structure without centralized coordination.
 - **Supporting phenomena:** Ant trail formation, slime mold maze solving, human traffic flow, neural pathfinding, internet routing, bird flocking, fish schooling, market price formation.
 - **Explanation:** In ant foraging, each ant only needs to follow two rules: (1) deposit pheromone when returning from a food source, and (2) probabilistically follow stronger pheromone trails. No ant knows the network topology. Yet the colony collectively builds near-optimal trail networks. This invariant explains why distributed approaches to routing and optimization can work: the local/global tension can be resolved through iterative, feedback-driven local interactions. The invariant holds across scales -- from microscopic neural growth cones to continent-scale internet routing.
@@ -104,13 +104,13 @@ The tension mining analysis reveals that ant colony foraging is not merely a bio
 ### Mechanism 2: Pheromone Evaporation
 - **Function:** Introduces negative feedback that prevents premature convergence and enables adaptation
 - **Related tensions:** `T-SUR-014` (Survival vs Exploration)
-- **Related invariants:** `I-LRO-001` (Local Rules Create Global Order), `I-BSB-001` (Boundaries Shape Behavior)
+- **Related invariants:** `I-LCG-001` (Local Rules Create Global Order), `I-BSB-001` (Boundaries Shape Behavior)
 - **Explanation:** Pheromone trails decay over time at a rate determined by environmental factors (temperature, humidity, soil composition). This evaporation serves as a natural forgetting mechanism. Suboptimal paths that were temporarily reinforced are gradually abandoned. When a food source is depleted, the trail to it evaporates and no longer wastes the colony's energy. The evaporation rate is a critical parameter: too fast, and the colony cannot establish stable trails; too slow, and the colony cannot adapt to changing conditions. This mechanism directly complements the positive feedback of deposition -- together they form a coupled positive-negative feedback system that is the computational core of colony-level optimization.
 
 ### Mechanism 3: Stigmergy
 - **Function:** Enables indirect coordination through environmental modification
-- **Related tensions:** `T-IND-006` (Individual vs Collective)
-- **Related invariants:** `I-LRO-001` (Local Rules Create Global Order)
+- **Related tensions:** `T-IND-007` (Individual vs Collective)
+- **Related invariants:** `I-LCG-001` (Local Rules Create Global Order)
 - **Explanation:** Stigmergy is a mechanism of indirect coordination where agents modify the environment and other agents respond to those modifications. Ants do not communicate directly (no ant tells another ant "I found food"). Instead, an ant's pheromone trail modifies the environment, and other ants sense and respond to that modification. This is critical: it means the environment itself serves as the communication channel and the coordination medium. Stigmergy explains how the Individual vs Collective tension is resolved -- individual ants remain independent and local, but their environmental footprints collectively encode and propagate global information. The environment becomes a shared memory that outlives any individual ant's lifespan. In computer science terms, stigmergy implements a distributed shared memory system where writes (pheromone deposits) are visible to all subsequent readers (foraging ants) without any locking, arbitration, or centralized coordination.
 
 ### Mechanism 4: Probabilistic Path Selection
@@ -133,7 +133,7 @@ The tension mining analysis reveals that ant colony foraging is not merely a bio
 - Intra-colony cooperation vs inter-colony competition
 
 ### Core Invariants
-- Local rules create global order without centralized control (`I-LRO-001`)
+- Local rules create global order without centralized control (`I-LCG-001`)
 - Variation provides the substrate for selective reinforcement (`I-VES-001`)
 - Spatial, temporal, and informational boundaries constrain and direct behavior (`I-BSB-001`)
 
@@ -262,6 +262,6 @@ Where:
 
 ## Key Insight
 
-Ant Colony Optimization is not an algorithm about ants. It is an algorithm that encodes a general principle: **positive feedback (reinforcement) combined with negative feedback (forgetting) operating on a population of locally-acting agents produces globally optimal solutions.** The biological details -- the pheromone chemistry, the ant physiology, the nest architecture -- are implementation details, not the core principle. The core insight is that the tension between individual exploration and collective exploitation can be resolved not through centralized coordination, but through iterative environmental modification. Every ant that walks a path changes the environment for every ant that follows -- and this is both the problem and the solution. The same principle that generates ant trails generates neural wiring, internet routing tables, and pedestrian flows. When you see distributed path optimization in any domain, you are seeing the `I-LRO-001` invariant in action: local rules creating global order, mediated by the `I-VES-001` cycle of variation and selection, bounded by the `I-BSB-001` constraints of space, time, and information.
+Ant Colony Optimization is not an algorithm about ants. It is an algorithm that encodes a general principle: **positive feedback (reinforcement) combined with negative feedback (forgetting) operating on a population of locally-acting agents produces globally optimal solutions.** The biological details -- the pheromone chemistry, the ant physiology, the nest architecture -- are implementation details, not the core principle. The core insight is that the tension between individual exploration and collective exploitation can be resolved not through centralized coordination, but through iterative environmental modification. Every ant that walks a path changes the environment for every ant that follows -- and this is both the problem and the solution. The same principle that generates ant trails generates neural wiring, internet routing tables, and pedestrian flows. When you see distributed path optimization in any domain, you are seeing the `I-LCG-001` invariant in action: local rules creating global order, mediated by the `I-VES-001` cycle of variation and selection, bounded by the `I-BSB-001` constraints of space, time, and information.
 
 The Tension Mining framework reveals that the most powerful algorithms are not invented -- they are discovered by observing how nature resolves fundamental tensions. Ant colony foraging is not just a biological phenomenon; it is a window into a universal optimization principle that spans biology, computer science, and engineering.

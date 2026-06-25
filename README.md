@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/tensions-19-6b7280?style=flat-square" alt="19 Tensions">
   <img src="https://img.shields.io/badge/invariants-12-6b7280?style=flat-square" alt="12 Invariants">
   <a href="./examples/"><img src="https://img.shields.io/badge/cases-11_studies-6b7280?style=flat-square" alt="11 Case Studies"></a>
-  <a href="./templates/"><img src="https://img.shields.io/badge/templates-5-6b7280?style=flat-square" alt="5 Templates"></a>
+  <a href="./templates/"><img src="https://img.shields.io/badge/templates-9-6b7280?style=flat-square" alt="9 Templates"></a>
   <a href="https://github.com/zbbsdsb/Tension-Mining/actions"><img src="https://img.shields.io/github/actions/workflow/status/zbbsdsb/Tension-Mining/ci.yml?style=flat-square&label=ci" alt="CI Status"></a>
 </p>
 
@@ -299,8 +299,8 @@ Tension Mining is a lens. Its purpose is simple: help researchers discover the f
 - [x] 7-phase pipeline with gate conditions
 - [x] Progressive Disclosure architecture
 - [x] Atlas with [CORE]/[EXPERIMENTAL] labeling
-- [x] 5 domain-specific templates
-- [x] 11 case studies
+- [x] 9 domain-specific templates
+- [x] 8 case studies
 - [x] Quality rubric (D1-D5)
 - [x] CI/CD with automated atlas validation
 - [x] Anti-Rationalization defense mechanisms
