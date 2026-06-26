@@ -906,6 +906,8 @@
     @media (max-width: 900px) {
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
+      .positioning-grid { grid-template-columns: repeat(2, 1fr); }
+      .academic-grid { grid-template-columns: repeat(2, 1fr); }
       nav .links { display: none; }
       .pipeline-viz { min-height: 600px; }
       .pipeline-svg { height: 600px; }
@@ -916,6 +918,8 @@
     @media (max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
+      .positioning-grid { grid-template-columns: 1fr; }
+      .academic-grid { grid-template-columns: 1fr; }
       .hero { padding: 5rem 1.5rem 3rem; }
       section { padding: 5rem 1.5rem; }
       .pipeline-viz { min-height: 500px; }
@@ -926,6 +930,355 @@
     a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
+    }
+
+    /* Featured case pipeline walkthrough */
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .positioning-card {
+      background: rgba(17, 19, 24, 0.8);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .positioning-card:hover {
+      border-color: rgba(107, 140, 174, 0.3);
+      box-shadow: 0 0 20px rgba(107, 140, 174, 0.08);
+      transform: translateY(-2px);
+    }
+    .positioning-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent2), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .positioning-card:hover::before { opacity: 1; }
+    .pos-alt-name {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .pos-alt-label {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .pos-alt-limitation {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .pos-tm-adds {
+      font-size: 0.8rem;
+      color: var(--accent2);
+      line-height: 1.5;
+    }
+    .pos-tm-adds strong {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    /* Quality rubric */
+    .rubric-section {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .rubric-table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+    }
+    .rubric-table th {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.75rem 0.5rem 0.5rem 0.5rem;
+      border-bottom: 1px solid var(--rule);
+      text-align: left;
+      font-weight: 400;
+    }
+    .rubric-table th:first-child {
+      width: 15%;
+      padding-left: 0;
+    }
+    .rubric-table th:not(:first-child) {
+      width: 28.33%;
+    }
+    .rubric-table td {
+      padding: 0.75rem 0.5rem;
+      border-bottom: 1px solid rgba(48, 52, 62, 0.5);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .rubric-table td:first-child {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 1rem;
+      color: var(--ink);
+      padding-left: 0;
+    }
+    .rubric-table td:not(:first-child) {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+    .rubric-table tr:hover td {
+      background: rgba(17, 19, 24, 0.8);
+    }
+    .rubric-level {
+      display: inline-block;
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .rubric-d1 { color: rgba(196, 68, 68, 0.6); }
+    .rubric-d3 { color: var(--accent2); }
+    .rubric-d5 { color: var(--accent3); }
+    .rubric-dim-desc {
+      font-size: 0.65rem;
+      color: var(--muted);
+      font-family: 'JetBrainsMono', monospace;
+      letter-spacing: 0.05em;
+      margin-top: 0.15rem;
+    }
+
+    /* Academic foundations */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .academic-card {
+      background: rgba(17, 19, 24, 0.8);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.5rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .academic-card:hover {
+      border-color: rgba(107, 140, 174, 0.3);
+      box-shadow: 0 0 20px rgba(107, 140, 174, 0.08);
+      transform: translateY(-2px);
+    }
+    .academic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .academic-card:hover::before { opacity: 1; }
+    .acad-icon {
+      font-family: 'Jura', sans-serif;
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+    .acad-name {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.15rem;
+    }
+    .acad-work {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--accent2);
+      margin-bottom: 0.75rem;
+    }
+    .acad-connection {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .acad-connection strong {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    /* Footer enhancements */
+    .footer-bibtex {
+      margin-top: 1.5rem;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-bibtex pre {
+      background: rgba(17, 19, 24, 0.8);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 0.65rem;
+      font-family: 'JetBrainsMono', monospace;
+      line-height: 1.5;
+      color: var(--muted);
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      user-select: all;
+    }
+    .footer-bibtex .bibtex-label {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .walkthrough-scroll {
+      margin-top: 3rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rule) transparent;
+      padding-bottom: 0.75rem;
+    }
+    .walkthrough-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+    .walkthrough-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .walkthrough-scroll::-webkit-scrollbar-thumb {
+      background: var(--rule);
+      border-radius: 2px;
+    }
+    .walkthrough-track {
+      display: flex;
+      gap: 1.25rem;
+      min-width: min-content;
+      padding: 2px 0;
+    }
+    .walkthrough-card {
+      flex: 0 0 250px;
+      background: rgba(17, 19, 24, 0.8);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.25rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      cursor: default;
+    }
+    .walkthrough-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .walkthrough-card:nth-child(-n+4)::before {
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .walkthrough-card:nth-child(n+5)::before {
+      background: linear-gradient(90deg, var(--accent2), transparent);
+    }
+    .walkthrough-card:hover::before {
+      opacity: 1;
+    }
+    .walkthrough-card:hover {
+      border-color: rgba(107, 140, 174, 0.3);
+      box-shadow: 0 0 20px rgba(107, 140, 174, 0.08);
+      transform: translateY(-2px);
+    }
+    .walk-card-phase {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .walk-card-phase span {
+      color: var(--muted);
+      margin-right: 0.35rem;
+    }
+    .walk-card-title {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .walk-card-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .walkthrough-highlight {
+      margin-top: 2rem;
+      background: rgba(17, 19, 24, 0.8);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+    .walkthrough-highlight .hl-label {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+    .walkthrough-highlight p {
+      font-family: 'CrimsonPro', Georgia, serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 0;
+    }
+    .walkthrough-highlight p strong {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .walkthrough-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .walkthrough-link a {
+      font-family: 'JetBrainsMono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+    }
+    .walkthrough-link a:hover {
+      border-bottom-color: var(--accent);
     }
 
     /* Reduced motion */
@@ -1056,6 +1409,39 @@
     <div class="attribution" data-i18n="quote.attr">— The Tension Mining Principle</div>
   </div>
 
+  <section id="why-tension-mining" aria-labelledby="why-title">
+    <div class="section-label" data-i18n="why.label">Why Tension Mining</div>
+    <h2 class="section-title" id="why-title" data-i18n="why.title">Not Another Methodology</h2>
+    <p class="section-desc" data-i18n="why.desc">Frameworks you already know answer "how to solve." Tension Mining answers "what forces shape this problem before you solve it."</p>
+
+    <div class="positioning-grid">
+      <div class="positioning-card">
+        <div class="pos-alt-name">Alternative</div>
+        <div class="pos-alt-label">Design Thinking</div>
+        <div class="pos-alt-limitation">Solution-oriented. Starts from "how might we." Empathy maps find user needs, but miss the structural forces that constrain those needs.</div>
+        <div class="pos-tm-adds"><strong>Tension Mining adds:</strong> Starts from "what forces cannot be eliminated." Finds the permanent tradeoffs that design cannot dissolve.</div>
+      </div>
+      <div class="positioning-card">
+        <div class="pos-alt-name">Alternative</div>
+        <div class="pos-alt-label">Systems Dynamics</div>
+        <div class="pos-alt-limitation">Domain-specific and quantitative. Requires calibrated models and historical data. Powerful within a domain, but each model starts from zero.</div>
+        <div class="pos-tm-adds"><strong>Tension Mining adds:</strong> Cross-domain invariants that transfer between domains. The phenomena change; the tensions persist.</div>
+      </div>
+      <div class="positioning-card">
+        <div class="pos-alt-name">Alternative</div>
+        <div class="pos-alt-label">Cynefin Framework</div>
+        <div class="pos-alt-limitation">Classifies problems (Simple, Complicated, Complex, Chaotic) but does not prescribe a discovery process for the Complex domain.</div>
+        <div class="pos-tm-adds"><strong>Tension Mining adds:</strong> A structured 7-phase pipeline purpose-built for Complex domain analysis, with gate conditions ensuring rigor.</div>
+      </div>
+      <div class="positioning-card">
+        <div class="pos-alt-name">Alternative</div>
+        <div class="pos-alt-label">First Principles</div>
+        <div class="pos-alt-limitation">Decomposes a problem into its fundamental constituents. Powerful but open-ended — no guidance on which constituents matter.</div>
+        <div class="pos-tm-adds"><strong>Tension Mining adds:</strong> Guides decomposition toward ineliminable tensions — forces that cannot be decomposed away, only managed.</div>
+      </div>
+    </div>
+  </section>
+
   <section id="pipeline" aria-labelledby="pipeline-title">
     <div class="section-label" data-i18n="pipeline.label">The Methodology</div>
     <h2 class="section-title" id="pipeline-title" data-i18n="pipeline.title">Seven Phases. Strict Order. No Skipping.</h2>
@@ -1148,6 +1534,39 @@
     </div>
   </section>
 
+  <section id="academic-foundations" aria-labelledby="academic-title">
+    <div class="section-label" data-i18n="academic.label">Intellectual Heritage</div>
+    <h2 class="section-title" id="academic-title" data-i18n="academic.title">Built on Prior Work</h2>
+    <p class="section-desc" data-i18n="academic.desc">Tension Mining does not claim to be original. It synthesizes existing ideas from systems thinking, design research, cognitive science, and complexity theory into a single operational pipeline.</p>
+
+    <div class="academic-grid">
+      <div class="academic-card">
+        <div class="acad-icon">[CYNEFIN]</div>
+        <div class="acad-name">Dave Snowden</div>
+        <div class="acad-work">Cynefin Framework</div>
+        <div class="acad-connection"><strong>Contribution:</strong> A sense-making framework that distinguishes Simple, Complicated, Complex, and Chaotic domains. <strong>Connection:</strong> Tension Mining is a structured discovery pipeline purpose-built for the Complex domain — where Cynefin stops prescribing.</div>
+      </div>
+      <div class="academic-card">
+        <div class="acad-icon">[DESIGN]</div>
+        <div class="acad-name">Donald Schon / Nigel Cross</div>
+        <div class="acad-work">Reflective Practice · Designerly Ways of Knowing</div>
+        <div class="acad-connection"><strong>Contribution:</strong> Design problems are "indeterminate" — not solvable by pure deduction. <strong>Connection:</strong> Tensions are the source of indeterminacy. The pipeline makes this productive rather than paralyzing.</div>
+      </div>
+      <div class="academic-card">
+        <div class="acad-icon">[SYSTEMS]</div>
+        <div class="acad-name">Donella Meadows</div>
+        <div class="acad-work">Thinking in Systems · Leverage Points</div>
+        <div class="acad-connection"><strong>Contribution:</strong> System behavior is governed by feedback loops and leverage points. <strong>Connection:</strong> Tensions are the "deepest" leverage points — changing the framing of a tension reshapes all downstream design decisions.</div>
+      </div>
+      <div class="academic-card">
+        <div class="acad-icon">[SCAFFOLD]</div>
+        <div class="acad-name">Lev Vygotsky</div>
+        <div class="acad-work">Zone of Proximal Development</div>
+        <div class="acad-connection"><strong>Contribution:</strong> Learning happens most effectively with structured guidance just beyond current capability. <strong>Connection:</strong> The 7-phase pipeline scaffolds analysis — the AI interviews, the human drives content, and each gate ensures readiness before proceeding.</div>
+      </div>
+    </div>
+  </section>
+
   <div class="wave-divider" aria-hidden="true"><canvas id="wave-canvas"></canvas></div>
 
   <section id="atlas" aria-labelledby="atlas-title">
@@ -1183,6 +1602,61 @@
         <div class="number" data-count="9">0</div>
         <div class="label" data-i18n="stats.templates">Domain Templates</div>
       </div>
+    </div>
+  </section>
+
+  <section id="featured-case" aria-labelledby="featured-title" style="padding-top:0">
+    <div class="section-label" data-i18n="featured.label">Featured Demonstration</div>
+    <h2 class="section-title" id="featured-title" data-i18n="featured.title">PageRank Through the Pipeline</h2>
+    <p class="section-desc" data-i18n="featured.desc">Watch how Google's PageRank emerges from the full 7-phase Tension Mining pipeline — from observed phenomena to algorithmic derivation.</p>
+
+    <div class="walkthrough-scroll">
+      <div class="walkthrough-track">
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>01</span>Phenomenon Mining</div>
+          <div class="walk-card-title">Power-Law Link Structure</div>
+          <div class="walk-card-desc">Web links follow a power-law distribution: a few pages (Google, Yahoo) accumulate millions of inbound links while most pages have near-zero. Users create links as implicit quality votes.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>02</span>Tension Mining</div>
+          <div class="walk-card-title">Local vs Global · Freedom vs Efficiency</div>
+          <div class="walk-card-desc">Each page sees only its own links but needs global relevance. Anyone can link anywhere, making the web noisy yet rich. Both tensions are ineliminable — they define the problem space.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>03</span>Invariant Mining</div>
+          <div class="walk-card-title">Local Rules Create Global Order</div>
+          <div class="walk-card-desc">Local link decisions, aggregated across the entire web, reveal a stable global ranking. Gradients Drive Movement: rank diffuses through the link structure like heat through a conducting material.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>04</span>Mechanism Mining</div>
+          <div class="walk-card-title">Eigenvector Centrality</div>
+          <div class="walk-card-desc">A page's importance is the sum of its inbound neighbors' importance. This self-consistent recursive definition — $r_i = \sum_{j \in B_i} r_j / N_j$ — is the mathematical mechanism.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>05</span>System Synthesis</div>
+          <div class="walk-card-title">Iterative Power Method</div>
+          <div class="walk-card-desc">The PageRank algorithm computes the principal eigenvector of the web's link matrix via repeated iteration. A damping factor (d=0.85) models random surfing and guarantees convergence.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>06</span>Algorithm Synthesis</div>
+          <div class="walk-card-title">Distributed Computation</div>
+          <div class="walk-card-desc">Sparse matrix-vector multiplication enables processing across billions of pages via MapReduce. Each iteration runs in parallel on web-scale data. Converges within approximately 50 rounds.</div>
+        </div>
+        <div class="walkthrough-card">
+          <div class="walk-card-phase"><span>07</span>Destruction</div>
+          <div class="walk-card-title">Link Farms and SEO Manipulation</div>
+          <div class="walk-card-desc">Artificial link structures exploit the algorithm's trust in link topology as relevance signal. Google's countermeasures: nofollow attribute, Penguin algorithm, and human quality raters.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="walkthrough-highlight">
+      <div class="hl-label">Key Insight</div>
+      <p>The PageRank algorithm was not designed — it was <strong>discovered through the pipeline</strong>. Each phase narrowed the design space until the mathematical structure became inevitable. This is the promise of Tension Mining: not creativity, but inevitability.</p>
+    </div>
+
+    <div class="walkthrough-link">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/examples/page-rank.md">Read the Full PageRank Analysis →</a>
     </div>
   </section>
 
@@ -1307,6 +1781,57 @@
     </div>
   </section>
 
+  <section id="rubric" aria-labelledby="rubric-title">
+    <div class="section-label" data-i18n="rubric.label">Quality Standard</div>
+    <h2 class="section-title" id="rubric-title" data-i18n="rubric.title">D1-D5 Quality Rubric</h2>
+    <p class="section-desc" data-i18n="rubric.desc">Every analysis is self-scored across five dimensions. Mastery means your analysis passes the Destruction Phase — not that it is complete.</p>
+
+    <div class="rubric-section">
+      <table class="rubric-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th><span class="rubric-level rubric-d1">D1 — Aware</span></th>
+            <th><span class="rubric-level rubric-d3">D3 — Competent</span></th>
+            <th><span class="rubric-level rubric-d5">D5 — Master</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Depth <div class="rubric-dim-desc">Domain coverage</div></td>
+            <td>Single domain. Phenomena from one context only.</td>
+            <td>2-3 domains. Cross-domain patterns beginning to emerge.</td>
+            <td>5+ domains. Patterns validated across unrelated fields.</td>
+          </tr>
+          <tr>
+            <td>Breadth <div class="rubric-dim-desc">Tension coverage</div></td>
+            <td>2 tensions identified. Surface-level tradeoffs.</td>
+            <td>5 tensions identified. Include at least one surprising tension.</td>
+            <td>10+ tensions identified. Full atlas coverage with [CORE] labels.</td>
+          </tr>
+          <tr>
+            <td>Rigor <div class="rubric-dim-desc">Validation depth</div></td>
+            <td>Intuition-based. Claims supported by single phenomenon.</td>
+            <td>Cross-validated. Each claim supported by 2+ independent sources.</td>
+            <td>Falsification attempts documented. Negative results included.</td>
+          </tr>
+          <tr>
+            <td>Novelty <div class="rubric-dim-desc">Insight quality</div></td>
+            <td>Known patterns. Confirms what experts already know.</td>
+            <td>Cross-domain insight. Connects previously unrelated fields.</td>
+            <td>Surprising invariants. Contradicts common assumptions.</td>
+          </tr>
+          <tr>
+            <td>Actionability <div class="rubric-dim-desc">Output utility</div></td>
+            <td>Abstract insight. Interesting but no design implications.</td>
+            <td>Design implications. Suggests specific tradeoff resolution strategies.</td>
+            <td>Direct algorithm derivation. Mechanism maps to computational structure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <section id="install" aria-labelledby="install-title">
     <div class="section-label" data-i18n="install.label">Get Started</div>
     <h2 class="section-title" id="install-title" data-i18n="install.title">Install in 30 Seconds</h2>
@@ -1375,6 +1900,35 @@
     </div>
   </section>
 
+  <section id="contribute" aria-labelledby="contribute-title">
+    <div class="section-label" data-i18n="contribute.label">Get Involved</div>
+    <h2 class="section-title" id="contribute-title" data-i18n="contribute.title">Contribute to the Atlas</h2>
+    <p class="section-desc" data-i18n="contribute.desc">The Tension Atlas grows with each contribution. Three paths to participate, depending on your interest and experience level.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem">
+      <div class="positioning-card" style="cursor:pointer" onclick="window.open('https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-tension.yml')">
+        <div class="pos-alt-name">Path 1</div>
+        <div class="pos-alt-label" style="font-size:1.1rem">Submit a Tension</div>
+        <div class="pos-alt-limitation">Identify a persistent tradeoff in any domain. Follow the tension template with Force A, Force B, cross-domain examples, and related invariants.</div>
+        <div class="pos-tm-adds" style="color:var(--accent)">Open a tension issue →</div>
+      </div>
+      <div class="positioning-card" style="cursor:pointer" onclick="window.open('https://github.com/zbbsdsb/Tension-Mining/issues/new?template=new-case-study.yml')">
+        <div class="pos-alt-name">Path 2</div>
+        <div class="pos-alt-label" style="font-size:1.1rem">Write a Case Study</div>
+        <div class="pos-alt-limitation">Apply the 7-phase pipeline to a real-world system. Use the case study template and link your findings to existing tensions and invariants.</div>
+        <div class="pos-tm-adds" style="color:var(--accent)">Open a case study issue →</div>
+      </div>
+      <div class="positioning-card" style="cursor:pointer" onclick="window.open('https://github.com/zbbsdsb/Tension-Mining/discussions')">
+        <div class="pos-alt-name">Path 3</div>
+        <div class="pos-alt-label" style="font-size:1.1rem">Join the Discussion</div>
+        <div class="pos-alt-limitation">Share feedback, propose improvements, or ask questions about the methodology. No formal contribution required — every perspective helps refine the atlas.</div>
+        <div class="pos-tm-adds" style="color:var(--accent)">Open Discussions →</div>
+      </div>
+    </div>
+    <div class="walkthrough-link" style="margin-top:1.5rem">
+      <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/CONTRIBUTING.md">Read the Full Contributing Guide →</a>
+    </div>
+  </section>
+
   <section id="roadmap" aria-labelledby="roadmap-title">
     <div class="section-label" data-i18n="roadmap.label">What's Next</div>
     <h2 class="section-title" id="roadmap-title" data-i18n="roadmap.title">Roadmap</h2>
@@ -1437,8 +1991,22 @@
       <a href="https://github.com/zbbsdsb/Tension-Mining/blob/main/LICENSE">License</a>
     </div>
     <div class="copyright">MIT License — Copyright (c) 2026 zbbsdsb</div>
-    <div class="footer-academic" style="margin-top:1rem;font-size:0.72rem;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
+    <div style="margin-top:1rem;font-size:0.72rem;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6">
       <span data-i18n="footer.cite">Cite: Zhao, C. (2026). Tension Mining: A Methodology for Discovering Invariants in Complex Systems (Version 2.0.0). GitHub. https://github.com/zbbsdsb/Tension-Mining</span>
+    </div>
+    <div class="footer-bibtex">
+      <div class="bibtex-label">BibTeX Citation</div>
+      <pre>@software{zhao2026tension,
+  author = {Zhao, Ceaser},
+  title = {{Tension Mining}: A Methodology for Discovering Invariants
+           in Complex Systems},
+  year = {2026},
+  version = {2.0.0},
+  url = {https://github.com/zbbsdsb/Tension-Mining}
+}</pre>
+    </div>
+    <div style="margin-top:0.75rem;font-size:0.7rem;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto">
+      <span data-i18n="footer.builtby">Built by <a href="https://github.com/zbbsdsb" style="color:var(--accent2);text-decoration:none">Ceaser Zhao</a> — Independent Researcher. arXiv paper forthcoming.</span>
     </div>
   </footer>
 
